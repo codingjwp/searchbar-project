@@ -1,4 +1,4 @@
-idx,number,name,form,type1,type2,hp,attack,defense,spattack,spdefense,speed,krname
+id,number,name,form,type1,type2,hp,attack,defense,spattack,spdefense,speed,krname
 d82ebc64-6996-4ef6-81a6-f868424e1950,001,Bulbasaur,,Grass,Poison,45,49,49,65,65,45,이상해씨
 48de0b6d-0ca0-4beb-a2c3-93f2eb0c4b6e,002,Ivysaur,,Grass,Poison,60,62,63,80,80,60,이상해풀
 ab65a833-c414-4102-8ea3-18d8bc8369e0,003,Venusaur,,Grass,Poison,80,82,83,100,100,80,이상해꽃

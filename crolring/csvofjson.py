@@ -14,4 +14,6 @@ with open(input_file, 'r', encoding='utf-8') as csv_file:
     lines.append(row_data)
 
 with open(out_file, 'w', encoding='utf-8') as json_file:
-  json.dump(lines, json_file, ensure_ascii=False, indent=2)
+  json.dump(lines, json_file, ensure_ascii=False)
+
+  # , indent=2
