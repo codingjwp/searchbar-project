@@ -8,8 +8,14 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'prettier',
   ],
-  ignorePatterns: ['dist', '.eslintrc.cjs', 'node_modules/', '*.{json, md}'],
+  ignorePatterns: ['dist', '.eslintrc.cjs', '.prettierrc.cjs', 'lint-staged.config.cjs', 'node_modules/', '*.{json, md}'],
   parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: true,
+    tsconfigRootDir: __dirname,
+  },
   plugins: ['react-refresh', 'prettier'],
   rules: {
     'react-refresh/only-export-components': [
@@ -18,8 +24,9 @@ module.exports = {
     ],
     'no-dupe-keys': 'error',
     'no-dupe-args': 'error',
-    'no-duplicate-imports': 'error',
     'no-console': ['error', { allow: ['warn', 'error'] }],
+    'no-duplicate-imports': 'error',
+    '@typescript-eslint/no-non-null-assertion': 'off',
     'prettier/prettier': 'error',
   },
 }
