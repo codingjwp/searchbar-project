@@ -1,6 +1,5 @@
-
 function App() {
-  console.log('error');
-  return (<div>App</div>)
+  console.log("error");
+  return <div>App</div>;
 }
-export default App
+export default App;
