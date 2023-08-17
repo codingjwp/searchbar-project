@@ -1,0 +1,74 @@
+@import '../mixin';
+
+.searchHomeWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $fullSize;
+  height: $fullSize;
+  &.pokeball {
+    background: linear-gradient(to bottom, $pokeTop 48%, $ballMiddle 48% 52% , $ballBottom 52% $fullSize);
+  }
+  &.superball {
+    background: linear-gradient(to bottom, $superTop 48%, $ballMiddle 48% 52% , $ballBottom 52% $fullSize);
+  }
+  &.ultraball {
+    background: linear-gradient(to bottom, $ultraTop 48%, $ballMiddle 48% 52% , $ballBottom 52% $fullSize);
+  }
+}
+
+.barHidden {
+  display: none;
+}
+
+@mixin superball($width, $height, $translateY, $clip) {
+  .superBallBar {
+    position: fixed;
+    top: 0;
+    width: $width;
+    height: $height;
+    background: linear-gradient(to top, $pokeTop 75%, #ef4c41 $fullSize);
+    &.leftBar {
+      left: 15%;
+      clip-path: polygon(0 0, $fullSize 0, 90% $clip, 40% $clip);
+      transform: translateY($translateY) rotateZ(-25deg);
+    }
+    &.rightBar {
+      right: 15%;
+      clip-path: polygon(0 0, $fullSize 0, 60% $clip, 10% $clip);
+      transform: translateY($translateY) rotateZ(25deg);
+    }
+  }
+}
+
+@mixin urltraball($width, $height) {
+  .urltraBallBar {
+    position: fixed;
+    width: $width;
+    height: $height;
+    top: 0;
+    background: linear-gradient(to top, #f7b808 75%, #f7d47c $fullSize);
+    &.leftBar {
+      left: 15%;
+    }
+    &.rightBar {
+      right: 15%;
+    }
+  } 
+}
+
+@include desktop {
+  @include superball(15%, 48%, -19%, 100%);
+  @include urltraball(15%, 48%);
+}
+
+@include tablet {
+  @include superball(17%, 48%, -19%, 80%);
+  @include urltraball(15%, 48%);
+}
+
+@include mobile {
+  @include superball(19%, 48%, -19%, 70%);
+  @include urltraball(15%, 48%);
+}
+
