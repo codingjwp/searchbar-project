@@ -11,66 +11,66 @@
   height: 1px;
 }
 
-.searchBar .searchInput, .searchBtn, .searchBtn::before, .searchBtn::after {
+.searchInput, .searchBtn, .searchBtn::before, .searchBtn::after {
   transition: all .25s ease-out;
 }
 
 @mixin searchBarSize($width, $height, $isDesktop) {
-  .searchBar .searchInput, .searchBtn {
-    width: $width;
-    height: $height;
-    border-radius: $halfSize;
-  }
-  .searchInput:focus, .searchInput:valid {
-    width: $fullSize;
-    border-right: 0;
-    border-radius: .3rem 0 0 .3rem;
-    background-color: $ballBottom;
-    transform: scale(1);
-  }
-  @if $isDesktop == false {
-    .searchBar:focus-within {
-      position: fixed;
-      top: 0;
-      margin: 0;
-      padding: 0;
-    }
-  }
-}
-
-.searchBar .searchInput:invalid:not(:focus), .serachBtn {
-  cursor: pointer;
-}
-.searchBar .searchInput:focus, .searchInput:not(:focus) + .searchBtn:focus {
-  outline: transparent;
-}
-
-@mixin searchBase($isDesktop) {
   .searchBar {
     display: flex;
     margin: auto;
     padding: 1.5em;
     justify-content: center;
-    width: 100%;
+    width: $fullSize;
     @if $isDesktop {
       max-width: 30em;
+    } @else {
+      &:focus-within {
+        position: fixed;
+        top: 0;
+        margin: 0;
+        padding: 0;
+      }
     }
   }
-  
-  .searchInput {
-    background: $ballBottom;
-    border: .5em solid $ballMiddle;
-    transform: translate(50%, -50%) scale(2);
-    padding: .75em;
-    transform-origin: 100% 0;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-  }
-  
   .searchBtn {
     display: none;
     position: relative;
+    cursor: pointer;
+  }
+  .searchInput {
+    width: $width;
+    height: $height;
+    border-radius: $halfSize;
+    padding: .75em;
+    transform: translate(50%, -50%) scale(2);
+    transform-origin: 100% 0;
+    border: .5em solid $ballMiddle;
+    background: $ballBottom;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    // &:focus, &:valid {
+    //   width: $fullSize;
+    //   border-right: 0;
+    //   border-radius: .3rem 0 0 .3rem;
+    //   background-color: $ballBottom;
+    //   transform: scale(1);
+    //   outline: transparent;
+    // }
+    // &:focus + .searchBtn, &:valid + .searchBtn {
+    //   display: block;
+    //   width: $width;
+    //   height: $height;
+    //   border-radius: $halfSize;
+    //   border: .5rem solid $ballMiddle;
+    //   border-left: 0;
+    //   background: $ballBottom;
+    //   border-radius: 0 0.375em 0.375em 0;
+    // }
+    &:invalid:not(:focus) {
+      cursor: pointer;
+    }
   }
 }
 
@@ -80,51 +80,42 @@
     display: block;
     opacity: 0;
   }
-  .searchBtn::before {
-    position: absolute;
-    top: $beforeTop;
-    left: $beforeLeft;
-    border-radius: 50%;
-    box-shadow: 0 0 0 0.2em $ballMiddle inset;
-    width: 1.5em;
-    height: 1.5em;
-  }
-  .searchBtn::after {
-    position: absolute;
-    top: $afterTop;
-    left: $afterLeft;
-    border-radius: 0 0.25em 0.25em 0;
-    transform: rotate(55deg);
-    transform-origin: 0 50%;
-    width: 0.75em;
-    height: 0.25em;
-    background: $ballMiddle;
-  }
-
-  .searchInput:focus + .searchBtn, .searchInput:valid + .searchBtn {
-    display: block;
-    border: .5rem solid $ballMiddle;
-    border-left: 0;
-    background: $ballBottom;
-    border-radius: 0 0.375em 0.375em 0;
+  .searchBtn {
+    &::before {
+      position: absolute;
+      top: $beforeTop;
+      left: $beforeLeft;
+      border-radius: 50%;
+      box-shadow: 0 0 0 0.2em $ballMiddle inset;
+      width: 1.5em;
+      height: 1.5em;
+    }
+    &::after {
+      position: absolute;
+      top: $afterTop;
+      left: $afterLeft;
+      border-radius: 0 0.25em 0.25em 0;
+      transform: rotate(55deg);
+      transform-origin: 0 50%;
+      width: 0.75em;
+      height: 0.25em;
+      background: $ballMiddle;
+    }
   }
 }
 
 @include desktop {
   @include searchBarSize(5rem, 5rem, true);
-  @include searchBase(true);
   @include searchBtnPostion(1.2em, 1.2em, 2.3em, 2.2em);
 }
 
 @include tablet {
   @include searchBarSize(5rem, 5rem, false);
-  @include searchBase(false);
   @include searchBtnPostion(1.2em, 1.2em, 2.3em, 2.2em);
 }
 
 @include mobile {
   @include searchBarSize(3.5rem, 3.5rem, false);
-  @include searchBase(false);
   @include searchBtnPostion(.4em, .4em, 1.5em, 1.5em);
 }
 
