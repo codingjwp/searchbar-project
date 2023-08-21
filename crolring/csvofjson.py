@@ -1,16 +1,14 @@
 import csv, json
 # CSV OF JSON
-input_file = './pokemon.csv'
-out_file = './new_pokemon.json'
+input_file = './pokemonlist.csv'
+out_file = './pokemonlist.json'
 
 with open(input_file, 'r', encoding='utf-8') as csv_file:
   csv_reader = csv.reader(csv_file)
 
   header = next(csv_reader)
-
   lines = []
   for row in csv_reader:
-    print(row)
     row_data = {header[i]: row[i] for i in range(len(header))}
     lines.append(row_data)
 
