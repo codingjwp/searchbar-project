@@ -1,5 +1,4 @@
 {
-  "/pokemondb/:name": "/pokemondb?name=:name",
-  "/pokemondb/:krname": "/pokemondb?krname=:krname",
-  "/pokemondb/:number": "/pokemondb?name=:number"
+  "/pokemondb": "/pokemondb",
+  "/pokemonlist": "/pokemonlist"
 }
