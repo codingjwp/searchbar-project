@@ -14,7 +14,8 @@ const SearchBar = forwardRef<HTMLInputElement, SearchBarProps>(({name, data}, re
   const [hasFocus, setHasFocus] = useState(false);
 
   const isFocusTrue = () => {
-    if (hasFocus === false) setHasFocus(true);
+    if (hasFocus === false)
+      setHasFocus(true);
   }
   const isFocusFalse = (e: FocusEvent) => {
     const checkValue = (e.target as HTMLInputElement).value ?? "";
