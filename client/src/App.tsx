@@ -1,8 +1,11 @@
 import Routers from "./Routers";
+import RecoilState from "./apis/recoilState";
 
 function App() {
   return (
-    <Routers />
+    <RecoilState>
+      <Routers />
+    </RecoilState>
   );
 }
 export default App;
