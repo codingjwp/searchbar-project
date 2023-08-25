@@ -1,11 +1,11 @@
 import Routers from "./Routers";
-import RecoilState from "./apis/recoilState";
+import RecoilComponents from "./apis/RecoilComponents";
 
 function App() {
   return (
-    <RecoilState>
+    <RecoilComponents>
       <Routers />
-    </RecoilState>
+    </RecoilComponents>
   );
 }
 export default App;

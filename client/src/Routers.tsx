@@ -1,11 +1,12 @@
+import { lazy } from "react";
 import {
   Route,
   createBrowserRouter,
   createRoutesFromElements,
   RouterProvider,
 } from "react-router-dom";
-import SearchHome from "./pages/SearchHome";
-import PokemonDb from "./pages/PokemonDb";
+const SearchHome = lazy(() => import("./pages/SearchHome"));
+const PokemonDb = lazy(() => import("./pages/PokemonDb"));
 
 const routerElements = createBrowserRouter(
   createRoutesFromElements(
