@@ -1,17 +1,19 @@
-import { forwardRef, FocusEvent, useState } from "react";
+import { forwardRef, FocusEvent, useState, ChangeEvent } from "react";
 import styles from "./searchBar.module.scss";
 
 interface SearchBarProps {
   name: string;
   data?: {
     id: string;
-    name: string;
+    enname: string;
+    search: string;
     krname: string;
   }[];
+  onChange: (e: ChangeEvent) => void;
 }
 
 const SearchBar = forwardRef<HTMLInputElement, SearchBarProps>(
-  ({ name, data }, ref) => {
+  ({ name, data, onChange }, ref) => {
     const [hasFocus, setHasFocus] = useState(false);
 
     const isFocusTrue = () => {
@@ -40,6 +42,7 @@ const SearchBar = forwardRef<HTMLInputElement, SearchBarProps>(
             required={true}
             onFocus={isFocusTrue}
             onBlur={isFocusFalse}
+            onChange={onChange}
           />
           <button
             className={`${styles.searchBarBtn} ${
