@@ -35,8 +35,9 @@ export const searchListState = selector<
 
       if (!response.every((res) => res.ok)) throw new Error("Network Error");
 
-      const [korean, english]: PokemonListProps[] =
-        await Promise.all<PokemonListProps>(response.map((res) => res.json()));
+      const [korean, english] = await Promise.all<PokemonListProps[]>(
+        response.map((res) => res.json()),
+      );
 
       if (!korean || !english) throw new Error("Not Found Error");
 
