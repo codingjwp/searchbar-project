@@ -1,8 +1,8 @@
+import { ChangeEvent } from "react";
 import { useRecoilState } from "recoil";
 import SearchBar from "../components/SearchBar";
 import styles from "./searchHome.module.scss";
 import { PokemonListProps, searchListState } from "../apis/recoilState";
-import { ChangeEvent } from "react";
 
 const randomIndex = Math.floor(Math.random() * 3);
 
@@ -41,7 +41,7 @@ const SearchHome = () => {
         }
       />
       <SearchBar
-        name="pokemon-search"
+        name="pokemon-search-bar"
         onChange={searchBarChangeOfText}
         data={listState as PokemonListProps[]}
       />

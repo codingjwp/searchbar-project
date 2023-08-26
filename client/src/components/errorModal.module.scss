@@ -1,0 +1,28 @@
+.modalBaseCenter {
+  width: 100%;
+  background-color: #fafafa;
+  z-index: 10;
+}
+
+.modalErrorName {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 .5em .5em;
+  border-bottom: 3px solid #000000;
+}
+
+.modalErrorMessage {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 .5em .5em;
+}
+
+.modalErrorStack {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  width: 100%;
+  margin: auto 0;
+  padding: 0 0 0 .7em;
+  line-height: 1.5em;
+  white-space: pre-wrap; 
+}

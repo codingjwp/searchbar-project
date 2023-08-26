@@ -1,8 +1,8 @@
 import { Component, ReactNode } from "react";
+import ErrorModal from "../components/ErrorModal";
 
 interface ErrorBoundaryProps {
   children: ReactNode;
-  fallback: ReactNode;
 }
 
 interface ErrorBoundaryState {
@@ -20,7 +20,14 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
   }
 
   render() {
-    if (this.state.hasError) return this.props.fallback;
+    if (this.state.hasError) {
+      const message = {
+        stack: this.state.error?.stack ?? "",
+        name: this.state.error?.name ?? "Error",
+        message: this.state.error?.message ?? "The Error cannot be identified.",
+      };
+      return <ErrorModal error={message} />;
+    }
     return this.props.children;
   }
 }

@@ -1,17 +1,27 @@
-import { lazy } from "react";
+import { Suspense } from "react";
 import {
   Route,
   createBrowserRouter,
   createRoutesFromElements,
   RouterProvider,
 } from "react-router-dom";
-const SearchHome = lazy(() => import("./pages/SearchHome"));
-const PokemonDb = lazy(() => import("./pages/PokemonDb"));
+import SearchHome from "./pages/SearchHome";
+import PokemonDb from "./pages/PokemonDb";
+import ErrorBoundary from "./apis/ErrorBoundary";
 
 const routerElements = createBrowserRouter(
   createRoutesFromElements(
     <Route>
-      <Route path="/" element={<SearchHome />} />
+      <Route
+        path="/"
+        element={
+          <ErrorBoundary>
+            <Suspense fallback={<div>Loading..</div>}>
+              <SearchHome />
+            </Suspense>
+          </ErrorBoundary>
+        }
+      />
       <Route path="db/:id" element={<PokemonDb />} />
     </Route>,
   ),

@@ -3,13 +3,13 @@ import styles from "./searchBar.module.scss";
 
 interface SearchBarProps {
   name: string;
-  data?: {
+  data: {
     id: string;
     enname: string;
     search: string;
     krname: string;
   }[];
-  onChange: (e: ChangeEvent) => void;
+  onChange?: (e: ChangeEvent) => void;
 }
 
 const SearchBar = forwardRef<HTMLInputElement, SearchBarProps>(
@@ -57,12 +57,12 @@ const SearchBar = forwardRef<HTMLInputElement, SearchBarProps>(
           </button>
         </div>
         <div className={styles.searchBarDetail}>
-          {data ? (
+          {data?.length !== 0 ? (
             data.map((item) => {
               return (
                 <div className={styles.searchBarDetailBox} key={item.id}>
                   {item.krname}
-                  <sub>item.name</sub>
+                  <sub>{`(${item.enname})`}</sub>
                 </div>
               );
             })
