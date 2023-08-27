@@ -1,0 +1,34 @@
+@import '../mixin';
+
+.hidden {
+  display: none;
+}
+
+@mixin searchFoucuse($isdesktop) {
+  .searchBarDetail {
+    display: block;
+    border-radius: 0 0 .5em .5em;
+    border: .5em solid $ballMiddle;
+    border-top: 0;
+    background-color: $ballBottom;
+    @if $isdesktop {
+      max-width: 30em;
+    }
+  }
+  .searchBarDetailBox {
+    width: $fullSize;
+    padding: 1em;
+    font-size: 1.1em;
+    border-bottom: 1px solid $ballMiddle;
+  }
+}
+
+@include desktop {
+  @include searchFoucuse(true);
+}
+@include tablet {
+  @include searchFoucuse(false);
+}
+@include mobile {
+  @include searchFoucuse(false);
+}

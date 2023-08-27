@@ -1,21 +1,21 @@
-import { forwardRef, FocusEvent, useState, ChangeEvent } from "react";
+import { forwardRef, FocusEvent, useState, ChangeEvent, Suspense } from "react";
 import styles from "./searchBar.module.scss";
+import { useSetRecoilState } from "recoil";
+import { searchTextState } from "../apis/recoilState";
+import SearchDetail from "./SearchDetail";
 
 interface SearchBarProps {
   name: string;
-  data: {
-    id: string;
-    enname: string;
-    search: string;
-    krname: string;
-  }[];
-  onChange?: (e: ChangeEvent) => void;
 }
 
 const SearchBar = forwardRef<HTMLInputElement, SearchBarProps>(
-  ({ name, data, onChange }, ref) => {
+  ({ name }, ref) => {
     const [hasFocus, setHasFocus] = useState(false);
-
+    const setTextState = useSetRecoilState(searchTextState);
+    const searchTextChange = (e: ChangeEvent) => {
+      const text = (e.target as HTMLInputElement).value ?? "";
+      setTextState(text);
+    };
     const isFocusTrue = () => {
       if (hasFocus === false) setHasFocus(true);
     };
@@ -42,7 +42,7 @@ const SearchBar = forwardRef<HTMLInputElement, SearchBarProps>(
             required={true}
             onFocus={isFocusTrue}
             onBlur={isFocusFalse}
-            onChange={onChange}
+            onChange={searchTextChange}
           />
           <button
             className={`${styles.searchBarBtn} ${
@@ -56,22 +56,9 @@ const SearchBar = forwardRef<HTMLInputElement, SearchBarProps>(
             <span className={styles.searchBarSpan}>Search</span>
           </button>
         </div>
-        <div className={styles.searchBarDetail}>
-          {data?.length !== 0 ? (
-            data.map((item) => {
-              return (
-                <div className={styles.searchBarDetailBox} key={item.id}>
-                  {item.krname}
-                  <sub>{`(${item.enname})`}</sub>
-                </div>
-              );
-            })
-          ) : (
-            <div className={styles.searchBarDetailBox}>
-              검색어가 존재하지 않습니다.
-            </div>
-          )}
-        </div>
+        <Suspense>
+          <SearchDetail hasFocus={hasFocus} />
+        </Suspense>
       </div>
     );
   },
