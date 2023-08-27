@@ -1,20 +1,18 @@
-import { atom, selector, DefaultValue } from "recoil";
+import { atom, selector } from "recoil";
 
-export interface PokemonListProps {
+interface PokemonListProps {
   id: string;
   enname: string;
   search: string;
   krname: string;
 }
 
-const searchTextState = atom<string>({
+export const searchTextState = atom<string>({
   key: "searchTextState",
   default: "",
 });
 
-export const searchListState = selector<
-  string | PokemonListProps[] | DefaultValue
->({
+export const searchListState = selector<PokemonListProps[]>({
   key: "searchListState",
   get: async ({ get }) => {
     try {
@@ -22,17 +20,11 @@ export const searchListState = selector<
         .replace(/['+-_: ]+/g, "")
         .toLowerCase();
       if (pokemonName === "") return [];
-
       const fetchArray = [
-        fetch(
-          `http://localhost:4000/pokemonlist?krname_like=${pokemonName}&_limit=5`,
-        ),
-        fetch(
-          `http://localhost:4000/pokemonlist?search_like=${pokemonName}&_limit=5`,
-        ),
+        fetch(`${import.meta.env.VITE_API_KR_LIST}${pokemonName}`),
+        fetch(`${import.meta.env.VITE_API_EN_LIST}${pokemonName}`),
       ];
       const response = await Promise.all(fetchArray);
-
       if (!response.every((res) => res.ok)) throw new Error("Network Error");
 
       const [korean, english] = await Promise.all<PokemonListProps[]>(
@@ -40,21 +32,10 @@ export const searchListState = selector<
       );
 
       if (!korean || !english) throw new Error("Not Found Error");
-
       return korean.length === 0 ? english : korean;
     } catch (error: unknown) {
       const data = (error as Error).message;
-
       throw new Error(data);
     }
   },
-  set: ({ set }, newValue) =>
-    set(
-      searchTextState,
-      newValue instanceof DefaultValue
-        ? newValue
-        : typeof newValue === "string"
-        ? newValue
-        : "",
-    ),
 });
