@@ -1,24 +1,14 @@
-import { ChangeEvent } from "react";
-import { useRecoilState } from "recoil";
-import SearchBar from "../components/SearchBar";
 import styles from "./searchHome.module.scss";
-import { PokemonListProps, searchListState } from "../apis/recoilState";
+import SearchBar from "../components/SearchBar";
 
 const randomIndex = Math.floor(Math.random() * 3);
 
 const SearchHome = () => {
-  const [listState, setListState] = useRecoilState(searchListState);
   const homeClass = [
     `${styles.pokeball}`,
     `${styles.superball}`,
     `${styles.ultraball}`,
   ];
-
-  const searchBarChangeOfText = (e: ChangeEvent) => {
-    e.preventDefault();
-    const searchText = (e.target as HTMLInputElement).value;
-    setListState(searchText);
-  };
 
   return (
     <div className={`${styles.searchHomeWrapper} ${homeClass[randomIndex]}`}>
@@ -40,11 +30,7 @@ const SearchHome = () => {
             : `${styles.barHidden}`
         }
       />
-      <SearchBar
-        name="pokemon-search-bar"
-        onChange={searchBarChangeOfText}
-        data={listState as PokemonListProps[]}
-      />
+      <SearchBar name="pokemon-search-bar" />
     </div>
   );
 };
