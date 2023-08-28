@@ -1,6 +1,7 @@
-import { useRecoilValue } from "recoil";
+import { useRecoilValue, useRecoilState } from "recoil";
 import styles from "./searchDetail.module.scss";
-import { searchListState } from "../apis/recoilState";
+import { searchListState, searchDetailIndex } from "../apis/recoilState";
+import { useEffect } from "react";
 
 interface searchDetailProps {
   hasFocus: boolean;
@@ -8,23 +9,36 @@ interface searchDetailProps {
 
 const SearchDetail = ({ hasFocus }: searchDetailProps) => {
   const data = useRecoilValue(searchListState);
+  const [detailIndex, setDetailIndex] = useRecoilState(searchDetailIndex);
+
+  useEffect(() => {
+    if (data.length <= detailIndex) {
+      setDetailIndex((prev) => prev - 1);
+    }
+  }, [detailIndex]);
+
   return (
-    <div className={hasFocus ? styles.searchBarDetail : styles.hidden}>
+    <ul className={hasFocus ? styles.searchBarDetail : styles.hidden}>
       {data?.length !== 0 ? (
-        data.map((item) => {
+        data.map((item, index) => {
           return (
-            <div className={styles.searchBarDetailBox} key={item.id}>
+            <li
+              className={`${styles.searchBarDetailBox} ${
+                detailIndex === index ? styles.indexCheck : ""
+              }`}
+              key={item.id}
+            >
               {item.krname}
               <sub>{`(${item.enname})`}</sub>
-            </div>
+            </li>
           );
         })
       ) : (
-        <div className={styles.searchBarDetailBox}>
+        <li title={"no-search"} className={styles.searchBarDetailBox}>
           검색어가 존재하지 않습니다.
-        </div>
+        </li>
       )}
-    </div>
+    </ul>
   );
 };
 

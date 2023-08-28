@@ -7,6 +7,8 @@
 @mixin searchFoucuse($isdesktop) {
   .searchBarDetail {
     display: block;
+    margin: 0;
+    padding: 0;
     border-radius: 0 0 .5em .5em;
     border: .5em solid $ballMiddle;
     border-top: 0;
@@ -16,7 +18,7 @@
     }
   }
   .searchBarDetailBox {
-    width: $fullSize;
+    list-style: none;
     padding: 1em;
     font-size: 1.1em;
     border-bottom: 1px solid $ballMiddle;
@@ -31,4 +33,8 @@
 }
 @include mobile {
   @include searchFoucuse(false);
+}
+
+.indexCheck {
+  background-color: #00aaff;
 }
