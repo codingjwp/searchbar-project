@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import {
   Route,
   createBrowserRouter,
@@ -16,9 +15,7 @@ const routerElements = createBrowserRouter(
         path="/"
         element={
           <ErrorBoundary>
-            <Suspense fallback={<div>Loading..</div>}>
-              <SearchHome />
-            </Suspense>
+            <SearchHome />
           </ErrorBoundary>
         }
       />

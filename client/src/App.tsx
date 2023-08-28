@@ -1,11 +1,11 @@
 import Routers from "./Routers";
-import RecoilComponents from "./apis/RecoilComponents";
+import { RecoilRoot } from "recoil";
 
 function App() {
   return (
-    <RecoilComponents>
+    <RecoilRoot>
       <Routers />
-    </RecoilComponents>
+    </RecoilRoot>
   );
 }
 export default App;
