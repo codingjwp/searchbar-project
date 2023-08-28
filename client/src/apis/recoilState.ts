@@ -39,3 +39,8 @@ export const searchListState = selector<PokemonListProps[]>({
     }
   },
 });
+
+export const searchDetailIndex = atom({
+  key: "searchDetailIndex",
+  default: -1,
+});
