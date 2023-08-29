@@ -4,11 +4,11 @@ import { searchListState, searchDetailIndex } from "../apis/recoilState";
 import { useEffect, MouseEvent } from "react";
 
 interface searchDetailProps {
-  hasFocus: boolean;
+  isFocused: boolean;
   touchDetail?: (e: MouseEvent) => void;
 }
 
-const SearchDetail = ({ hasFocus, touchDetail }: searchDetailProps) => {
+const SearchDetail = ({ isFocused, touchDetail }: searchDetailProps) => {
   const data = useRecoilValue(searchListState);
   const [detailIndex, setDetailIndex] = useRecoilState(searchDetailIndex);
 
@@ -20,7 +20,7 @@ const SearchDetail = ({ hasFocus, touchDetail }: searchDetailProps) => {
 
   return (
     <div
-      className={hasFocus ? styles.searchBarDetail : styles.hidden}
+      className={isFocused ? styles.searchBarDetail : styles.hidden}
       onClick={touchDetail}
     >
       <ul className={styles.searchBarDetailCover}>

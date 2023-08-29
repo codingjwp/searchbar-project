@@ -102,7 +102,7 @@ const SearchBar = ({ name }: SearchBarProps) => {
         </button>
       </div>
       <Suspense>
-        <SearchDetail hasFocus={isFocused} touchDetail={handleTouchOfClick} />
+        <SearchDetail isFocused={isFocused} touchDetail={handleTouchOfClick} />
       </Suspense>
     </div>
   );
