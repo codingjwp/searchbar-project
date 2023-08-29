@@ -1,7 +1,17 @@
-import { useState, ChangeEvent, Suspense, useRef, KeyboardEvent } from "react";
-import styles from "./searchBar.module.scss";
+import {
+  useState,
+  ChangeEvent,
+  MouseEvent,
+  FocusEvent,
+  Suspense,
+  useRef,
+  KeyboardEvent,
+  useEffect,
+} from "react";
+import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { searchDetailIndex, searchTextState } from "../apis/recoilState";
+import styles from "./searchBar.module.scss";
 import SearchDetail from "./SearchDetail";
 
 interface SearchBarProps {
@@ -9,43 +19,57 @@ interface SearchBarProps {
 }
 
 const SearchBar = ({ name }: SearchBarProps) => {
-  const [hasFocus, setHasFocus] = useState(false);
+  const navigate = useNavigate();
+  const [isFocused, setIsFocused] = useState(false);
   const textRef = useRef<HTMLInputElement | null>(null);
-  const [textState, setTextState] = useRecoilState(searchTextState);
+  const [searchText, setSearchText] = useRecoilState(searchTextState);
   const [detailIndex, setDetailIndex] = useRecoilState(searchDetailIndex);
-  const searchTextChange = (e: ChangeEvent) => {
-    const text = (e.target as HTMLInputElement).value ?? "";
-    setTextState(text);
+
+  const searchTextChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setSearchText(e.target.value ?? "");
+    setDetailIndex(-1);
   };
-  const isFocusTrue = () => {
-    if (hasFocus === false) {
-      setHasFocus(true);
-    }
-  };
-  const isFocusFalse = () => {
-    const checkValue = textRef.current?.value ?? "";
-    checkValue === "" ? setHasFocus(false) : setHasFocus(true);
+  const handleFocusChange = (e: FocusEvent) => {
+    if (e.type === "focus" && !isFocused) setIsFocused(true);
+    else if (e.type === "blur") setIsFocused(textRef.current?.value !== "");
   };
   const hasSearchDetailIndex = (e: KeyboardEvent) => {
-    if (!(e.key === "ArrowUp" || e.key === "ArrowDown" || e.key === "Enter"))
-      return;
+    if (!["ArrowUp", "ArrowDown", "Enter"].includes(e.key)) return;
     if (e.key === "ArrowUp" && detailIndex > 0) {
       setDetailIndex((prev) => prev - 1);
     } else if (e.key === "ArrowDown" && detailIndex < 4) {
       setDetailIndex((prev) => prev + 1);
-    } else if (e.key === "Enter") {
+    } else if (e.key === "Enter" && detailIndex !== -1) {
       const li = document.querySelectorAll("li");
       if (li && li.item(0).title === "no-search") return;
       if (li && li.item(detailIndex)) {
-        setTextState(li.item(detailIndex).innerText.split("(")[0]);
+        setSearchText(li.item(detailIndex).innerText.split("(")[0]);
         setDetailIndex(-1);
       }
     }
   };
+  const handleTouchOfClick = (e: MouseEvent) => {
+    const li = e.target as HTMLLIElement;
+    if (li.title === "no-search") return;
+    setSearchText(li.innerText.split("(")[0]);
+    setDetailIndex(-1);
+  };
+
+  const movePokemonDb = () => {
+    const li = document.querySelector("li");
+    if (li && li.title === "no-search") return;
+    const id = li?.getAttribute("aria-label");
+    navigate(`/db/${id}`);
+  };
+  useEffect(() => {
+    setSearchText("");
+  }, []);
 
   return (
     <div
-      className={`${styles.searchBar} ${hasFocus ? styles.searchBarFocus : ""}`}
+      className={`${styles.searchBar} ${
+        isFocused ? styles.searchBarFocus : ""
+      }`}
     >
       <div className={styles.searchBarCover}>
         <input
@@ -56,27 +80,29 @@ const SearchBar = ({ name }: SearchBarProps) => {
           type="search"
           pattern=".*\S.*"
           required={true}
-          onFocus={isFocusTrue}
-          onBlur={isFocusFalse}
+          onFocus={handleFocusChange}
+          onBlur={handleFocusChange}
           onChange={searchTextChange}
-          value={textState}
+          value={searchText}
           onKeyDown={hasSearchDetailIndex}
         />
         <button
           className={`${styles.searchBarBtn} ${
-            hasFocus === false ? styles.searchBarBtnFocuse : ""
+            isFocused === false ? styles.searchBarBtnFocuse : ""
           }`}
           title={name}
           name={name}
           type="submit"
-          onFocus={isFocusTrue}
-          onBlur={isFocusFalse}
+          onFocus={handleFocusChange}
+          onBlur={handleFocusChange}
+          onClick={movePokemonDb}
+          onTouchStart={movePokemonDb}
         >
           <span className={styles.searchBarSpan}>Search</span>
         </button>
       </div>
       <Suspense>
-        <SearchDetail hasFocus={hasFocus} />
+        <SearchDetail hasFocus={isFocused} touchDetail={handleTouchOfClick} />
       </Suspense>
     </div>
   );

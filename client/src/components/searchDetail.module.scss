@@ -7,13 +7,19 @@
 @mixin searchFoucuse($isdesktop) {
   .searchBarDetail {
     display: block;
-    margin: 0;
-    padding: 0;
-    border-radius: 0 0 .5em .5em;
-    border: .5em solid $ballMiddle;
-    border-top: 0;
-    background-color: $ballBottom;
+    width: 100%;
+    overflow-y: auto;
+    & .searchBarDetailCover {
+      margin: 0;
+      padding: 0;
+      border-radius: 0 0 .5em .5em;
+      border: .5em solid $ballMiddle;
+      border-top: 0;
+      background-color: $ballBottom;
+    }
     @if $isdesktop {
+      position: absolute;
+      top: 5em;
       max-width: 30em;
     }
   }
@@ -22,6 +28,12 @@
     padding: 1em;
     font-size: 1.1em;
     border-bottom: 1px solid $ballMiddle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    & sub {
+      pointer-events: none;
+    }
   }
 }
 
