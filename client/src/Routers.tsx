@@ -7,6 +7,8 @@ import {
 import SearchHome from "./pages/SearchHome";
 import PokemonDb from "./pages/PokemonDb";
 import ErrorBoundary from "./apis/ErrorBoundary";
+import { RecoilRoot } from "recoil";
+import { Suspense } from "react";
 
 const routerElements = createBrowserRouter(
   createRoutesFromElements(
@@ -19,7 +21,16 @@ const routerElements = createBrowserRouter(
           </ErrorBoundary>
         }
       />
-      <Route path="db/:id" element={<PokemonDb />} />
+      <Route
+        path="db/:id"
+        element={
+          <RecoilRoot override={true}>
+            <Suspense>
+              <PokemonDb />
+            </Suspense>
+          </RecoilRoot>
+        }
+      />
     </Route>,
   ),
 );

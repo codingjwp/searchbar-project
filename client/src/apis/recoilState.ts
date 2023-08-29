@@ -40,6 +40,44 @@ export const searchListState = selector<PokemonListProps[]>({
   },
 });
 
+interface PokemonDBProps {
+  id: string;
+  number: string;
+  enname: string;
+  form1: string;
+  form2: string;
+  form3: string;
+  form4: string;
+  form5: string;
+  type1: string;
+  type2: string;
+  hp: string;
+  attack: string;
+  defense: string;
+  spattack: string;
+  spdefense: string;
+  speed: string;
+  krname: string;
+  imgname: string;
+}
+
+export const pokemonDB = selector<PokemonDBProps | undefined>({
+  key: "pokemonStateDB",
+  get: async ({ get }) => {
+    try {
+      const id = get(searchTextState);
+      const response = await fetch(`${import.meta.env.VITE_API_DB}${id}`);
+      if (!response.ok) throw new Error("Network Error");
+      const data: PokemonDBProps[] =
+        (await response.json()) as PokemonDBProps[];
+      return data.length === 0 ? undefined : data[0];
+    } catch (error: unknown) {
+      const data = (error as Error).message;
+      throw new Error(data);
+    }
+  },
+});
+
 export const searchDetailIndex = atom({
   key: "searchDetailIndex",
   default: -1,
