@@ -12,14 +12,10 @@ const SearchDetail = ({ hasFocus, touchDetail }: searchDetailProps) => {
   const data = useRecoilValue(searchListState);
   const [detailIndex, setDetailIndex] = useRecoilState(searchDetailIndex);
 
-  const detailIndexCheck = (index: number) => {
-    if (data.length <= index) {
+  useEffect(() => {
+    if (data.length <= detailIndex) {
       setDetailIndex((prev) => prev - 1);
     }
-  };
-
-  useEffect(() => {
-    detailIndexCheck(detailIndex);
   }, [detailIndex]);
 
   return (
