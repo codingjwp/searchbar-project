@@ -28,24 +28,30 @@ const MainCard = ({
   type1,
 }: MainCardProps) => {
   return (
-    <div className={`${styles.mainCard} ${getTypeStyle(type1.toLowerCase())}`}>
-      <img
-        className={styles.mainCardImg}
-        src={`${import.meta.env.VITE_API_IMG}${imgname}`}
-        alt={enname}
-      />
-      <span className={`${styles.mainCardTitle}`}>#{number}</span>
-      <span className={`${styles.mainCardTitle}`}>{krname}</span>
-      <span>{enname}</span>
-      <span className={styles.hidden}>
-        {id}
-        {form1}
-        {form2}
-        {form3}
-        {form4}
-        {form5}
-        {type1}
-      </span>
+    <div className={`${styles.mainCard} `}>
+      <div
+        className={`${styles.mainCardContainer} ${getTypeStyle(
+          type1.toLowerCase(),
+        )}`}
+      >
+        <img
+          className={styles.mainCardImg}
+          src={`${import.meta.env.VITE_API_IMG}${imgname}`}
+          alt={enname}
+        />
+        <span className={`${styles.mainCardTitle}`}>#{number}</span>
+        <span className={`${styles.mainCardTitle}`}>{krname}</span>
+        <span>{enname}</span>
+        <span className={styles.hidden}>
+          {id}
+          {form1}
+          {form2}
+          {form3}
+          {form4}
+          {form5}
+          {type1}
+        </span>
+      </div>
     </div>
   );
 };

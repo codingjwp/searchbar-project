@@ -17,3 +17,10 @@
     @content;
   }
 }
+
+@mixin animation($name, $duration, $timing, $count) {
+  animation-name: $name;
+  animation-duration: $duration;
+  animation-timing-function: $timing;
+  animation-iteration-count: $count;
+}

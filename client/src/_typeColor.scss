@@ -1,183 +1,166 @@
-@import './variables';
+$typeBeforeNormal: #aaaa99;
+$typeBeforeFire: #ff4422;
+$typeBeforeWater: #3399ff;
+$typeBeforeElectric: #ffcc33;
+$typeBeforeGrass: #77cc55;
+$typeBeforeIce: #66ccff;
+$typeBeforeFight: #bb5544;
+$typeBeforePoison: #aa5599;
+$typeBeforeGround: #ddbb55;
+$typeBeforeFlying: #8899ff;
+$typeBeforePsychic: #ff5599;
+$typeBeforeBug: #aabb22;
+$typeBeforeRock: #bbaa66;
+$typeBeforeGhost: #6666bb;
+$typeBeforeDragon: #7766ee;
+$typeBeforeDark: #775544;
+$typeBeforeSteel: #aaaabb;
+$typeBeforeFairy: #ee99ee;
+
+$typeAfterNormal: #858577;
+$typeAfterFire: #d2381d;
+$typeAfterWater: #2b7fd3;
+$typeAfterElectric: #d1a72a;
+$typeAfterGrass: #5da042;
+$typeAfterIce: #56aeda;
+$typeAfterFight: #9b4738;
+$typeAfterPoison: #8b457d;
+$typeAfterGround: #b79b47;
+$typeAfterFlying: #7685db;
+$typeAfterPsychic: #d2477f;
+$typeAfterBug: #8b9a1d;
+$typeAfterRock: #958853;
+$typeAfterGhost: #515193;
+$typeAfterDragon: #6153bd;
+$typeAfterDark: #5b4134;
+$typeAfterSteel: #777783;
+$typeAfterFairy: #bf7dbf;
+
+
 
 .bugType{
   background-color: $typeAfterBug;
-  &::before {
-    content: "";
-    background-color: $typeBeforeBug;
-  }
   &::after {
     content: "";
+    background: linear-gradient(0deg, $typeBeforeBug 0%, lighten($typeBeforeBug, 20%) 85%, $typeBeforeBug 100%);
   }
 }
 .darkType{
   background-color: $typeAfterDark;
-  &::before {
-    content: "";
-    background-color: $typeBeforeDark;
-  }
   &::after {
     content: "";
+    background: linear-gradient(0deg, $typeBeforeDark 0%, lighten($typeBeforeDark, 20%) 85%, $typeBeforeDark 100%);
   }
 }
 .dragonType{
   background-color: $typeAfterDragon;
-  &::before {
-    content: "";
-    background-color: $typeBeforeDragon;
-  }
   &::after {
     content: "";
+    background: linear-gradient(0deg, $typeBeforeDragon 0%, lighten($typeBeforeDragon, 20%) 85%, $typeBeforeDragon 100%);
   }
 }
 .electricType{
   background-color: $typeAfterElectric;
-  &::before {
-    content: "";
-    background-color: $typeBeforeElectric;
-  }
   &::after {
     content: "";
+    background: linear-gradient(0deg, $typeBeforeElectric 0%, lighten($typeBeforeElectric, 20%) 85%, $typeBeforeElectric 100%);
   }
 }
 .fightingType{
   background-color: $typeAfterFight;
-  &::before {
-    content: "";
-    background-color: $typeBeforeFight;
-  }
   &::after {
     content: "";
+    background: linear-gradient(0deg, $typeBeforeFight 0%, lighten($typeBeforeFight, 20%) 85%, $typeBeforeFight 100%);
   }
 }
 .fairyType{
   background-color: $typeAfterFairy;
-  &::before {
-    content: "";
-    background-color: $typeBeforeFairy;
-  }
   &::after {
     content: "";
+    background: linear-gradient(0deg, $typeBeforeFairy 0%, lighten($typeBeforeFairy, 20%) 85%, $typeBeforeFairy 100%);
   }
 }
 .flyingType{
   background-color: $typeAfterFlying;
-  &::before {
-    content: "";
-    background-color: $typeBeforeFlying;
-  }
   &::after {
     content: "";
+    background: linear-gradient(0deg, $typeBeforeFlying 0%, lighten($typeBeforeFlying, 20%) 85%, $typeBeforeFlying 100%);
   }
 }
 .fireType{
   background-color: $typeAfterFire;
-  &::before {
-    content: "";
-    background-color: $typeBeforeFire;
-  }
   &::after {
     content: "";
+    background: linear-gradient(0deg, $typeBeforeFire 0%, lighten($typeBeforeFire, 20%) 85%, $typeBeforeFire 100%);
   }
 }
 .grassType{
   background-color: $typeAfterGrass;
-  &::before {
-    content: "";
-    background-color: $typeBeforeGrass;
-  }
   &::after {
     content: "";
+    background: linear-gradient(0deg, $typeBeforeGrass 0%, lighten($typeBeforeGrass, 20%) 85%, $typeBeforeGrass 100%);
   }
 }
 .ghostType{
   background-color: $typeAfterGhost;
-  &::before {
-    content: "";
-    background-color: $typeBeforeGhost;
-  }
   &::after {
     content: "";
+    background: linear-gradient(0deg, $typeBeforeGhost 0%, lighten($typeBeforeGhost, 20%) 85%, $typeBeforeGhost 100%);
   }
 }
 .groundType{
   background-color: $typeAfterGround;
-  &::before {
-    content: "";
-    background-color: $typeBeforeGround;
-  }
   &::after {
     content: "";
+    background: linear-gradient(0deg, $typeBeforeGround 0%, lighten($typeBeforeGround, 20%) 85%, $typeBeforeGround 100%);
   }
 }
 .iceType{
   background-color: $typeAfterIce;
-  &::before {
-    content: "";
-    background-color: $typeBeforeIce;
-  }
   &::after {
     content: "";
+    background: linear-gradient(0deg, $typeBeforeIce 0%, lighten($typeBeforeIce, 20%) 85%, $typeBeforeIce 100%);
   }
 }
 .normalType{
   background-color: $typeAfterNormal;
-  &::before {
-    content: "";
-    background-color: $typeBeforeNormal;
-  }
   &::after {
     content: "";
+    background: linear-gradient(0deg, $typeBeforeNormal 0%, lighten($typeBeforeNormal, 20%) 85%, $typeBeforeNormal 100%);
   }
 }
 .poisonType{
   background-color: $typeAfterPoison;
-  &::before {
-    content: "";
-    background-color: $typeBeforePoison;
-  }
   &::after {
     content: "";
+    background: linear-gradient(0deg, $typeBeforePoison 0%, lighten($typeBeforePoison, 20%) 85%, $typeBeforePoison 100%);
   }
 }
 .psychicType{
   background-color: $typeAfterPsychic;
-  &::before {
-    content: "";
-    background-color: $typeBeforePsychic;
-  }
   &::after {
     content: "";
+    background: linear-gradient(0deg, $typeBeforePsychic 0%, lighten($typeBeforePsychic, 20%) 85%, $typeBeforePsychic 100%);
   }
 }
 .rockType{
   background-color: $typeAfterRock;
-  &::before {
-    content: "";
-    background-color: $typeBeforeRock;
-  }
   &::after {
     content: "";
+    background: linear-gradient(0deg, $typeBeforeRock 0%, lighten($typeBeforeRock, 20%) 85%, $typeBeforeRock 100%);
   }
 }
 .steelType{
   background-color: $typeAfterSteel;
-  &::before {
-    content: "";
-    background-color: $typeBeforeSteel;
-  }
   &::after {
     content: "";
+    background: linear-gradient(0deg, $typeBeforeSteel 0%, lighten($typeBeforeSteel, 20%) 85%, $typeBeforeSteel 100%);
   }
 }
 .waterType{
   background-color: $typeAfterWater;
-  &::before {
-    content: "";
-    background-color: $typeBeforeWater;
-  }
   &::after {
     content: "";
+    background: linear-gradient(0deg, $typeBeforeWater 0%, lighten($typeBeforeWater, 20%) 85%, $typeBeforeWater 100%);
   }
 }
-
