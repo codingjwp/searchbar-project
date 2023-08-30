@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useSetRecoilState, useRecoilValue } from "recoil";
 import { searchTextState, pokemonDB } from "../apis/recoilState";
 import { useEffect } from "react";
+import styles from "./pokemonDb.module.scss";
 import MainCard from "../components/MainCard";
 import StatusCard from "../components/StatusCard";
 
@@ -15,9 +16,9 @@ const PokemonDb = () => {
   }, []);
 
   return (
-    <div>
+    <div className={styles.pokemonDbWrapper}>
       {data && (
-        <>
+        <div className={styles.pokemonDbContainer}>
           <MainCard
             id={data.id}
             number={data.number}
@@ -40,7 +41,7 @@ const PokemonDb = () => {
             spdefense={data.spdefense}
             speed={data.speed}
           />
-        </>
+        </div>
       )}
     </div>
   );

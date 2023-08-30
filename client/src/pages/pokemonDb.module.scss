@@ -1,0 +1,16 @@
+@import '../mixin';
+
+.pokemonDbWrapper {
+  width: $fullSize;
+  height: $fullSize;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pokemonDbContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+}

@@ -1,3 +1,5 @@
+import styles from "./statusCard.module.scss";
+
 interface StatusCardProps {
   type1: string;
   type2: string;
@@ -20,7 +22,7 @@ const StatusCard = ({
   speed,
 }: StatusCardProps) => {
   return (
-    <div>
+    <div className={styles.statusCard}>
       {type1}, {type2}, {hp}, {attack}, {defense}, {spattack}, {spdefense},{" "}
       {speed}
     </div>
