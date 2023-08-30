@@ -1,4 +1,5 @@
 @import '../mixin';
+@import '../typeColor';
 
 .mainCard {
   box-sizing: border-box;
@@ -12,23 +13,28 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  &::before {
+    content: "";
+    width: 22.5em;
+    height: 30em;
+    border-radius: 1.2em;
+  }
 }
 
 .mainCardImg {
   object-fit: cover;
+  border-radius: 50%;
   width: 10em;
   height: 10em;
 }
 
-.hidden {
-  display: none;
-}
 .mainCardTitle {
   margin-top: .8em;
-  color: $cardTitle;
   font-size: 1.8em;
   font-weight: bolder;
   letter-spacing: .3em;
 }
-.mainCardSube {
+
+.hidden {
+  display: none;
 }

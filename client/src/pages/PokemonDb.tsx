@@ -30,6 +30,7 @@ const PokemonDb = () => {
             form4={data.form4}
             form5={data.form5}
             imgname={data.imgname}
+            type1={data.type1}
           />
           <StatusCard
             type1={data.type1}

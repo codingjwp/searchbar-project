@@ -1,0 +1,183 @@
+@import './variables';
+
+.bugType{
+  background-color: $typeAfterBug;
+  &::before {
+    content: "";
+    background-color: $typeBeforeBug;
+  }
+  &::after {
+    content: "";
+  }
+}
+.darkType{
+  background-color: $typeAfterDark;
+  &::before {
+    content: "";
+    background-color: $typeBeforeDark;
+  }
+  &::after {
+    content: "";
+  }
+}
+.dragonType{
+  background-color: $typeAfterDragon;
+  &::before {
+    content: "";
+    background-color: $typeBeforeDragon;
+  }
+  &::after {
+    content: "";
+  }
+}
+.electricType{
+  background-color: $typeAfterElectric;
+  &::before {
+    content: "";
+    background-color: $typeBeforeElectric;
+  }
+  &::after {
+    content: "";
+  }
+}
+.fightingType{
+  background-color: $typeAfterFight;
+  &::before {
+    content: "";
+    background-color: $typeBeforeFight;
+  }
+  &::after {
+    content: "";
+  }
+}
+.fairyType{
+  background-color: $typeAfterFairy;
+  &::before {
+    content: "";
+    background-color: $typeBeforeFairy;
+  }
+  &::after {
+    content: "";
+  }
+}
+.flyingType{
+  background-color: $typeAfterFlying;
+  &::before {
+    content: "";
+    background-color: $typeBeforeFlying;
+  }
+  &::after {
+    content: "";
+  }
+}
+.fireType{
+  background-color: $typeAfterFire;
+  &::before {
+    content: "";
+    background-color: $typeBeforeFire;
+  }
+  &::after {
+    content: "";
+  }
+}
+.grassType{
+  background-color: $typeAfterGrass;
+  &::before {
+    content: "";
+    background-color: $typeBeforeGrass;
+  }
+  &::after {
+    content: "";
+  }
+}
+.ghostType{
+  background-color: $typeAfterGhost;
+  &::before {
+    content: "";
+    background-color: $typeBeforeGhost;
+  }
+  &::after {
+    content: "";
+  }
+}
+.groundType{
+  background-color: $typeAfterGround;
+  &::before {
+    content: "";
+    background-color: $typeBeforeGround;
+  }
+  &::after {
+    content: "";
+  }
+}
+.iceType{
+  background-color: $typeAfterIce;
+  &::before {
+    content: "";
+    background-color: $typeBeforeIce;
+  }
+  &::after {
+    content: "";
+  }
+}
+.normalType{
+  background-color: $typeAfterNormal;
+  &::before {
+    content: "";
+    background-color: $typeBeforeNormal;
+  }
+  &::after {
+    content: "";
+  }
+}
+.poisonType{
+  background-color: $typeAfterPoison;
+  &::before {
+    content: "";
+    background-color: $typeBeforePoison;
+  }
+  &::after {
+    content: "";
+  }
+}
+.psychicType{
+  background-color: $typeAfterPsychic;
+  &::before {
+    content: "";
+    background-color: $typeBeforePsychic;
+  }
+  &::after {
+    content: "";
+  }
+}
+.rockType{
+  background-color: $typeAfterRock;
+  &::before {
+    content: "";
+    background-color: $typeBeforeRock;
+  }
+  &::after {
+    content: "";
+  }
+}
+.steelType{
+  background-color: $typeAfterSteel;
+  &::before {
+    content: "";
+    background-color: $typeBeforeSteel;
+  }
+  &::after {
+    content: "";
+  }
+}
+.waterType{
+  background-color: $typeAfterWater;
+  &::before {
+    content: "";
+    background-color: $typeBeforeWater;
+  }
+  &::after {
+    content: "";
+  }
+}
+
