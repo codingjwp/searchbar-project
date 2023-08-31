@@ -27,6 +27,8 @@ const MainCard = ({
   imgname,
   type1,
 }: MainCardProps) => {
+  const formList = [form1, form2, form3, form4, form5];
+
   return (
     <div className={`${styles.mainCard} `}>
       <div
@@ -34,21 +36,35 @@ const MainCard = ({
           type1.toLowerCase(),
         )}`}
       >
-        <img
-          className={styles.mainCardImg}
-          src={`${import.meta.env.VITE_API_IMG}${imgname}`}
-          alt={enname}
-        />
-        <span className={`${styles.mainCardTitle}`}>#{number}</span>
-        <span className={`${styles.mainCardTitle}`}>{krname}</span>
+        <div className={styles.mainCardImgCover}>
+          <img
+            className={styles.mainCardImg}
+            src={`${import.meta.env.VITE_API_IMG}${imgname}`}
+            alt={enname}
+          />
+        </div>
+        <span className={`${styles.mainCardTitle} ${styles.titleMarginTop}`}>
+          #{number}
+        </span>
+        <span className={`${styles.mainCardTitle} ${styles.titleMarginMiddle}`}>
+          {krname}
+        </span>
         <span>{enname}</span>
+        <div
+          className={formList.length === 0 ? styles.hidden : styles.formCover}
+        >
+          {formList.length !== 0 &&
+            formList.map((item) => {
+              if (item !== "")
+                return (
+                  <span key={item} className={styles.formSpan}>
+                    {item}
+                  </span>
+                );
+            })}
+        </div>
         <span className={styles.hidden}>
           {id}
-          {form1}
-          {form2}
-          {form3}
-          {form4}
-          {form5}
           {type1}
         </span>
       </div>
@@ -56,7 +72,7 @@ const MainCard = ({
   );
 };
 
-function getTypeStyle(type: string) {
+export function getTypeStyle(type: string) {
   switch (type) {
     case "bug":
       return `${styles.bugType}`;

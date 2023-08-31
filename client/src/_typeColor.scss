@@ -36,131 +36,179 @@ $typeAfterDark: #5b4134;
 $typeAfterSteel: #777783;
 $typeAfterFairy: #bf7dbf;
 
+@mixin otherTypeCardCss($isBorder, $color) {
+  @if $isBorder {
+    .mainCardImgCover {
+      border: .2em solid $color;
+    }
+  }
+  .formCover {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+    font-size: .8em;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+  }
+  
+  .formSpan {
+    cursor: pointer;
+    box-sizing: border-box;
+    padding: .4em .6em;
+    margin-right: .3em;
+    border-radius: 1.1em;
+    background-color: lighten($color, 30%);
+    &:hover {
+      background-color: lighten($color, 10%);
+    }
+  }
+}
 
+@mixin typeCardColor($isBorder) {
+  .bugType{
+    background-color: $typeAfterBug;
+    &::after {
+      content: "";
+      background: linear-gradient(0deg, $typeBeforeBug 0%, lighten($typeBeforeBug, 20%) 85%, $typeBeforeBug 100%);
+    }
+    @include otherTypeCardCss($isBorder, $typeAfterBug);
+  }
+  .darkType{
+    background-color: $typeAfterDark;
+    &::after {
+      content: "";
+      background: linear-gradient(0deg, $typeBeforeDark 0%, lighten($typeBeforeDark, 20%) 85%, $typeBeforeDark 100%);
+    }
+    @include otherTypeCardCss($isBorder, $typeAfterDark);
+  }
+  .dragonType{
+    background-color: $typeAfterDragon;
+    &::after {
+      content: "";
+      background: linear-gradient(0deg, $typeBeforeDragon 0%, lighten($typeBeforeDragon, 20%) 85%, $typeBeforeDragon 100%);
+    }
+    @include otherTypeCardCss($isBorder, $typeAfterDragon);
+  }
+  .electricType{
+    background-color: $typeAfterElectric;
+    &::after {
+      content: "";
+      background: linear-gradient(0deg, $typeBeforeElectric 0%, lighten($typeBeforeElectric, 20%) 85%, $typeBeforeElectric 100%);
+    }
+    @include otherTypeCardCss($isBorder, $typeAfterElectric);
+  }
+  .fightingType{
+    background-color: $typeAfterFight;
+    &::after {
+      content: "";
+      background: linear-gradient(0deg, $typeBeforeFight 0%, lighten($typeBeforeFight, 20%) 85%, $typeBeforeFight 100%);
+    }
+    @include otherTypeCardCss($isBorder, $typeAfterFight);
+  }
+  .fairyType{
+    background-color: $typeAfterFairy;
+    &::after {
+      content: "";
+      background: linear-gradient(0deg, $typeBeforeFairy 0%, lighten($typeBeforeFairy, 20%) 85%, $typeBeforeFairy 100%);
+    }
+    @include otherTypeCardCss($isBorder, $typeAfterFairy);
+  }
+  .flyingType{
+    background-color: $typeAfterFlying;
+    &::after {
+      content: "";
+      background: linear-gradient(0deg, $typeBeforeFlying 0%, lighten($typeBeforeFlying, 20%) 85%, $typeBeforeFlying 100%);
+    }
+    @include otherTypeCardCss($isBorder, $typeAfterFlying);
+  }
+  .fireType{
+    background-color: $typeAfterFire;
+    &::after {
+      content: "";
+      background: linear-gradient(0deg, $typeBeforeFire 0%, lighten($typeBeforeFire, 20%) 85%, $typeBeforeFire 100%);
+    }
+    @include otherTypeCardCss($isBorder, $typeAfterFire);
+  }
+  .grassType{
+    background-color: $typeAfterGrass;
+    &::after {
+      content: "";
+      background: linear-gradient(0deg, $typeBeforeGrass 0%, lighten($typeBeforeGrass, 20%) 85%, $typeBeforeGrass 100%);
+    }
+    @include otherTypeCardCss($isBorder, $typeAfterGrass);
+  }
+  .ghostType{
+    background-color: $typeAfterGhost;
+    &::after {
+      content: "";
+      background: linear-gradient(0deg, $typeBeforeGhost 0%, lighten($typeBeforeGhost, 20%) 85%, $typeBeforeGhost 100%);
+    }
+    @include otherTypeCardCss($isBorder, $typeAfterGhost);
+  }
+  .groundType{
+    background-color: $typeAfterGround;
+    &::after {
+      content: "";
+      background: linear-gradient(0deg, $typeBeforeGround 0%, lighten($typeBeforeGround, 20%) 85%, $typeBeforeGround 100%);
+    }
+    @include otherTypeCardCss($isBorder, $typeAfterGround);
+  }
+  .iceType{
+    background-color: $typeAfterIce;
+    &::after {
+      content: "";
+      background: linear-gradient(0deg, $typeBeforeIce 0%, lighten($typeBeforeIce, 20%) 85%, $typeBeforeIce 100%);
+    }
+    @include otherTypeCardCss($isBorder, $typeAfterIce);
+  }
+  .normalType{
+    background-color: $typeAfterNormal;
+    &::after {
+      content: "";
+      background: linear-gradient(0deg, $typeBeforeNormal 0%, lighten($typeBeforeNormal, 20%) 85%, $typeBeforeNormal 100%);
+    }
+    @include otherTypeCardCss($isBorder, $typeAfterNormal);
+  }
+  .poisonType{
+    background-color: $typeAfterPoison;
+    &::after {
+      content: "";
+      background: linear-gradient(0deg, $typeBeforePoison 0%, lighten($typeBeforePoison, 20%) 85%, $typeBeforePoison 100%);
+    }
+    @include otherTypeCardCss($isBorder, $typeAfterPoison);
+  }
+  .psychicType{
+    background-color: $typeAfterPsychic;
+    &::after {
+      content: "";
+      background: linear-gradient(0deg, $typeBeforePsychic 0%, lighten($typeBeforePsychic, 20%) 85%, $typeBeforePsychic 100%);
+    }
+    @include otherTypeCardCss($isBorder, $typeAfterPsychic);
+  }
+  .rockType{
+    background-color: $typeAfterRock;
+    &::after {
+      content: "";
+      background: linear-gradient(0deg, $typeBeforeRock 0%, lighten($typeBeforeRock, 20%) 85%, $typeBeforeRock 100%);
+    }
+    @include otherTypeCardCss($isBorder, $typeAfterRock);
+  }
+  .steelType{
+    background-color: $typeAfterSteel;
+    &::after {
+      content: "";
+      background: linear-gradient(0deg, $typeBeforeSteel 0%, lighten($typeBeforeSteel, 20%) 85%, $typeBeforeSteel 100%);
+    }
+    @include otherTypeCardCss($isBorder, $typeAfterSteel);
+  }
+  .waterType{
+    background-color: $typeAfterWater;
+    &::after {
+      content: "";
+      background: linear-gradient(0deg, $typeBeforeWater 0%, lighten($typeBeforeWater, 20%) 85%, $typeBeforeWater 100%);
+    }
+    @include otherTypeCardCss($isBorder, $typeAfterWater);
+  }
 
-.bugType{
-  background-color: $typeAfterBug;
-  &::after {
-    content: "";
-    background: linear-gradient(0deg, $typeBeforeBug 0%, lighten($typeBeforeBug, 20%) 85%, $typeBeforeBug 100%);
-  }
-}
-.darkType{
-  background-color: $typeAfterDark;
-  &::after {
-    content: "";
-    background: linear-gradient(0deg, $typeBeforeDark 0%, lighten($typeBeforeDark, 20%) 85%, $typeBeforeDark 100%);
-  }
-}
-.dragonType{
-  background-color: $typeAfterDragon;
-  &::after {
-    content: "";
-    background: linear-gradient(0deg, $typeBeforeDragon 0%, lighten($typeBeforeDragon, 20%) 85%, $typeBeforeDragon 100%);
-  }
-}
-.electricType{
-  background-color: $typeAfterElectric;
-  &::after {
-    content: "";
-    background: linear-gradient(0deg, $typeBeforeElectric 0%, lighten($typeBeforeElectric, 20%) 85%, $typeBeforeElectric 100%);
-  }
-}
-.fightingType{
-  background-color: $typeAfterFight;
-  &::after {
-    content: "";
-    background: linear-gradient(0deg, $typeBeforeFight 0%, lighten($typeBeforeFight, 20%) 85%, $typeBeforeFight 100%);
-  }
-}
-.fairyType{
-  background-color: $typeAfterFairy;
-  &::after {
-    content: "";
-    background: linear-gradient(0deg, $typeBeforeFairy 0%, lighten($typeBeforeFairy, 20%) 85%, $typeBeforeFairy 100%);
-  }
-}
-.flyingType{
-  background-color: $typeAfterFlying;
-  &::after {
-    content: "";
-    background: linear-gradient(0deg, $typeBeforeFlying 0%, lighten($typeBeforeFlying, 20%) 85%, $typeBeforeFlying 100%);
-  }
-}
-.fireType{
-  background-color: $typeAfterFire;
-  &::after {
-    content: "";
-    background: linear-gradient(0deg, $typeBeforeFire 0%, lighten($typeBeforeFire, 20%) 85%, $typeBeforeFire 100%);
-  }
-}
-.grassType{
-  background-color: $typeAfterGrass;
-  &::after {
-    content: "";
-    background: linear-gradient(0deg, $typeBeforeGrass 0%, lighten($typeBeforeGrass, 20%) 85%, $typeBeforeGrass 100%);
-  }
-}
-.ghostType{
-  background-color: $typeAfterGhost;
-  &::after {
-    content: "";
-    background: linear-gradient(0deg, $typeBeforeGhost 0%, lighten($typeBeforeGhost, 20%) 85%, $typeBeforeGhost 100%);
-  }
-}
-.groundType{
-  background-color: $typeAfterGround;
-  &::after {
-    content: "";
-    background: linear-gradient(0deg, $typeBeforeGround 0%, lighten($typeBeforeGround, 20%) 85%, $typeBeforeGround 100%);
-  }
-}
-.iceType{
-  background-color: $typeAfterIce;
-  &::after {
-    content: "";
-    background: linear-gradient(0deg, $typeBeforeIce 0%, lighten($typeBeforeIce, 20%) 85%, $typeBeforeIce 100%);
-  }
-}
-.normalType{
-  background-color: $typeAfterNormal;
-  &::after {
-    content: "";
-    background: linear-gradient(0deg, $typeBeforeNormal 0%, lighten($typeBeforeNormal, 20%) 85%, $typeBeforeNormal 100%);
-  }
-}
-.poisonType{
-  background-color: $typeAfterPoison;
-  &::after {
-    content: "";
-    background: linear-gradient(0deg, $typeBeforePoison 0%, lighten($typeBeforePoison, 20%) 85%, $typeBeforePoison 100%);
-  }
-}
-.psychicType{
-  background-color: $typeAfterPsychic;
-  &::after {
-    content: "";
-    background: linear-gradient(0deg, $typeBeforePsychic 0%, lighten($typeBeforePsychic, 20%) 85%, $typeBeforePsychic 100%);
-  }
-}
-.rockType{
-  background-color: $typeAfterRock;
-  &::after {
-    content: "";
-    background: linear-gradient(0deg, $typeBeforeRock 0%, lighten($typeBeforeRock, 20%) 85%, $typeBeforeRock 100%);
-  }
-}
-.steelType{
-  background-color: $typeAfterSteel;
-  &::after {
-    content: "";
-    background: linear-gradient(0deg, $typeBeforeSteel 0%, lighten($typeBeforeSteel, 20%) 85%, $typeBeforeSteel 100%);
-  }
-}
-.waterType{
-  background-color: $typeAfterWater;
-  &::after {
-    content: "";
-    background: linear-gradient(0deg, $typeBeforeWater 0%, lighten($typeBeforeWater, 20%) 85%, $typeBeforeWater 100%);
-  }
 }

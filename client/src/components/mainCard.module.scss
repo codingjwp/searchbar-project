@@ -20,13 +20,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   position: absolute;
   width: 100%;
   height: 100%;
   inset: 0;
   box-sizing: border-box;
   border-radius: 1.2em;
-  padding: 3em;
+  padding: 2em 3em 2em 3em;
   overflow: hidden;
   &::before {
     content: "";
@@ -44,25 +45,36 @@
     inset: .8em;
     border-radius: 1.2em;
   }
-  & img, & span {
+  & .mainCardImgCover, & span, & .formCover {
     z-index: 1;
   }
 }
 
+.mainCardImgCover {
+  overflow: hidden;
+  border-radius: 3em;
+  width: 14em;
+  height: 14em;
+}
 .mainCardImg {
-  object-fit: cover;
-  border-radius: 50%;
-  width: 12em;
-  height: 12em;
+  width: 14em;
+  height: 14em;
 }
 
 .mainCardTitle {
-  margin-top: .5em;
-  font-size: 1.8em;
+  font-size: 1.4em;
   font-weight: bolder;
   letter-spacing: .3em;
+}
+.titleMarginTop {
+  margin-top: .5em;
+}
+.titleMarginMiddle {
+  margin: .3em 0;
 }
 
 .hidden {
   display: none;
 }
+
+@include typeCardColor(true);
