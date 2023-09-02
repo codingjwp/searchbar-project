@@ -1,40 +1,4 @@
-$typeBeforeNormal: #aaaa99;
-$typeBeforeFire: #ff4422;
-$typeBeforeWater: #3399ff;
-$typeBeforeElectric: #ffcc33;
-$typeBeforeGrass: #77cc55;
-$typeBeforeIce: #66ccff;
-$typeBeforeFight: #bb5544;
-$typeBeforePoison: #aa5599;
-$typeBeforeGround: #ddbb55;
-$typeBeforeFlying: #8899ff;
-$typeBeforePsychic: #ff5599;
-$typeBeforeBug: #aabb22;
-$typeBeforeRock: #bbaa66;
-$typeBeforeGhost: #6666bb;
-$typeBeforeDragon: #7766ee;
-$typeBeforeDark: #775544;
-$typeBeforeSteel: #aaaabb;
-$typeBeforeFairy: #ee99ee;
-
-$typeAfterNormal: #858577;
-$typeAfterFire: #d2381d;
-$typeAfterWater: #2b7fd3;
-$typeAfterElectric: #d1a72a;
-$typeAfterGrass: #5da042;
-$typeAfterIce: #56aeda;
-$typeAfterFight: #9b4738;
-$typeAfterPoison: #8b457d;
-$typeAfterGround: #b79b47;
-$typeAfterFlying: #7685db;
-$typeAfterPsychic: #d2477f;
-$typeAfterBug: #8b9a1d;
-$typeAfterRock: #958853;
-$typeAfterGhost: #515193;
-$typeAfterDragon: #6153bd;
-$typeAfterDark: #5b4134;
-$typeAfterSteel: #777783;
-$typeAfterFairy: #bf7dbf;
+@import './mixin';
 
 @mixin otherTypeCardCss($isBorder, $color) {
   @if $isBorder {
@@ -45,7 +9,7 @@ $typeAfterFairy: #bf7dbf;
   .formCover {
     display: flex;
     justify-content: center;
-    margin-top: 2em;
+    margin-top: 1.5em;
     font-size: .8em;
     user-select: none;
     -webkit-user-select: none;
@@ -54,11 +18,17 @@ $typeAfterFairy: #bf7dbf;
   
   .formSpan {
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    text-align: center;
     box-sizing: border-box;
     padding: .4em .6em;
-    margin-right: .3em;
     border-radius: 1.1em;
+    margin-right: .3em;
     background-color: lighten($color, 30%);
+    &:last-child {
+      margin: 0;
+    }
     &:hover {
       background-color: lighten($color, 10%);
     }
