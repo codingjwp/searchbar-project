@@ -1,16 +1,61 @@
 @import '../mixin';
 
-.pokemonDbWrapper {
-  width: $fullSize;
-  height: $fullSize;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@mixin wrapperChange($isMobile){
+  .pokemonDbWrapper {
+    background: radial-gradient(circle at 50% 50%, #ffffff 0%, #87ceeb 100%);
+    width: $fullSize;
+    height: $fullSize;
+    @if $isMobile {
+      overflow: scroll;
+    }
+  }
 }
 
-.pokemonDbContainer {
+@mixin cardFilp($isMobile) {
+  .pokemonDbContainer {
+    display: flex;
+    position: relative;
+    width: $fullSize;
+    justify-content: center;
+    align-items: center;
+    @if $isMobile {
+      flex-direction: column;
+      margin-top: 6vh;
+      height: 48em;
+    } @else {
+      flex-direction: row;
+      height: $fullSize;
+    }
+  }
+}
+
+.pokemonDbHeader {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  position: relative;
+  justify-content: end;
+  position: fixed;
+  align-items: center;
+  top: 0;
+  width: $fullSize;
+  height: 5vh;
+  background-color: #0782b3;
+  z-index: 2;
+  & > svg {
+    cursor: pointer;
+    margin-right: 1vw;
+  }
+}
+
+@include desktop {
+  @include wrapperChange(false);
+  @include cardFilp(false);
+}
+
+@include tablet {
+  @include wrapperChange(false);
+  @include cardFilp(false);
+}
+
+@include mobile {
+  @include wrapperChange(true);
+  @include cardFilp(true);
 }
