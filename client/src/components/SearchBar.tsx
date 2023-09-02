@@ -33,21 +33,6 @@ const SearchBar = ({ name }: SearchBarProps) => {
     if (e.type === "focus" && !isFocused) setIsFocused(true);
     else if (e.type === "blur") setIsFocused(textRef.current?.value !== "");
   };
-  const hasSearchDetailIndex = (e: KeyboardEvent) => {
-    if (!["ArrowUp", "ArrowDown", "Enter"].includes(e.key)) return;
-    if (e.key === "ArrowUp" && detailIndex > 0) {
-      setDetailIndex((prev) => prev - 1);
-    } else if (e.key === "ArrowDown" && detailIndex < 4) {
-      setDetailIndex((prev) => prev + 1);
-    } else if (e.key === "Enter" && detailIndex !== -1) {
-      const li = document.querySelectorAll("li");
-      if (li && li.item(0).title === "no-search") return;
-      if (li && li.item(detailIndex)) {
-        setSearchText(li.item(detailIndex).innerText.split("(")[0]);
-        setDetailIndex(-1);
-      }
-    }
-  };
   const handleTouchOfClick = (e: MouseEvent) => {
     const li = e.target as HTMLLIElement;
     if (li.title === "no-search") return;
@@ -61,6 +46,25 @@ const SearchBar = ({ name }: SearchBarProps) => {
     const id = li?.getAttribute("aria-label");
     navigate(`/db/${id}`);
   };
+
+  const hasSearchDetailIndex = (e: KeyboardEvent) => {
+    if (!["ArrowUp", "ArrowDown", "Enter"].includes(e.key)) return;
+    if (e.key === "ArrowUp" && detailIndex > 0) {
+      setDetailIndex((prev) => prev - 1);
+    } else if (e.key === "ArrowDown" && detailIndex < 4) {
+      setDetailIndex((prev) => prev + 1);
+    } else if (e.key === "Enter" && detailIndex !== -1) {
+      const li = document.querySelectorAll("li");
+      if (li && li.item(0).title === "no-search") return;
+      if (li && li.item(detailIndex)) {
+        setSearchText(li.item(detailIndex).innerText.split("(")[0]);
+        setDetailIndex(-1);
+      }
+    } else if (e.key === "Enter" && detailIndex === -1) {
+      movePokemonDb();
+    }
+  };
+
   useEffect(() => {
     setSearchText("");
   }, []);

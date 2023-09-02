@@ -1,71 +1,79 @@
-@import '../mixin';
 @import '../typeColor';
 
-.mainCard {
-  display: flex;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  width: 22.5em;
-  height: 30em;
-  margin-right: .5em;
-}
-
 @keyframes cardBorder {
-  0% { transform: translate(-50%, -50%) rotate(0deg); }
-  100% { transform: translate(-50%, -50%) rotate(360deg); }
+  0% { transform: translate(-$halfSize, -$halfSize) rotate(0deg); }
+  100% { transform: translate(-$halfSize, -$halfSize) rotate(360deg); }
 }
 
-.mainCardContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  inset: 0;
-  box-sizing: border-box;
-  border-radius: 1.2em;
-  padding: 2em 3em 2em 3em;
-  overflow: hidden;
-  &::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 40em;
-    height: 10em;
-    background: linear-gradient(transparent, #e3d984, #edd74e, #e3d984, transparent);
-    @include animation(cardBorder, 4s, linear, infinite)
+@mixin mainCardDevice($width, $height, $imgWidth, $imgHeight, $isMobile){
+  .mainCard {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    min-width: $width;
+    min-height: $height;
+    @if $isMobile {
+      margin-bottom: .3em;
+    } @else {
+      margin-right: .5em;
+    }
   }
-  &::after {
-    content: "";
+  
+  .mainCardContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     position: absolute;
-    inset: .8em;
+    width: $fullSize;
+    height: $fullSize;
+    inset: 0;
+    box-sizing: border-box;
     border-radius: 1.2em;
+    padding: 2em 2em 2em 2em;
+    overflow: hidden;
+    &::before {
+      content: "";
+      position: absolute;
+      top: $halfSize;
+      left: $halfSize;
+      width: 40em;
+      height: 10em;
+      background: linear-gradient(transparent, #e3d984, #edd74e, #e3d984, transparent);
+      @include animation(cardBorder, 4s, linear, infinite)
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      inset: .8em;
+      border-radius: 1.2em;
+    }
+    & .mainCardImgCover, & span, & .formCover {
+      z-index: 1;
+    }
   }
-  & .mainCardImgCover, & span, & .formCover {
-    z-index: 1;
+  
+  .mainCardImgCover {
+    overflow: hidden;
+    border-radius: 3em;
+    width: $imgWidth;
+    height: $imgHeight;
+  }
+  
+  .mainCardImg {
+    width: $imgWidth;
+    height: $imgHeight;
+  }
+  
+  .mainCardTitle {
+    font-size: 1.4em;
+    font-weight: bolder;
+    letter-spacing: .3em;
   }
 }
 
-.mainCardImgCover {
-  overflow: hidden;
-  border-radius: 3em;
-  width: 14em;
-  height: 14em;
-}
-.mainCardImg {
-  width: 14em;
-  height: 14em;
-}
 
-.mainCardTitle {
-  font-size: 1.4em;
-  font-weight: bolder;
-  letter-spacing: .3em;
-}
 .titleMarginTop {
   margin-top: .5em;
 }
@@ -78,3 +86,15 @@
 }
 
 @include typeCardColor(true);
+
+@include desktop {
+  @include mainCardDevice(22.5em, 30em, 14em, 14em, false);
+}
+
+@include tablet {
+  @include mainCardDevice(22.5em, 30em, 14em, 14em, false);
+}
+
+@include mobile {
+  @include mainCardDevice(20em, 23em, 10em, 10em, true);
+}

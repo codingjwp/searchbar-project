@@ -1,3 +1,4 @@
+import { SyntheticEvent } from "react";
 import styles from "./mainCard.module.scss";
 
 interface MainCardProps {
@@ -41,6 +42,9 @@ const MainCard = ({
             className={styles.mainCardImg}
             src={`${import.meta.env.VITE_API_IMG}${imgname}`}
             alt={enname}
+            onError={(e: SyntheticEvent<HTMLImageElement>) =>
+              (e.currentTarget.src = "/src/assets/default.avif")
+            }
           />
         </div>
         <span className={`${styles.mainCardTitle} ${styles.titleMarginTop}`}>
@@ -72,7 +76,7 @@ const MainCard = ({
   );
 };
 
-export function getTypeStyle(type: string) {
+function getTypeStyle(type: string) {
   switch (type) {
     case "bug":
       return `${styles.bugType}`;
