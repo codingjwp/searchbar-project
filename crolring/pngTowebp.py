@@ -2,8 +2,8 @@
 from PIL import Image
 import os
 
-URL = './poketsprite'
-NEXTURL = './webpsprite'
+URL = '../server/assets/form'
+NEXTURL = '../server/assets/test'
 
 def convert_png_to_webp(png_path, webp_path):
     img = Image.open(f'{URL}/{png_path}')
