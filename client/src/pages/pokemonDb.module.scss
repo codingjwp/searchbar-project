@@ -21,7 +21,7 @@
     @if $isMobile {
       flex-direction: column;
       margin-top: 6vh;
-      height: 48em;
+      height: 60em;
     } @else {
       flex-direction: row;
       height: $fullSize;
