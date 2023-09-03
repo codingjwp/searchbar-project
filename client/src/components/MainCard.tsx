@@ -1,4 +1,10 @@
-import { SyntheticEvent } from "react";
+import {
+  SyntheticEvent,
+  useRef,
+  MouseEvent,
+  TouchEvent,
+  useState,
+} from "react";
 import styles from "./mainCard.module.scss";
 
 interface MainCardProps {
@@ -28,7 +34,23 @@ const MainCard = ({
   imgname,
   type1,
 }: MainCardProps) => {
+  const [imgSrc, setImgSrc] = useState(
+    `${import.meta.env.VITE_API_IMG}${imgname}`,
+  );
   const formList = [form1, form2, form3, form4, form5];
+  const imgRef = useRef<HTMLImageElement | null>(null);
+  const handleOverFormImg = (e: MouseEvent | TouchEvent) => {
+    if (e.target === e.currentTarget) return;
+    if (e.type === "mouseover") {
+      const form = (e.target as HTMLSpanElement).innerText
+        .replace(/\'|+|-|_|\s+/g, "")
+        .toLowerCase();
+      if (imgRef && imgRef.current)
+        setImgSrc(`${import.meta.env.VITE_API_FORM}${number}-${form}.webp`);
+    } else if (e.type === "mouseleave") {
+      setImgSrc(`${import.meta.env.VITE_API_IMG}${imgname}`);
+    }
+  };
 
   return (
     <div className={`${styles.mainCard} `}>
@@ -39,9 +61,11 @@ const MainCard = ({
       >
         <div className={styles.mainCardImgCover}>
           <img
+            ref={imgRef}
             className={styles.mainCardImg}
-            src={`${import.meta.env.VITE_API_IMG}${imgname}`}
+            src={imgSrc}
             alt={enname}
+            loading="lazy"
             onError={(e: SyntheticEvent<HTMLImageElement>) =>
               (e.currentTarget.src = "/src/assets/default.avif")
             }
@@ -56,6 +80,8 @@ const MainCard = ({
         <span>{enname}</span>
         <div
           className={formList.length === 0 ? styles.hidden : styles.formCover}
+          onMouseOver={handleOverFormImg}
+          onMouseLeave={handleOverFormImg}
         >
           {formList.length !== 0 &&
             formList.map((item) => {
@@ -67,10 +93,7 @@ const MainCard = ({
                 );
             })}
         </div>
-        <span className={styles.hidden}>
-          {id}
-          {type1}
-        </span>
+        <span className={styles.hidden}>{id}</span>
       </div>
     </div>
   );

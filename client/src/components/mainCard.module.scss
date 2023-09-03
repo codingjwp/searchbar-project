@@ -5,14 +5,14 @@
   100% { transform: translate(-$halfSize, -$halfSize) rotate(360deg); }
 }
 
-@mixin mainCardDevice($width, $height, $imgWidth, $imgHeight, $isMobile){
+@mixin mainCardDevice($isMobile){
   .mainCard {
     display: flex;
     position: relative;
     justify-content: center;
     align-items: center;
-    min-width: $width;
-    min-height: $height;
+    min-width: 22.5em;
+    min-height: 30em;
     @if $isMobile {
       margin-bottom: .3em;
     } @else {
@@ -55,15 +55,16 @@
   }
   
   .mainCardImgCover {
+    background-color: #ffffff;
     overflow: hidden;
     border-radius: 3em;
-    width: $imgWidth;
-    height: $imgHeight;
+    width: 14em;
+    height: 14em;
   }
   
   .mainCardImg {
-    width: $imgWidth;
-    height: $imgHeight;
+    width: 14em;
+    height: 14em;
   }
   
   .mainCardTitle {
@@ -88,13 +89,13 @@
 @include typeCardColor(true);
 
 @include desktop {
-  @include mainCardDevice(22.5em, 30em, 14em, 14em, false);
+  @include mainCardDevice(false);
 }
 
 @include tablet {
-  @include mainCardDevice(22.5em, 30em, 14em, 14em, false);
+  @include mainCardDevice(false);
 }
 
 @include mobile {
-  @include mainCardDevice(20em, 23em, 10em, 10em, true);
+  @include mainCardDevice(true);
 }

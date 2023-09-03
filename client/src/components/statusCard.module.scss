@@ -5,55 +5,53 @@
   100% { transform: translate(-$halfSize, -$halfSize) rotate(360deg); }
 }
 
-@mixin statusCardDevice($width, $height, $maginTop){
-  .statusCard {
-    display: flex;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    min-width: $width;
-    min-height: $height;
-  }
+.statusCard {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  min-width: 22.5em;
+  min-height: 30em;
+}
 
-  .statusCardContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+.statusCardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  width: $fullSize;
+  height: $fullSize;
+  inset: 0;
+  box-sizing: border-box;
+  border-radius: 1.2em;
+  padding: 2em 3em 2em 3em;
+  overflow: hidden;
+  &::before {
+    content: "";
     position: absolute;
-    width: $fullSize;
-    height: $fullSize;
-    inset: 0;
-    box-sizing: border-box;
+    top: $halfSize;
+    left: $halfSize;
+    width: 40em;
+    height: 10em;
+    background: linear-gradient(transparent, #e3d984, #edd74e, #e3d984, transparent);
+    @include animation(cardBorder, 4s, linear, infinite)
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    inset: .8em;
     border-radius: 1.2em;
-    padding: 2em 3em 2em 3em;
-    overflow: hidden;
-    &::before {
-      content: "";
-      position: absolute;
-      top: $halfSize;
-      left: $halfSize;
-      width: 40em;
-      height: 10em;
-      background: linear-gradient(transparent, #e3d984, #edd74e, #e3d984, transparent);
-      @include animation(cardBorder, 4s, linear, infinite)
-    }
-    &::after {
-      content: "";
-      position: absolute;
-      inset: .8em;
-      border-radius: 1.2em;
-    }
-    & .statusCardImgCover, & span, & canvas {
-      z-index: 1;
-    }
   }
-  .statusCardImgCover {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: $maginTop;
+  & .statusCardImgCover, & span, & canvas {
+    z-index: 1;
   }
+}
+.statusCardImgCover {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 3em;
 }
 .statusMarginRight {
   margin-right: 1em;
@@ -71,15 +69,3 @@
 }
 
 @include typeCardColor(true);
-
-@include desktop {
-  @include statusCardDevice(22.5em, 30em, 3em);
-}
-
-@include tablet {
-  @include statusCardDevice(22.5em, 30em, 3em);
-}
-
-@include mobile {
-  @include statusCardDevice(20em, 23em, 1em);
-}
