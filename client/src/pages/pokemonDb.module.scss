@@ -4,8 +4,8 @@
   .pokemonDbWrapper {
     background: radial-gradient(circle at 50% 50%, #ffffff 0%, #87ceeb 100%);
     width: $fullSize;
-    height: calc(100vh - 5rem);
-    margin-top: 5rem;
+    height: calc(100vh - 4rem);;
+    margin-top: 4rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,10 +42,9 @@
   align-items: center;
   top: 0;
   width: $fullSize;
-  height: 5rem;
+  height: 4rem;
   background-color: #0782b3;
   z-index: 10;
-
   & > svg {
     cursor: pointer;
     margin-right: 1vw;

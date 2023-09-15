@@ -35,6 +35,7 @@ const SearchBar = ({ name }: SearchBarProps) => {
     else if (e.type === "blur") setIsFocused(textRef.current?.value !== "");
   };
   const handleTouchOfClick = (e: MouseEvent) => {
+    if ((e.target as HTMLElement).nodeName !== 'LI') return;
     const li = e.target as HTMLLIElement;
     if (li.title === "no-search") return;
     setSearchText(li.innerText.split("(")[0]);
@@ -91,6 +92,7 @@ const SearchBar = ({ name }: SearchBarProps) => {
           onChange={searchTextChange}
           value={searchText}
           onKeyDown={hasSearchDetailIndex}
+          autoComplete="off"
         />
         <button
           className={cn(styles.searchBarBtn, {

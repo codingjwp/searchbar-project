@@ -61,7 +61,7 @@ const MainCard = ({
           getTypeStyle(type1.toLowerCase()),
         )}
       >
-        <div className={styles.mainCardImgCover}>
+        <div className={cn(styles.mainCardImgCover)}>
           <img
             ref={imgRef}
             className={styles.mainCardImg}
@@ -79,7 +79,7 @@ const MainCard = ({
         <span className={cn(styles.mainCardTitle, styles.titleMarginMiddle)}>
           {krname}
         </span>
-        <span>{enname}</span>
+        <span className={styles.mainCardEnName}>{enname}</span>
         <div
           className={formList.length === 0 ? styles.hidden : styles.formCover}
           onMouseOver={handleOverFormImg}

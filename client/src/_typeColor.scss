@@ -3,17 +3,8 @@
 @mixin otherTypeCardCss($isBorder, $color) {
   @if $isBorder {
     .mainCardImgCover {
-      border: .2em solid $color;
+      border: .2rem solid $color;
     }
-  }
-  .formCover {
-    display: flex;
-    justify-content: center;
-    margin-top: 1.5em;
-    font-size: .8em;
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
   }
   
   .formSpan {
@@ -22,9 +13,9 @@
     align-items: center;
     text-align: center;
     box-sizing: border-box;
-    padding: .4em .6em;
-    border-radius: 1.1em;
-    margin-right: .3em;
+    padding: .4rem .6rem;
+    border-radius: 1.1rem;
+    margin-right: .3rem;
     background-color: lighten($color, 30%);
     &:last-child {
       margin: 0;
