@@ -11,6 +11,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { searchDetailIndex, searchTextState } from "../apis/recoilState";
+import cn from "classnames";
 import styles from "./searchBar.module.scss";
 import SearchDetail from "./SearchDetail";
 
@@ -37,22 +38,25 @@ const SearchBar = ({ name }: SearchBarProps) => {
     const li = e.target as HTMLLIElement;
     if (li.title === "no-search") return;
     setSearchText(li.innerText.split("(")[0]);
+    textRef.current?.focus();
     setDetailIndex(-1);
   };
-
   const movePokemonDb = () => {
     const li = document.querySelector("li");
     if (li && li.title === "no-search") return;
     const id = li?.getAttribute("aria-label");
     navigate(`/db/${id}`);
   };
-
   const hasSearchDetailIndex = (e: KeyboardEvent) => {
-    if (!["ArrowUp", "ArrowDown", "Enter"].includes(e.key)) return;
+    if (
+      !["ArrowUp", "ArrowDown", "Enter"].includes(e.key) ||
+      e.nativeEvent.isComposing
+    )
+      return;
     if (e.key === "ArrowUp" && detailIndex > 0) {
-      setDetailIndex((prev) => prev - 1);
+      setDetailIndex(detailIndex - 1);
     } else if (e.key === "ArrowDown" && detailIndex < 4) {
-      setDetailIndex((prev) => prev + 1);
+      setDetailIndex(detailIndex + 1);
     } else if (e.key === "Enter" && detailIndex !== -1) {
       const li = document.querySelectorAll("li");
       if (li && li.item(0).title === "no-search") return;
@@ -71,9 +75,7 @@ const SearchBar = ({ name }: SearchBarProps) => {
 
   return (
     <div
-      className={`${styles.searchBar} ${
-        isFocused ? styles.searchBarFocus : ""
-      }`}
+      className={cn(styles.searchBar, { [styles.searchBarFocus]: isFocused })}
     >
       <div className={styles.searchBarCover}>
         <input
@@ -91,9 +93,9 @@ const SearchBar = ({ name }: SearchBarProps) => {
           onKeyDown={hasSearchDetailIndex}
         />
         <button
-          className={`${styles.searchBarBtn} ${
-            isFocused === false ? styles.searchBarBtnFocuse : ""
-          }`}
+          className={cn(styles.searchBarBtn, {
+            [styles.searchBarBtnFocuse]: !isFocused,
+          })}
           title={name}
           name={name}
           type="submit"
@@ -106,7 +108,11 @@ const SearchBar = ({ name }: SearchBarProps) => {
         </button>
       </div>
       <Suspense>
-        <SearchDetail isFocused={isFocused} touchDetail={handleTouchOfClick} />
+        <SearchDetail
+          isFocused={isFocused}
+          detailIndex={detailIndex}
+          touchDetail={handleTouchOfClick}
+        />
       </Suspense>
     </div>
   );

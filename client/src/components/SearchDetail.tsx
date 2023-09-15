@@ -1,16 +1,22 @@
-import { useRecoilValue, useRecoilState } from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 import styles from "./searchDetail.module.scss";
 import { searchListState, searchDetailIndex } from "../apis/recoilState";
 import { useEffect, MouseEvent } from "react";
+import cn from "classnames";
 
 interface searchDetailProps {
   isFocused: boolean;
+  detailIndex: number;
   touchDetail?: (e: MouseEvent) => void;
 }
 
-const SearchDetail = ({ isFocused, touchDetail }: searchDetailProps) => {
+const SearchDetail = ({
+  isFocused,
+  detailIndex,
+  touchDetail,
+}: searchDetailProps) => {
   const data = useRecoilValue(searchListState);
-  const [detailIndex, setDetailIndex] = useRecoilState(searchDetailIndex);
+  const setDetailIndex = useSetRecoilState(searchDetailIndex);
 
   useEffect(() => {
     if (data.length <= detailIndex) {
@@ -20,7 +26,10 @@ const SearchDetail = ({ isFocused, touchDetail }: searchDetailProps) => {
 
   return (
     <div
-      className={isFocused ? styles.searchBarDetail : styles.hidden}
+      className={cn({
+        [styles.searchBarDetail]: isFocused,
+        [styles.hidden]: !isFocused,
+      })}
       onClick={touchDetail}
     >
       <ul className={styles.searchBarDetailCover}>
@@ -28,9 +37,9 @@ const SearchDetail = ({ isFocused, touchDetail }: searchDetailProps) => {
           data.map((item, index) => {
             return (
               <li
-                className={`${styles.searchBarDetailBox} ${
-                  detailIndex === index ? styles.indexCheck : ""
-                }`}
+                className={cn(styles.searchBarDetailBox, {
+                  [styles.indexCheck]: detailIndex === index,
+                })}
                 key={item.id}
                 aria-label={item.id}
               >
@@ -40,7 +49,7 @@ const SearchDetail = ({ isFocused, touchDetail }: searchDetailProps) => {
             );
           })
         ) : (
-          <li title={"no-search"} className={styles.searchBarDetailBox}>
+          <li title="no-search" className={styles.searchBarDetailBox}>
             검색어가 존재하지 않습니다.
           </li>
         )}

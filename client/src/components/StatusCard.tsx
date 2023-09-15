@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import styles from "./statusCard.module.scss";
 import { Chart, registerables, ChartConfiguration, ChartItem } from "chart.js";
+import cn from "classnames";
 
 interface StatusCardProps {
   type1: string;
@@ -78,16 +79,17 @@ const StatusCard = ({
   return (
     <div className={styles.statusCard}>
       <div
-        className={`${styles.statusCardContainer} ${getTypeStyle(
-          type1.toLowerCase(),
-        )}`}
+        className={cn(
+          styles.statusCardContainer,
+          getTypeStyle(type1.toLowerCase()),
+        )}
       >
         <canvas ref={canvasRef} />
         <div className={styles.statusCardImgCover}>
           <img
-            className={`${styles.statusCardTypeImg} ${
-              type2 !== "" ? styles.statusMarginRight : ""
-            }`}
+            className={cn(styles.statusCardTypeImg, {
+              [styles.statusMarginRight]: type2 !== "",
+            })}
             src={`${import.meta.env.VITE_API_TYPE}${type1}.png`}
             alt={type1}
           />

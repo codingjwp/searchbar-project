@@ -6,6 +6,7 @@ import {
   useState,
 } from "react";
 import styles from "./mainCard.module.scss";
+import cn from "classnames";
 
 interface MainCardProps {
   id: string;
@@ -53,11 +54,12 @@ const MainCard = ({
   };
 
   return (
-    <div className={`${styles.mainCard} `}>
+    <div className={styles.mainCard}>
       <div
-        className={`${styles.mainCardContainer} ${getTypeStyle(
-          type1.toLowerCase(),
-        )}`}
+        className={cn(
+          styles.mainCardContainer,
+          getTypeStyle(type1.toLowerCase()),
+        )}
       >
         <div className={styles.mainCardImgCover}>
           <img
@@ -71,10 +73,10 @@ const MainCard = ({
             }
           />
         </div>
-        <span className={`${styles.mainCardTitle} ${styles.titleMarginTop}`}>
+        <span className={cn(styles.mainCardTitle, styles.titleMarginTop)}>
           #{number}
         </span>
-        <span className={`${styles.mainCardTitle} ${styles.titleMarginMiddle}`}>
+        <span className={cn(styles.mainCardTitle, styles.titleMarginMiddle)}>
           {krname}
         </span>
         <span>{enname}</span>

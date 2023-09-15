@@ -22,7 +22,7 @@ const PokemonDb = () => {
 
   return (
     <div className={styles.pokemonDbWrapper}>
-      <div className={`${styles.pokemonDbHeader}`}>
+      <div className={styles.pokemonDbHeader}>
         <svg width={24} height={24} viewBox="0 0 24 24" onClick={handelLogout}>
           <use href={`${svg}#logout`} />
         </svg>
