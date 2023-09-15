@@ -43,7 +43,7 @@ const MainCard = ({
     if (e.target === e.currentTarget) return;
     if (e.type === "mouseover") {
       const form = (e.target as HTMLSpanElement).innerText
-        .replace(/\'|+|-|_|\s+/g, "")
+        .replace(/'|\+|-|_|\s+/g, "")
         .toLowerCase();
       if (imgRef && imgRef.current)
         setImgSrc(`${import.meta.env.VITE_API_FORM}${number}-${form}.webp`);
