@@ -11,20 +11,18 @@ const SearchHome = () => {
   };
   const searchHomeWrapper = cn(styles.searchHomeWrapper, {
     [styles.pokeball]: ballDesign(randomIndex, 0),
-    [styles.superball]: ballDesign(randomIndex, 1),
+    [styles.captainball]: ballDesign(randomIndex, 1),
     [styles.ultraball]: ballDesign(randomIndex, 2),
   });
   const barLeftDesign = cn({
-    [styles.barHidden]: ballDesign(randomIndex, 0),
-    [styles.superBallBar]: ballDesign(randomIndex, 1),
+    [styles.barHidden]: ballDesign(randomIndex, 0) || ballDesign(randomIndex, 1),
     [styles.urltraBallBar]: ballDesign(randomIndex, 2),
-    [styles.leftBar]: ballDesign(randomIndex, 1) || ballDesign(randomIndex, 2),
+    [styles.leftBar]: ballDesign(randomIndex, 2),
   });
   const barRightDesign = cn({
-    [styles.barHidden]: ballDesign(randomIndex, 0),
-    [styles.superBallBar]: ballDesign(randomIndex, 1),
+    [styles.barHidden]: ballDesign(randomIndex, 0) || ballDesign(randomIndex, 1),
     [styles.urltraBallBar]: ballDesign(randomIndex, 2),
-    [styles.rightBar]: ballDesign(randomIndex, 1) || ballDesign(randomIndex, 2),
+    [styles.rightBar]: ballDesign(randomIndex, 2),
   });
 
   return (

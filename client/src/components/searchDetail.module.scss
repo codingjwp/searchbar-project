@@ -7,32 +7,41 @@
 @mixin searchFoucuse($isdesktop) {
   .searchBarDetail {
     display: block;
-    width: 100%;
+    width: $fullSize;
     overflow-y: auto;
     & .searchBarDetailCover {
       margin: 0;
       padding: 0;
-      border-radius: 0 0 .5em .5em;
-      border: .5em solid $ballMiddle;
+      border-radius: 0 0 .5rem .5rem;
       border-top: 0;
-      background-color: $ballBottom;
+      @if $isdesktop == false {
+        height: 100vh;
+        background-color: #31343855;
+      }
+      
     }
     @if $isdesktop {
       position: absolute;
-      top: 5em;
-      max-width: 30em;
+      top: 5.9rem;
+      max-width: 40rem;
     }
   }
   .searchBarDetailBox {
     list-style: none;
-    padding: 1em;
-    font-size: 1.1em;
-    border-bottom: 1px solid $ballMiddle;
+    padding: 1rem;
+    font-size: 1.1rem;
+    border-left: .5rem solid $ballMiddle;
+    border-right: .5rem solid $ballMiddle;
+    border-bottom: .1rem solid $ballMiddle;
+    background-color: $ballBottom;
     -webkit-user-select: none;
     -moz-user-select: none;
     user-select: none;
     & sub {
       pointer-events: none;
+    }
+    &:last-child {
+      border-bottom: .5rem solid $ballMiddle;
     }
   }
 }
