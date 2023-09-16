@@ -1,6 +1,6 @@
-import styles from "./searchHome.module.scss";
-import SearchBar from "../components/SearchBar";
-import cn from "classnames";
+import styles from './searchHome.module.scss';
+import SearchBar from '../components/SearchBar';
+import cn from 'classnames';
 
 const randomIndex = Math.floor(Math.random() * 3);
 
@@ -15,12 +15,14 @@ const SearchHome = () => {
     [styles.ultraball]: ballDesign(randomIndex, 2),
   });
   const barLeftDesign = cn({
-    [styles.barHidden]: ballDesign(randomIndex, 0) || ballDesign(randomIndex, 1),
+    [styles.barHidden]:
+      ballDesign(randomIndex, 0) || ballDesign(randomIndex, 1),
     [styles.urltraBallBar]: ballDesign(randomIndex, 2),
     [styles.leftBar]: ballDesign(randomIndex, 2),
   });
   const barRightDesign = cn({
-    [styles.barHidden]: ballDesign(randomIndex, 0) || ballDesign(randomIndex, 1),
+    [styles.barHidden]:
+      ballDesign(randomIndex, 0) || ballDesign(randomIndex, 1),
     [styles.urltraBallBar]: ballDesign(randomIndex, 2),
     [styles.rightBar]: ballDesign(randomIndex, 2),
   });
@@ -29,7 +31,7 @@ const SearchHome = () => {
     <div className={searchHomeWrapper}>
       <div className={barLeftDesign} />
       <div className={barRightDesign} />
-      <SearchBar name="pokemon-search-bar" />
+      <SearchBar name='pokemon-search-bar' />
     </div>
   );
 };

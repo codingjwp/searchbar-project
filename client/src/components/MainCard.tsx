@@ -4,9 +4,9 @@ import {
   MouseEvent,
   TouchEvent,
   useState,
-} from "react";
-import styles from "./mainCard.module.scss";
-import cn from "classnames";
+} from 'react';
+import styles from './mainCard.module.scss';
+import cn from 'classnames';
 
 interface MainCardProps {
   id: string;
@@ -41,15 +41,14 @@ const MainCard = ({
   const formList = [form1, form2, form3, form4, form5];
   const imgRef = useRef<HTMLImageElement | null>(null);
   const handleOverFormImg = (e: MouseEvent | TouchEvent) => {
-    if (e.type === "mouseover") {
+    if (e.type === 'mouseover') {
       if (e.target === e.currentTarget) return;
       const form = (e.target as HTMLSpanElement).innerText
-        .replace(/'|\+|-|_|\s+/g, "")
+        .replace(/'|\+|-|_|\s+/g, '')
         .toLowerCase();
       if (imgRef && imgRef.current)
         setImgSrc(`${import.meta.env.VITE_API_FORM}${number}-${form}.webp`);
-    } else if (e.type === "mouseleave") {
-      console.log('test');
+    } else if (e.type === 'mouseleave') {
       setImgSrc(`${import.meta.env.VITE_API_IMG}${imgname}`);
     }
   };
@@ -60,8 +59,7 @@ const MainCard = ({
         className={cn(
           styles.mainCardContainer,
           getTypeStyle(type1.toLowerCase()),
-        )}
-      >
+        )}>
         <div className={cn(styles.mainCardImgCover)}>
           <img
             ref={imgRef}
@@ -69,7 +67,7 @@ const MainCard = ({
             src={imgSrc}
             alt={enname}
             onError={(e: SyntheticEvent<HTMLImageElement>) =>
-              (e.currentTarget.src = "/src/assets/default.avif")
+              (e.currentTarget.src = '/src/assets/default.avif')
             }
           />
         </div>
@@ -83,11 +81,10 @@ const MainCard = ({
         <div
           className={formList.length === 0 ? styles.hidden : styles.formCover}
           onMouseOver={handleOverFormImg}
-          onMouseLeave={handleOverFormImg}
-        >
+          onMouseLeave={handleOverFormImg}>
           {formList.length !== 0 &&
             formList.map((item) => {
-              if (item !== "")
+              if (item !== '')
                 return (
                   <span key={item} className={styles.formSpan}>
                     {item}
@@ -103,44 +100,44 @@ const MainCard = ({
 
 function getTypeStyle(type: string) {
   switch (type) {
-    case "bug":
+    case 'bug':
       return `${styles.bugType}`;
-    case "dark":
+    case 'dark':
       return `${styles.darkType}`;
-    case "dragon":
+    case 'dragon':
       return `${styles.dragonType}`;
-    case "electric":
+    case 'electric':
       return `${styles.electricType}`;
-    case "fighting":
+    case 'fighting':
       return `${styles.fightingType}`;
-    case "fairy":
+    case 'fairy':
       return `${styles.fairyType}`;
-    case "flying":
+    case 'flying':
       return `${styles.flyingType}`;
-    case "fire":
+    case 'fire':
       return `${styles.fireType}`;
-    case "grass":
+    case 'grass':
       return `${styles.grassType}`;
-    case "ghost":
+    case 'ghost':
       return `${styles.ghostType}`;
-    case "ground":
+    case 'ground':
       return `${styles.groundType}`;
-    case "ice":
+    case 'ice':
       return `${styles.iceType}`;
-    case "normal":
+    case 'normal':
       return `${styles.normalType}`;
-    case "poison":
+    case 'poison':
       return `${styles.poisonType}`;
-    case "psychic":
+    case 'psychic':
       return `${styles.psychicType}`;
-    case "rock":
+    case 'rock':
       return `${styles.rockType}`;
-    case "steel":
+    case 'steel':
       return `${styles.steelType}`;
-    case "water":
+    case 'water':
       return `${styles.waterType}`;
     default:
-      return "";
+      return '';
   }
 }
 

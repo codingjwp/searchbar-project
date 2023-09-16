@@ -1,23 +1,23 @@
-import { useParams, useNavigate } from "react-router-dom";
-import { useRecoilValue } from "recoil";
-import { pokemonDB } from "../apis/recoilState";
-import svg from "../assets/logout.svg";
-import styles from "./pokemonDb.module.scss";
-import MainCard from "../components/MainCard";
-import StatusCard from "../components/StatusCard";
+import { useParams, useNavigate } from 'react-router-dom';
+import { useRecoilValue } from 'recoil';
+import { pokemonDB } from '../apis/recoilState';
+import svg from '../assets/logout.svg';
+import styles from './pokemonDb.module.scss';
+import MainCard from '../components/MainCard';
+import StatusCard from '../components/StatusCard';
 
 const PokemonDb = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const data = useRecoilValue(pokemonDB(id ?? ''));
   const handelLogout = () => {
-    navigate("/");
+    navigate('/');
   };
 
   return (
     <div className={styles.pokemonDbWrapper}>
       <div className={styles.pokemonDbHeader}>
-        <svg width={24} height={24} viewBox="0 0 24 24" onClick={handelLogout}>
+        <svg width={24} height={24} viewBox='0 0 24 24' onClick={handelLogout}>
           <use href={`${svg}#logout`} />
         </svg>
       </div>

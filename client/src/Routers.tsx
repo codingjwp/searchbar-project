@@ -3,18 +3,18 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
   RouterProvider,
-} from "react-router-dom";
-import SearchHome from "./pages/SearchHome";
-import PokemonDb from "./pages/PokemonDb";
-import ErrorBoundary from "./apis/ErrorBoundary";
-import { RecoilRoot } from "recoil";
-import { Suspense } from "react";
+} from 'react-router-dom';
+import SearchHome from './pages/SearchHome';
+import PokemonDb from './pages/PokemonDb';
+import ErrorBoundary from './apis/ErrorBoundary';
+import { RecoilRoot } from 'recoil';
+import { Suspense } from 'react';
 
 const routerElements = createBrowserRouter(
   createRoutesFromElements(
     <Route>
       <Route
-        path="/"
+        path='/'
         element={
           <ErrorBoundary>
             <SearchHome />
@@ -22,7 +22,7 @@ const routerElements = createBrowserRouter(
         }
       />
       <Route
-        path="db/:id"
+        path='db/:id'
         element={
           <RecoilRoot override={true}>
             <Suspense>

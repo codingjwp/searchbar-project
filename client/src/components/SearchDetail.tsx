@@ -1,8 +1,8 @@
-import { useRecoilValue } from "recoil";
-import styles from "./searchDetail.module.scss";
-import { searchListState } from "../apis/recoilState";
-import { MouseEvent } from "react";
-import cn from "classnames";
+import { useRecoilValue } from 'recoil';
+import styles from './searchDetail.module.scss';
+import { searchListState } from '../apis/recoilState';
+import { MouseEvent } from 'react';
+import cn from 'classnames';
 
 interface searchDetailProps {
   isFocused: boolean;
@@ -25,8 +25,7 @@ const SearchDetail = ({
         [styles.searchBarDetail]: isFocused,
         [styles.hidden]: !isFocused,
       })}
-      onClick={touchDetail}
-    >
+      onClick={touchDetail}>
       <ul className={styles.searchBarDetailCover}>
         {data?.length !== 0 ? (
           data.map((item, index) => {
@@ -37,15 +36,14 @@ const SearchDetail = ({
                 })}
                 key={item.id}
                 id={item.id}
-                aria-label={item.krname}
-              >
+                aria-label={item.krname}>
                 {item.krname}
                 <sub>{`(${item.enname})`}</sub>
               </li>
             );
           })
         ) : (
-          <li title="no-search" className={styles.searchBarDetailBox}>
+          <li title='no-search' className={styles.searchBarDetailBox}>
             검색어가 존재하지 않습니다.
           </li>
         )}

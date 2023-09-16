@@ -12,13 +12,12 @@
     & .searchBarDetailCover {
       margin: 0;
       padding: 0;
-      border-radius: 0 0 .5rem .5rem;
+      border-radius: 0 0 0.5rem 0.5rem;
       border-top: 0;
       @if $isdesktop == false {
         height: 100vh;
         background-color: #31343855;
       }
-      
     }
     @if $isdesktop {
       position: absolute;
@@ -30,9 +29,9 @@
     list-style: none;
     padding: 1rem;
     font-size: 1.6rem;
-    border-left: .5rem solid $ballMiddle;
-    border-right: .5rem solid $ballMiddle;
-    border-bottom: .1rem solid $ballMiddle;
+    border-left: 0.5rem solid $ballMiddle;
+    border-right: 0.5rem solid $ballMiddle;
+    border-bottom: 0.1rem solid $ballMiddle;
     background-color: $ballBottom;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -41,7 +40,7 @@
       pointer-events: none;
     }
     &:last-child {
-      border-bottom: .5rem solid $ballMiddle;
+      border-bottom: 0.5rem solid $ballMiddle;
     }
   }
 }

@@ -1,11 +1,15 @@
 @import '../typeColor';
 
 @keyframes cardBorder {
-  0% { transform: translate(-$halfSize, -$halfSize) rotate(0deg); }
-  100% { transform: translate(-$halfSize, -$halfSize) rotate(360deg); }
+  0% {
+    transform: translate(-$halfSize, -$halfSize) rotate(0deg);
+  }
+  100% {
+    transform: translate(-$halfSize, -$halfSize) rotate(360deg);
+  }
 }
 
-@mixin mainCardDevice($ismobile, $width, $height){
+@mixin mainCardDevice($ismobile, $width, $height) {
   .mainCard {
     display: flex;
     position: relative;
@@ -14,12 +18,12 @@
     min-width: $width;
     min-height: $height;
     @if $ismobile {
-      margin-bottom: .3rem;
+      margin-bottom: 0.3rem;
     } @else {
-      margin-right: .5rem;
+      margin-right: 0.5rem;
     }
   }
-  
+
   .mainCardContainer {
     display: flex;
     flex-direction: column;
@@ -34,26 +38,34 @@
     padding: 2rem 2rem 2rem 2rem;
     overflow: hidden;
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       top: $halfSize;
       left: $halfSize;
       width: calc($width + 26rem);
       height: 15rem;
-      background: linear-gradient(transparent, #e3d984, #edd74e, #e3d984, transparent);
-      @include animation(cardBorder, 4s, linear, infinite)
+      background: linear-gradient(
+        transparent,
+        #e3d984,
+        #edd74e,
+        #e3d984,
+        transparent
+      );
+      @include animation(cardBorder, 4s, linear, infinite);
     }
     &::after {
-      content: "";
+      content: '';
       position: absolute;
-      inset: .8rem;
+      inset: 0.8rem;
       border-radius: 1.2rem;
     }
-    & .mainCardImgCover, & span, & .formCover {
+    & .mainCardImgCover,
+    & span,
+    & .formCover {
       z-index: 1;
     }
   }
-  
+
   .mainCardImgCover {
     background-color: #ffffff;
     overflow: hidden;
@@ -68,7 +80,7 @@
       height: calc($height - 22rem);
     }
   }
-  
+
   .mainCardImg {
     @if $ismobile {
       width: calc($width - 14rem);
@@ -78,7 +90,7 @@
       height: calc($height - 24rem);
     }
   }
-  
+
   .mainCardTitle {
     @if $ismobile {
       font-size: 1.6rem;
@@ -86,7 +98,7 @@
       font-size: 2.5rem;
     }
     font-weight: bolder;
-    letter-spacing: .3rem;
+    letter-spacing: 0.3rem;
   }
   .mainCardEnName {
     @if $ismobile {
@@ -112,10 +124,10 @@
 }
 
 .titleMarginTop {
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
 .titleMarginMiddle {
-  margin: .3rem 0;
+  margin: 0.3rem 0;
 }
 
 .hidden {

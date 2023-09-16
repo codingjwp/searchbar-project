@@ -7,15 +7,30 @@
   height: 100vh;
 
   &.pokeball {
-    background: linear-gradient(to bottom, $pokeTop 48%, $ballMiddle 48% 52%, $ballBottom 52% $fullSize);
+    background: linear-gradient(
+      to bottom,
+      $pokeTop 48%,
+      $ballMiddle 48% 52%,
+      $ballBottom 52% $fullSize
+    );
   }
 
   &.captainball {
-    background: linear-gradient(to bottom, $superTop 48%, $ballMiddle 48% 52%, $ballBottom 52% $fullSize);
+    background: linear-gradient(
+      to bottom,
+      $superTop 48%,
+      $ballMiddle 48% 52%,
+      $ballBottom 52% $fullSize
+    );
   }
 
   &.ultraball {
-    background: linear-gradient(to bottom, $ultraTop 48%, $ballMiddle 48% 52%, $ballBottom 52% $fullSize);
+    background: linear-gradient(
+      to bottom,
+      $ultraTop 48%,
+      $ballMiddle 48% 52%,
+      $ballBottom 52% $fullSize
+    );
   }
 }
 

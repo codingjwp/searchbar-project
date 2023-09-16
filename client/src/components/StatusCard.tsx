@@ -1,7 +1,7 @@
-import { useEffect, useRef } from "react";
-import styles from "./statusCard.module.scss";
-import { Chart, registerables, ChartConfiguration, ChartItem } from "chart.js";
-import cn from "classnames";
+import { useEffect, useRef } from 'react';
+import styles from './statusCard.module.scss';
+import { Chart, registerables, ChartConfiguration, ChartItem } from 'chart.js';
+import cn from 'classnames';
 
 interface StatusCardProps {
   type1: string;
@@ -32,20 +32,20 @@ const StatusCard = ({
       const canvas = canvasRef.current as ChartItem;
       const status = [hp, attack, defense, spattack, spdefense, speed];
       const data: ChartConfiguration = {
-        type: "doughnut",
+        type: 'doughnut',
         data: {
-          labels: ["Hp", "Attack", "Defense", "Spattack", "Spdefense", "Speed"],
+          labels: ['Hp', 'Attack', 'Defense', 'Spattack', 'Spdefense', 'Speed'],
           datasets: [
             {
-              label: "status",
+              label: 'status',
               data: status.map(Number),
               backgroundColor: [
-                "#d2381d",
-                "#2b7fd3",
-                "#d1a72a",
-                "#5da042",
-                "#8b457d",
-                "#d2477f",
+                '#d2381d',
+                '#2b7fd3',
+                '#d1a72a',
+                '#5da042',
+                '#8b457d',
+                '#d2477f',
               ],
               hoverOffset: 30,
             },
@@ -82,18 +82,17 @@ const StatusCard = ({
         className={cn(
           styles.statusCardContainer,
           getTypeStyle(type1.toLowerCase()),
-        )}
-      >
+        )}>
         <canvas ref={canvasRef} />
         <div className={styles.statusCardImgCover}>
           <img
             className={cn(styles.statusCardTypeImg, {
-              [styles.statusMarginRight]: type2 !== "",
+              [styles.statusMarginRight]: type2 !== '',
             })}
             src={`${import.meta.env.VITE_API_TYPE}${type1}.png`}
             alt={type1}
           />
-          {type2 !== "" ? (
+          {type2 !== '' ? (
             <img
               className={styles.statusCardTypeImg}
               src={`${import.meta.env.VITE_API_TYPE}${type2}.png`}
@@ -108,44 +107,44 @@ const StatusCard = ({
 
 function getTypeStyle(type: string) {
   switch (type) {
-    case "bug":
+    case 'bug':
       return `${styles.bugType}`;
-    case "dark":
+    case 'dark':
       return `${styles.darkType}`;
-    case "dragon":
+    case 'dragon':
       return `${styles.dragonType}`;
-    case "electric":
+    case 'electric':
       return `${styles.electricType}`;
-    case "fighting":
+    case 'fighting':
       return `${styles.fightingType}`;
-    case "fairy":
+    case 'fairy':
       return `${styles.fairyType}`;
-    case "flying":
+    case 'flying':
       return `${styles.flyingType}`;
-    case "fire":
+    case 'fire':
       return `${styles.fireType}`;
-    case "grass":
+    case 'grass':
       return `${styles.grassType}`;
-    case "ghost":
+    case 'ghost':
       return `${styles.ghostType}`;
-    case "ground":
+    case 'ground':
       return `${styles.groundType}`;
-    case "ice":
+    case 'ice':
       return `${styles.iceType}`;
-    case "normal":
+    case 'normal':
       return `${styles.normalType}`;
-    case "poison":
+    case 'poison':
       return `${styles.poisonType}`;
-    case "psychic":
+    case 'psychic':
       return `${styles.psychicType}`;
-    case "rock":
+    case 'rock':
       return `${styles.rockType}`;
-    case "steel":
+    case 'steel':
       return `${styles.steelType}`;
-    case "water":
+    case 'water':
       return `${styles.waterType}`;
     default:
-      return "";
+      return '';
   }
 }
 

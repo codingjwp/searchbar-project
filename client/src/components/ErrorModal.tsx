@@ -1,4 +1,4 @@
-import styles from "./errorModal.module.scss";
+import styles from './errorModal.module.scss';
 
 interface ModalProps {
   error?: {

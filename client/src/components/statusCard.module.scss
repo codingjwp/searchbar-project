@@ -1,8 +1,12 @@
 @import '../typeColor';
 
 @keyframes cardBorder {
-  0% { transform: translate(-$halfSize, -$halfSize) rotate(0deg); }
-  100% { transform: translate(-$halfSize, -$halfSize) rotate(360deg); }
+  0% {
+    transform: translate(-$halfSize, -$halfSize) rotate(0deg);
+  }
+  100% {
+    transform: translate(-$halfSize, -$halfSize) rotate(360deg);
+  }
 }
 
 @mixin statusCarDevice($width, $height) {
@@ -29,22 +33,30 @@
     padding: 2rem 3rem 2rem 3rem;
     overflow: hidden;
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       top: $halfSize;
       left: $halfSize;
       width: calc($width + 26rem);
       height: 15rem;
-      background: linear-gradient(transparent, #e3d984, #edd74e, #e3d984, transparent);
-      @include animation(cardBorder, 4s, linear, infinite)
+      background: linear-gradient(
+        transparent,
+        #e3d984,
+        #edd74e,
+        #e3d984,
+        transparent
+      );
+      @include animation(cardBorder, 4s, linear, infinite);
     }
     &::after {
-      content: "";
+      content: '';
       position: absolute;
-      inset: .8rem;
+      inset: 0.8rem;
       border-radius: 1.2rem;
     }
-    & .statusCardImgCover, & span, & canvas {
+    & .statusCardImgCover,
+    & span,
+    & canvas {
       z-index: 1;
     }
   }
@@ -62,7 +74,7 @@
     width: 3rem;
     height: 3rem;
     border-radius: $fullSize;
-    border: .2rem solid $ballBottom;
+    border: 0.2rem solid $ballBottom;
   }
 }
 

@@ -1,4 +1,4 @@
-import { atom, selectorFamily } from "recoil";
+import { atom, selectorFamily } from 'recoil';
 
 interface PokemonListProps {
   id: string;
@@ -8,23 +8,23 @@ interface PokemonListProps {
 }
 
 export const searchListState = selectorFamily<PokemonListProps[], string>({
-  key: "searchListState",
+  key: 'searchListState',
   get: (name: string) => async () => {
     try {
-      const pokemonName = name.replace(/['+-_: ]+/g, "").toLowerCase();
-      if (pokemonName === "") return [];
+      const pokemonName = name.replace(/['+-_: ]+/g, '').toLowerCase();
+      if (pokemonName === '') return [];
       const fetchArray = [
         fetch(`${import.meta.env.VITE_API_KR_LIST}${pokemonName}`),
         fetch(`${import.meta.env.VITE_API_EN_LIST}${pokemonName}`),
       ];
       const response = await Promise.all(fetchArray);
-      if (!response.every((res) => res.ok)) throw new Error("Network Error");
+      if (!response.every((res) => res.ok)) throw new Error('Network Error');
 
       const [korean, english] = await Promise.all<PokemonListProps[]>(
         response.map((res) => res.json()),
       );
 
-      if (!korean || !english) throw new Error("Not Found Error");
+      if (!korean || !english) throw new Error('Not Found Error');
       return korean.length === 0 ? english : korean;
     } catch (error: unknown) {
       const data = (error as Error).message;
@@ -55,12 +55,12 @@ interface PokemonDBProps {
 }
 
 export const pokemonDB = selectorFamily<PokemonDBProps | undefined, string>({
-  key: "pokemonStateDB",
+  key: 'pokemonStateDB',
   get: (id: string) => async () => {
     try {
       if (id === '') return undefined;
       const response = await fetch(`${import.meta.env.VITE_API_DB}${id}`);
-      if (!response.ok) throw new Error("Network Error");
+      if (!response.ok) throw new Error('Network Error');
       const data: PokemonDBProps[] =
         (await response.json()) as PokemonDBProps[];
       return data.length === 0 ? undefined : data[0];
@@ -72,6 +72,6 @@ export const pokemonDB = selectorFamily<PokemonDBProps | undefined, string>({
 });
 
 export const searchDetailIndex = atom({
-  key: "searchDetailIndex",
+  key: 'searchDetailIndex',
   default: -1,
 });
