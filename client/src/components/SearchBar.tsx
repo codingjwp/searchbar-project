@@ -26,10 +26,6 @@ const SearchBar = ({ name }: SearchBarProps) => {
   const resetIndex = useResetRecoilState(searchDetailIndex);
   const [detailIndex, setDetailIndex] = useRecoilState(searchDetailIndex);
 
-  const searchTextChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setSearchText(e.target.value ?? '');
-    resetIndex();
-  };
   const handleFocusChange = (e: FocusEvent) => {
     if (e.type === 'focus' && !isFocused) setIsFocused(true);
     else if (e.type === 'blur') setIsFocused(textRef.current?.value !== '');
@@ -42,14 +38,12 @@ const SearchBar = ({ name }: SearchBarProps) => {
     textRef.current?.focus();
     resetIndex();
   };
-
   const movePokemonDb = () => {
     const li = document.querySelector('li');
     if (li && li.title === 'no-search') return;
     const id = li?.id;
     navigate(`/db/${id}`);
   };
-
   const hasSearchDetailIndex = (e: KeyboardEvent) => {
     if (
       !['ArrowUp', 'ArrowDown', 'Enter'].includes(e.key) ||
@@ -74,6 +68,11 @@ const SearchBar = ({ name }: SearchBarProps) => {
     } else if (e.key === 'Enter' && detailIndex === -1) {
       movePokemonDb();
     }
+  };
+
+  const searchTextChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setSearchText(e.target.value ?? '');
+    resetIndex();
   };
 
   return (
