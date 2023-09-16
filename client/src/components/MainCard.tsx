@@ -41,14 +41,15 @@ const MainCard = ({
   const formList = [form1, form2, form3, form4, form5];
   const imgRef = useRef<HTMLImageElement | null>(null);
   const handleOverFormImg = (e: MouseEvent | TouchEvent) => {
-    if (e.target === e.currentTarget) return;
     if (e.type === "mouseover") {
+      if (e.target === e.currentTarget) return;
       const form = (e.target as HTMLSpanElement).innerText
         .replace(/'|\+|-|_|\s+/g, "")
         .toLowerCase();
       if (imgRef && imgRef.current)
         setImgSrc(`${import.meta.env.VITE_API_FORM}${number}-${form}.webp`);
     } else if (e.type === "mouseleave") {
+      console.log('test');
       setImgSrc(`${import.meta.env.VITE_API_IMG}${imgname}`);
     }
   };
@@ -67,7 +68,6 @@ const MainCard = ({
             className={styles.mainCardImg}
             src={imgSrc}
             alt={enname}
-            loading="lazy"
             onError={(e: SyntheticEvent<HTMLImageElement>) =>
               (e.currentTarget.src = "/src/assets/default.avif")
             }

@@ -1,4 +1,4 @@
-import { atom, selector } from "recoil";
+import { atom, selectorFamily } from "recoil";
 
 interface PokemonListProps {
   id: string;
@@ -7,18 +7,11 @@ interface PokemonListProps {
   krname: string;
 }
 
-export const searchTextState = atom<string>({
-  key: "searchTextState",
-  default: "",
-});
-
-export const searchListState = selector<PokemonListProps[]>({
+export const searchListState = selectorFamily<PokemonListProps[], string>({
   key: "searchListState",
-  get: async ({ get }) => {
+  get: (name: string) => async () => {
     try {
-      const pokemonName = get(searchTextState)
-        .replace(/['+-_: ]+/g, "")
-        .toLowerCase();
+      const pokemonName = name.replace(/['+-_: ]+/g, "").toLowerCase();
       if (pokemonName === "") return [];
       const fetchArray = [
         fetch(`${import.meta.env.VITE_API_KR_LIST}${pokemonName}`),
@@ -61,11 +54,11 @@ interface PokemonDBProps {
   imgname: string;
 }
 
-export const pokemonDB = selector<PokemonDBProps | undefined>({
+export const pokemonDB = selectorFamily<PokemonDBProps | undefined, string>({
   key: "pokemonStateDB",
-  get: async ({ get }) => {
+  get: (id: string) => async () => {
     try {
-      const id = get(searchTextState);
+      if (id === '') return undefined;
       const response = await fetch(`${import.meta.env.VITE_API_DB}${id}`);
       if (!response.ok) throw new Error("Network Error");
       const data: PokemonDBProps[] =

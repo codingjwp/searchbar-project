@@ -1,28 +1,23 @@
-import { useRecoilValue, useSetRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 import styles from "./searchDetail.module.scss";
-import { searchListState, searchDetailIndex } from "../apis/recoilState";
-import { useEffect, MouseEvent } from "react";
+import { searchListState } from "../apis/recoilState";
+import { MouseEvent } from "react";
 import cn from "classnames";
 
 interface searchDetailProps {
   isFocused: boolean;
+  pokemonName: string;
   detailIndex: number;
   touchDetail?: (e: MouseEvent) => void;
 }
 
 const SearchDetail = ({
   isFocused,
+  pokemonName,
   detailIndex,
   touchDetail,
 }: searchDetailProps) => {
-  const data = useRecoilValue(searchListState);
-  const setDetailIndex = useSetRecoilState(searchDetailIndex);
-
-  useEffect(() => {
-    if (data.length <= detailIndex) {
-      setDetailIndex((prev) => prev - 1);
-    }
-  }, [detailIndex]);
+  const data = useRecoilValue(searchListState(pokemonName));
 
   return (
     <div
@@ -41,7 +36,8 @@ const SearchDetail = ({
                   [styles.indexCheck]: detailIndex === index,
                 })}
                 key={item.id}
-                aria-label={item.id}
+                id={item.id}
+                aria-label={item.krname}
               >
                 {item.krname}
                 <sub>{`(${item.enname})`}</sub>

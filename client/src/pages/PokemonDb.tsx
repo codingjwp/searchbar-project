@@ -1,7 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { useSetRecoilState, useRecoilValue } from "recoil";
-import { searchTextState, pokemonDB } from "../apis/recoilState";
-import { useEffect } from "react";
+import { useRecoilValue } from "recoil";
+import { pokemonDB } from "../apis/recoilState";
 import svg from "../assets/logout.svg";
 import styles from "./pokemonDb.module.scss";
 import MainCard from "../components/MainCard";
@@ -10,15 +9,10 @@ import StatusCard from "../components/StatusCard";
 const PokemonDb = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const setIdState = useSetRecoilState(searchTextState);
-  const data = useRecoilValue(pokemonDB);
+  const data = useRecoilValue(pokemonDB(id ?? ''));
   const handelLogout = () => {
     navigate("/");
   };
-
-  useEffect(() => {
-    if (id) setIdState(id);
-  }, []);
 
   return (
     <div className={styles.pokemonDbWrapper}>

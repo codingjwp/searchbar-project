@@ -6,11 +6,10 @@ import {
   Suspense,
   useRef,
   KeyboardEvent,
-  useEffect,
 } from "react";
 import { useNavigate } from "react-router-dom";
-import { useRecoilState } from "recoil";
-import { searchDetailIndex, searchTextState } from "../apis/recoilState";
+import { useResetRecoilState, useRecoilState } from "recoil";
+import { searchDetailIndex } from "../apis/recoilState";
 import cn from "classnames";
 import styles from "./searchBar.module.scss";
 import SearchDetail from "./SearchDetail";
@@ -23,12 +22,13 @@ const SearchBar = ({ name }: SearchBarProps) => {
   const navigate = useNavigate();
   const [isFocused, setIsFocused] = useState(false);
   const textRef = useRef<HTMLInputElement | null>(null);
-  const [searchText, setSearchText] = useRecoilState(searchTextState);
+  const [searchText, setSearchText] = useState('');
+  const resetIndex = useResetRecoilState(searchDetailIndex);
   const [detailIndex, setDetailIndex] = useRecoilState(searchDetailIndex);
 
   const searchTextChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchText(e.target.value ?? "");
-    setDetailIndex(-1);
+    resetIndex();
   };
   const handleFocusChange = (e: FocusEvent) => {
     if (e.type === "focus" && !isFocused) setIsFocused(true);
@@ -40,39 +40,39 @@ const SearchBar = ({ name }: SearchBarProps) => {
     if (li.title === "no-search") return;
     setSearchText(li.innerText.split("(")[0]);
     textRef.current?.focus();
-    setDetailIndex(-1);
+    resetIndex();
   };
+
   const movePokemonDb = () => {
     const li = document.querySelector("li");
     if (li && li.title === "no-search") return;
-    const id = li?.getAttribute("aria-label");
+    const id = li?.id;
     navigate(`/db/${id}`);
   };
+
   const hasSearchDetailIndex = (e: KeyboardEvent) => {
-    if (
-      !["ArrowUp", "ArrowDown", "Enter"].includes(e.key) ||
-      e.nativeEvent.isComposing
-    )
+    if (!["ArrowUp", "ArrowDown", "Enter"].includes(e.key) || e.nativeEvent.isComposing )
       return;
+
     if (e.key === "ArrowUp" && detailIndex > 0) {
-      setDetailIndex(detailIndex - 1);
+      setDetailIndex(prev => prev <= 0 ? prev : prev - 1);
     } else if (e.key === "ArrowDown" && detailIndex < 4) {
-      setDetailIndex(detailIndex + 1);
+      const length = document.querySelectorAll("li").length;
+      setDetailIndex(prev => prev + 1 === length ? prev : prev + 1);
     } else if (e.key === "Enter" && detailIndex !== -1) {
       const li = document.querySelectorAll("li");
-      if (li && li.item(0).title === "no-search") return;
+  
+      if (li && li.item(0).title === "no-search")
+        return;
+
       if (li && li.item(detailIndex)) {
         setSearchText(li.item(detailIndex).innerText.split("(")[0]);
-        setDetailIndex(-1);
+        resetIndex();
       }
     } else if (e.key === "Enter" && detailIndex === -1) {
       movePokemonDb();
     }
   };
-
-  useEffect(() => {
-    setSearchText("");
-  }, []);
 
   return (
     <div
@@ -112,6 +112,7 @@ const SearchBar = ({ name }: SearchBarProps) => {
       <Suspense>
         <SearchDetail
           isFocused={isFocused}
+          pokemonName={searchText}
           detailIndex={detailIndex}
           touchDetail={handleTouchOfClick}
         />
