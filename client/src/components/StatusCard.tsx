@@ -1,7 +1,8 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import styles from './statusCard.module.scss';
-import { Chart, registerables, ChartConfiguration, ChartItem } from 'chart.js';
+import { Chart, registerables } from 'chart.js';
 import cn from 'classnames';
+import { useChart } from '../hooks/useChart';
 
 interface StatusCardProps {
   type1: string;
@@ -26,55 +27,7 @@ const StatusCard = ({
 }: StatusCardProps) => {
   Chart.register(...registerables);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-
-  useEffect(() => {
-    if (canvasRef) {
-      const canvas = canvasRef.current as ChartItem;
-      const status = [hp, attack, defense, spattack, spdefense, speed];
-      const data: ChartConfiguration = {
-        type: 'doughnut',
-        data: {
-          labels: ['Hp', 'Attack', 'Defense', 'Spattack', 'Spdefense', 'Speed'],
-          datasets: [
-            {
-              label: 'status',
-              data: status.map(Number),
-              backgroundColor: [
-                '#d2381d',
-                '#2b7fd3',
-                '#d1a72a',
-                '#5da042',
-                '#8b457d',
-                '#d2477f',
-              ],
-              hoverOffset: 30,
-            },
-          ],
-        },
-        options: {
-          responsive: true,
-          layout: {
-            padding: {
-              left: 20,
-              right: 20,
-              top: 20,
-              bottom: 20,
-            },
-          },
-          plugins: {
-            legend: {
-              display: false,
-            },
-            tooltip: {
-              enabled: true,
-            },
-          },
-        },
-      };
-      const chart = new Chart(canvas, data);
-      return () => chart.destroy();
-    }
-  }, []);
+  useChart([hp, attack, defense, spattack, spdefense, speed], canvasRef);
 
   return (
     <div className={styles.statusCard}>
