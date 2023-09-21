@@ -27,7 +27,7 @@ const StatusCard = ({
 }: StatusCardProps) => {
   Chart.register(...registerables);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  useChart(hp, attack, defense, spattack, spdefense, speed, canvasRef);
+  useChart([hp, attack, defense, spattack, spdefense, speed], canvasRef);
 
   return (
     <div className={styles.statusCard}>

@@ -50,5 +50,5 @@ export const useChart = (
     };
     const chart = new Chart(canvas, data);
     return () => chart.destroy();
-  }, [targetRef]);
+  }, [targetRef, newData]);
 };

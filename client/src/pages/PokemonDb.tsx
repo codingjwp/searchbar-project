@@ -5,6 +5,7 @@ import svg from '../assets/logout.svg';
 import styles from './pokemonDb.module.scss';
 import MainCard from '../components/MainCard';
 import StatusCard from '../components/StatusCard';
+import { useEffect } from 'react';
 
 const PokemonDb = () => {
   const { id } = useParams();
@@ -13,6 +14,10 @@ const PokemonDb = () => {
   const handelLogout = () => {
     navigate('/');
   };
+
+  useEffect(() => {
+    if (!data) handelLogout();
+  }, [data]);
 
   return (
     <div className={styles.pokemonDbWrapper}>

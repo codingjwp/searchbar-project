@@ -2,7 +2,7 @@ import { Component, ReactNode } from 'react';
 import ErrorModal from '../components/ErrorModal';
 
 interface ErrorBoundaryProps {
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 interface ErrorBoundaryState {

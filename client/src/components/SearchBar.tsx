@@ -3,7 +3,6 @@ import {
   ChangeEvent,
   MouseEvent,
   FocusEvent,
-  Suspense,
   useRef,
   KeyboardEvent,
 } from 'react';
@@ -108,14 +107,12 @@ const SearchBar = ({ name }: SearchBarProps) => {
           <span className={styles.searchBarSpan}>Search</span>
         </button>
       </div>
-      <Suspense>
-        <SearchDetail
-          isFocused={isFocused}
-          pokemonName={searchText}
-          detailIndex={detailIndex}
-          touchDetail={handleTouchOfClick}
-        />
-      </Suspense>
+      <SearchDetail
+        isFocused={isFocused}
+        pokemonName={searchText}
+        detailIndex={detailIndex}
+        touchDetail={handleTouchOfClick}
+      />
     </div>
   );
 };

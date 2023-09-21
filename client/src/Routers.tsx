@@ -7,8 +7,9 @@ import {
 import SearchHome from './pages/SearchHome';
 import PokemonDb from './pages/PokemonDb';
 import ErrorBoundary from './apis/ErrorBoundary';
-import { RecoilRoot } from 'recoil';
+import ErrorModal from './components/ErrorModal';
 import { Suspense } from 'react';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 const routerElements = createBrowserRouter(
   createRoutesFromElements(
@@ -24,19 +25,31 @@ const routerElements = createBrowserRouter(
       <Route
         path='db/:id'
         element={
-          <RecoilRoot override={true}>
-            <Suspense>
-              <PokemonDb />
-            </Suspense>
-          </RecoilRoot>
+          <Suspense>
+            <PokemonDb />
+          </Suspense>
+        }
+      />
+      <Route
+        path='*'
+        element={
+          <ErrorModal
+            error={{ stack: '', name: 'Error', message: 'Not found Page' }}
+          />
         }
       />
     </Route>,
   ),
 );
 
+const queryClient = new QueryClient();
+
 const Routers = () => {
-  return <RouterProvider router={routerElements} />;
+  return (
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={routerElements} />
+    </QueryClientProvider>
+  );
 };
 
 export default Routers;

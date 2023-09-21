@@ -1,9 +1,8 @@
-import { useRecoilValue } from 'recoil';
 import styles from './searchDetail.module.scss';
-import { searchListState } from '../apis/recoilState';
 import { MouseEvent } from 'react';
 import { useDebounce } from '../hooks/useDebounce';
 import cn from 'classnames';
+import { useSearchDetail } from '../hooks/useSearchDetail';
 
 interface searchDetailProps {
   isFocused: boolean;
@@ -19,7 +18,7 @@ const SearchDetail = ({
   touchDetail,
 }: searchDetailProps) => {
   const name = useDebounce(pokemonName, 300);
-  const data = useRecoilValue(searchListState(name));
+  const { data = [] } = useSearchDetail(name);
 
   return (
     <div
