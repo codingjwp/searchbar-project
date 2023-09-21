@@ -1,23 +1,17 @@
 import { useParams, useNavigate } from 'react-router-dom';
-import { useRecoilValue } from 'recoil';
-import { pokemonDB } from '../apis/recoilState';
 import svg from '../assets/logout.svg';
 import styles from './pokemonDb.module.scss';
 import MainCard from '../components/MainCard';
 import StatusCard from '../components/StatusCard';
-import { useEffect } from 'react';
+import { useSearchDetail } from '../hooks/useSearchDetail';
 
 const PokemonDb = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const data = useRecoilValue(pokemonDB(id ?? ''));
+  const { data } = useSearchDetail(id ?? '');
   const handelLogout = () => {
     navigate('/');
   };
-
-  useEffect(() => {
-    if (!data) handelLogout();
-  }, [data]);
 
   return (
     <div className={styles.pokemonDbWrapper}>
@@ -26,7 +20,7 @@ const PokemonDb = () => {
           <use href={`${svg}#logout`} />
         </svg>
       </div>
-      {data && (
+      {data ? (
         <div className={styles.pokemonDbContainer}>
           <MainCard
             id={data.id}
@@ -51,6 +45,12 @@ const PokemonDb = () => {
             spdefense={data.spdefense}
             speed={data.speed}
           />
+        </div>
+      ) : (
+        <div className={styles.pokemonDbContainer}>
+          <span className={styles.pokemondbNotFound}>
+            Not found Pokemon Database
+          </span>
         </div>
       )}
     </div>

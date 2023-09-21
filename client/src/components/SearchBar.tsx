@@ -5,6 +5,7 @@ import {
   FocusEvent,
   useRef,
   KeyboardEvent,
+  Suspense,
 } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useResetRecoilState, useRecoilState } from 'recoil';
@@ -12,6 +13,7 @@ import { searchDetailIndex } from '../apis/recoilState';
 import cn from 'classnames';
 import styles from './searchBar.module.scss';
 import SearchDetail from './SearchDetail';
+import ListSkeleton from './ListSkeleton';
 
 interface SearchBarProps {
   name: string;
@@ -107,12 +109,14 @@ const SearchBar = ({ name }: SearchBarProps) => {
           <span className={styles.searchBarSpan}>Search</span>
         </button>
       </div>
-      <SearchDetail
-        isFocused={isFocused}
-        pokemonName={searchText}
-        detailIndex={detailIndex}
-        touchDetail={handleTouchOfClick}
-      />
+      <Suspense fallback={<ListSkeleton />}>
+        <SearchDetail
+          isFocused={isFocused}
+          pokemonName={searchText}
+          detailIndex={detailIndex}
+          touchDetail={handleTouchOfClick}
+        />
+      </Suspense>
     </div>
   );
 };

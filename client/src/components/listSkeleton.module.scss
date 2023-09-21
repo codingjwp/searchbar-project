@@ -1,0 +1,70 @@
+@import '../mixin';
+
+@mixin searchSkeleton($isdesktop) {
+  .searchSkeletonDetail {
+    display: block;
+    width: $fullSize;
+    overflow-y: auto;
+    & .skeletonDetailCover {
+      margin: 0;
+      padding: 0;
+      border-radius: 0 0 0.5rem 0.5rem;
+      border-top: 0;
+      @if $isdesktop == false {
+        height: 100vh;
+        background-color: #31343855;
+      }
+    }
+    @if $isdesktop {
+      position: absolute;
+      top: 5.9rem;
+      max-width: 40rem;
+    }
+  }
+}
+
+.skeletonDetailBox {
+  list-style: none;
+  height: 2.4rem;
+  padding: 1rem;
+  font-size: 1.6rem;
+  border-left: 0.5rem solid $ballMiddle;
+  border-right: 0.5rem solid $ballMiddle;
+  border-bottom: 0.5rem solid $ballMiddle;
+  background-color: $ballBottom;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@keyframes skeletonLinear {
+  0% {
+    background-position: right center;
+  }
+  100% {
+    background-position: left center;
+  }
+}
+
+.skeletonDetailText {
+  color: transparent;
+  width: 40%;
+  height: 100%;
+  border-radius: 1.5rem;
+  background: linear-gradient(to right,transparent, $typeBeforeNormal, transparent, $typeBeforeNormal);
+  background-size: 400%;
+  will-change: skeletonLinear;
+  @include animation(skeletonLinear, 1s, ease, infinite);
+}
+
+
+
+@include desktop {
+  @include searchSkeleton(true);
+}
+@include tablet {
+  @include searchSkeleton(false);
+}
+@include mobile {
+  @include searchSkeleton(false);
+}

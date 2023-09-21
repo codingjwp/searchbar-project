@@ -8,8 +8,8 @@ import SearchHome from './pages/SearchHome';
 import PokemonDb from './pages/PokemonDb';
 import ErrorBoundary from './apis/ErrorBoundary';
 import ErrorModal from './components/ErrorModal';
-import { Suspense } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { Suspense } from 'react';
 
 const routerElements = createBrowserRouter(
   createRoutesFromElements(
@@ -25,9 +25,11 @@ const routerElements = createBrowserRouter(
       <Route
         path='db/:id'
         element={
-          <Suspense>
-            <PokemonDb />
-          </Suspense>
+          <ErrorBoundary>
+            <Suspense>
+              <PokemonDb />
+            </Suspense>
+          </ErrorBoundary>
         }
       />
       <Route
@@ -42,7 +44,13 @@ const routerElements = createBrowserRouter(
   ),
 );
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      suspense: true,
+    },
+  },
+});
 
 const Routers = () => {
   return (

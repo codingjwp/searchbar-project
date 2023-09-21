@@ -1,39 +1,43 @@
 import { useQuery } from 'react-query';
 
-interface PokemonListProps {
+interface PokemonDBProps {
   id: string;
+  number: string;
   enname: string;
-  search: string;
+  form1: string;
+  form2: string;
+  form3: string;
+  form4: string;
+  form5: string;
+  type1: string;
+  type2: string;
+  hp: string;
+  attack: string;
+  defense: string;
+  spattack: string;
+  spdefense: string;
+  speed: string;
   krname: string;
+  imgname: string;
 }
 
-const searchListFuc = async (name: string) => {
+const searchPokemonDb = async (id: string) => {
   try {
-    const pokemonName = name.replace(/['+-_: ]+/g, '').toLowerCase();
-    if (pokemonName === '') return [];
-    const fetchArray = [
-      fetch(`${import.meta.env.VITE_API_KR_LIST}${pokemonName}`),
-      fetch(`${import.meta.env.VITE_API_EN_LIST}${pokemonName}`),
-    ];
-    const response = await Promise.all(fetchArray);
-    if (!response.every((res) => res.ok)) throw new Error('Network Error');
-
-    const [korean, english] = await Promise.all<PokemonListProps[]>(
-      response.map((res) => res.json()),
-    );
-
-    if (!korean || !english) throw new Error('Not Found Error');
-    return korean.length === 0 ? english : korean;
+    if (id === '') return undefined;
+    const response = await fetch(`${import.meta.env.VITE_API_DB}${id}`);
+    if (!response.ok) throw new Error('Network Error');
+    const data: PokemonDBProps[] = (await response.json()) as PokemonDBProps[];
+    return data.length === 0 ? undefined : data[0];
   } catch (error: unknown) {
     const data = (error as Error).message;
     throw new Error(data);
   }
 };
 
-export const useSearchDetail = (name: string) => {
+export const useSearchDetail = (init: string) => {
   return useQuery({
-    queryKey: ['pokemonlist', name],
-    queryFn: () => searchListFuc(name),
+    queryKey: ['searchPokemonDb', init],
+    queryFn: () => searchPokemonDb(init),
     staleTime: 1000 * 60 * 60 * 24,
     cacheTime: 1000 * 60 * 60 * 24,
   });

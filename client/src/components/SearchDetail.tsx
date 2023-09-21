@@ -1,8 +1,8 @@
-import styles from './searchDetail.module.scss';
 import { MouseEvent } from 'react';
-import { useDebounce } from '../hooks/useDebounce';
+import styles from './searchDetail.module.scss';
 import cn from 'classnames';
-import { useSearchDetail } from '../hooks/useSearchDetail';
+import { useDebounce } from '../hooks/useDebounce';
+import { useSearchList } from '../hooks/useSearchList';
 
 interface searchDetailProps {
   isFocused: boolean;
@@ -18,7 +18,7 @@ const SearchDetail = ({
   touchDetail,
 }: searchDetailProps) => {
   const name = useDebounce(pokemonName, 300);
-  const { data = [] } = useSearchDetail(name);
+  const { data = [] } = useSearchList(name);
 
   return (
     <div
