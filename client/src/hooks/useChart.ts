@@ -2,12 +2,12 @@ import { useEffect } from 'react';
 import { Chart, ChartConfiguration, ChartItem } from 'chart.js';
 
 export const useChart = (
-  type: string[],
-  ref: React.RefObject<HTMLCanvasElement>,
+  newData: string[],
+  targetRef: React.RefObject<HTMLCanvasElement>,
 ) => {
   useEffect(() => {
-    if (!ref) return;
-    const canvas = ref.current as ChartItem;
+    if (!targetRef) return;
+    const canvas = targetRef.current as ChartItem;
     const data: ChartConfiguration = {
       type: 'doughnut',
       data: {
@@ -15,7 +15,7 @@ export const useChart = (
         datasets: [
           {
             label: 'status',
-            data: type.map(Number),
+            data: newData.map(Number),
             backgroundColor: [
               '#d2381d',
               '#2b7fd3',
@@ -50,5 +50,5 @@ export const useChart = (
     };
     const chart = new Chart(canvas, data);
     return () => chart.destroy();
-  }, []);
+  }, [targetRef]);
 };
