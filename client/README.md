@@ -1,46 +1,31 @@
-# SearchBar 프로젝트
+# 검색바 프로젝트 프론트엔드 부분
 
-## 목표
+`vite` + `reactjs` + `typescript`를 이용하여 만든 프론트엔드 입니다.
 
-[이전 검색바 프로젝트](https://github.com/codingjwp/pre-onboarding-11th-4-14.git)
+## Client 정보
 
-1. 이전 로컬 캐싱을 localStorage에 했던걸 변경
-2. 반응형으로 만들기.
-3. ContextAPI 변경.
+### 폴더에 대한 정보
 
-## 실행 방법 및 설명
+- 📂 apis : recoil 대한 코드
+- 📂 assets : 간단한 이미지들
+- 📂 components : 컴포넌트 코드
+- 📂 hooks : 커스텀 훅 코드
+- 📂 pages : 페이지 레이아웃 코드
 
-**server**
+### 설치 방법
 
-1. json-server 사용.
-2. 데이터: pokemondb.json
-3. 라우터: routes.json
-4. 이미지: asset 폴더
-5. port: 4000
-
-```bash
-# git clone 후
-cd searcher-project/server
-npm install
-npm start
-```
-
-**client**
-
-1. port: 5173;
-2. [.env 파일](#env-파일)
+git clone 한 후
 
 ```bash
 cd searcher-project/client
-
-# 내용을 아래 존재
-touch .env
-
+touch .env # 아래에 .env에 입력할 내용 설명
 npm install
 npm run dev
 ```
+### port 및 .env 파일
 
-## env 파일
+- port : 5173
+- base_url : `http://localhost:4000`
 
 ```bash
 # 한국어 검색
@@ -57,32 +42,13 @@ VITE_API_IMG="http://localhost:4000/sprites/"
 VITE_API_TYPE="http://localhost:4000/types/"
 ```
 
-## API 주소
+### url 경로
+- `/` : 검색바가 있는 root 주소
+- `/db/:id` : 포켓몬 정보 카드가 나오는 주소
 
-- `/pokemonlist` : 검색바에 입력시 나타나는 검색리스트
-  - `id`: uuid
-  - `ename`: 영어이름
-  - `search`: 검색시 사용되는 이름
-  - `krname`: 한글이름
-- `/pokemondb` : 검색 후 카드 정보에 표시되는 값
-  - `id`: list랑 동일한 uuid
-  - `number`: 넘버
-  - `enname`: 영어이름
-  - `krname`: 한글이름
-  - `form1`: 첫번째 폼
-  - `form2`: 두번째 폼
-  - `form3`: 세번째 폼
-  - `form4`: 네번째 폼
-  - `form5`: 다섯번째 폼
-  - `type1`: 첫번째 타입
-  - `type2`: 두번째 타입
-  - `hp`: 체력
-  - `attack`: 공격력
-  - `defense`: 방어력
-  - `spattack`: 특수 공격력
-  - `spdefense`: 특수 방어력
-  - `speed`: 스피드
-  - `imgname`: 이미지 이름
-- `/form` : 폼 이미지
-- `/sprites` : 기본 이미지
-- `/types` : 타입 이미지
+### 사용한 라이브러리 
+![sass](https://img.shields.io/badge/sass-1.67.0-FF0000?logo=sass)
+![chart.js](https://img.shields.io/badge/chart.js-4.4.0-00FF00?logo=chart.js)
+![classnames](https://img.shields.io/badge/classnames-2.3.2-00FFFF?logo=classnames)
+![react-query](https://img.shields.io/badge/react--query-3.39.3-800000?logo=react-query)
+![recoil](https://img.shields.io/badge/recoil-0.0.7-0000FF?logo=recoil)
