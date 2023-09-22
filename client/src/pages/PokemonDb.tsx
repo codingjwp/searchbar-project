@@ -4,19 +4,24 @@ import styles from './pokemonDb.module.scss';
 import MainCard from '../components/MainCard';
 import StatusCard from '../components/StatusCard';
 import { useSearchDetail } from '../hooks/useSearchDetail';
+import { useLayoutEffect } from 'react';
 
 const PokemonDb = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const { data } = useSearchDetail(id ?? '');
-  const handelLogout = () => {
+  const handleLogout = () => {
     navigate('/');
   };
+
+  useLayoutEffect(() => {
+    if (!data) navigate('/');
+  }, [data, navigate]);
 
   return (
     <div className={styles.pokemonDbWrapper}>
       <div className={styles.pokemonDbHeader}>
-        <svg width={24} height={24} viewBox='0 0 24 24' onClick={handelLogout}>
+        <svg width={24} height={24} viewBox='0 0 24 24' onClick={handleLogout}>
           <use href={`${svg}#logout`} />
         </svg>
       </div>
@@ -46,13 +51,7 @@ const PokemonDb = () => {
             speed={data.speed}
           />
         </div>
-      ) : (
-        <div className={styles.pokemonDbContainer}>
-          <span className={styles.pokemondbNotFound}>
-            Not found Pokemon Database
-          </span>
-        </div>
-      )}
+      ) : null}
     </div>
   );
 };
