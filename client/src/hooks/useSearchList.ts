@@ -1,4 +1,5 @@
 import { useQuery } from 'react-query';
+import { useEffect, useRef, useState } from 'react';
 
 interface PokemonListProps {
   id: string;
@@ -30,10 +31,28 @@ const searchListFn = async (name: string) => {
   }
 };
 
+const useDebounce = (value: string, delay: number) => {
+  const timer = useRef<number | null>(null);
+  const [debounceValue, setDebounceValue] = useState(value);
+
+  useEffect(() => {
+    timer.current = setTimeout(() => {
+      setDebounceValue(value);
+    }, delay);
+
+    return () => {
+      if (timer.current) clearTimeout(timer.current);
+    };
+  }, [value, delay]);
+  return debounceValue;
+};
+
 export const useSearchList = (init: string) => {
+  const debounceValue = useDebounce(init, 300);
+
   return useQuery({
-    queryKey: ['pokemonlist', init],
-    queryFn: () => searchListFn(init),
+    queryKey: ['pokemonlist', debounceValue],
+    queryFn: () => searchListFn(debounceValue),
     staleTime: 1000 * 60 * 60 * 24,
     cacheTime: 1000 * 60 * 60 * 24,
   });

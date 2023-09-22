@@ -1,7 +1,6 @@
 import { MouseEvent } from 'react';
 import styles from './searchDetail.module.scss';
 import cn from 'classnames';
-import { useDebounce } from '../hooks/useDebounce';
 import { useSearchList } from '../hooks/useSearchList';
 
 interface searchDetailProps {
@@ -17,9 +16,7 @@ const SearchDetail = ({
   detailIndex,
   touchDetail,
 }: searchDetailProps) => {
-  const name = useDebounce(pokemonName, 300);
-  const { data = [] } = useSearchList(name);
-
+  const { data = [] } = useSearchList(pokemonName);
   return (
     <div
       className={cn({
