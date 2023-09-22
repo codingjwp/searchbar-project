@@ -1,0 +1,68 @@
+@import '../mixin';
+
+.searchHomeWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  &.pokeball {
+    background: linear-gradient(
+      to bottom,
+      $pokeTop 48%,
+      $ballMiddle 48% 52%,
+      $ballBottom 52% $fullSize
+    );
+  }
+
+  &.captainball {
+    background: linear-gradient(
+      to bottom,
+      $superTop 48%,
+      $ballMiddle 48% 52%,
+      $ballBottom 52% $fullSize
+    );
+  }
+
+  &.ultraball {
+    background: linear-gradient(
+      to bottom,
+      $ultraTop 48%,
+      $ballMiddle 48% 52%,
+      $ballBottom 52% $fullSize
+    );
+  }
+}
+
+.barHidden {
+  display: none;
+}
+
+@mixin urltraball($width, $height) {
+  .urltraBallBar {
+    position: fixed;
+    width: $width;
+    height: $height;
+    top: 0;
+    background: linear-gradient(to top, #f7b808 75%, #f7d47c $fullSize);
+
+    &.leftBar {
+      left: 15%;
+    }
+    &.rightBar {
+      right: 15%;
+    }
+  }
+}
+
+@include desktop {
+  @include urltraball(15%, 48%);
+}
+
+@include tablet {
+  @include urltraball(15%, 48%);
+}
+
+@include mobile {
+  @include urltraball(15%, 48%);
+}

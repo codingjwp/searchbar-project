@@ -1,0 +1,72 @@
+@import '../mixin';
+
+@mixin wrapperChange($isMobile) {
+  .pokemonDbWrapper {
+    background: radial-gradient(circle at 50% 50%, #ffffff 0%, #87ceeb 100%);
+    width: $fullSize;
+    height: calc(100vh - 4rem);
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @if $isMobile {
+      overflow: scroll;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+}
+
+@mixin cardFilp($isMobile) {
+  .pokemonDbContainer {
+    display: flex;
+    position: relative;
+    width: $fullSize;
+    justify-content: center;
+    align-items: center;
+    @if $isMobile {
+      flex-direction: column;
+    } @else {
+      flex-direction: row;
+    }
+  }
+}
+
+.pokemonDbHeader {
+  display: flex;
+  justify-content: end;
+  position: fixed;
+  align-items: center;
+  top: 0;
+  width: $fullSize;
+  height: 4rem;
+  background-color: #0782b3;
+  z-index: 10;
+  & > svg {
+    cursor: pointer;
+    margin-right: 1vw;
+  }
+}
+
+@include desktop {
+  @include wrapperChange(false);
+  @include cardFilp(false);
+}
+
+@include tablet {
+  @include wrapperChange(false);
+  @include cardFilp(false);
+}
+
+@include mobile {
+  @include wrapperChange(true);
+  @include cardFilp(true);
+}
+
+.pokemondbNotFound {
+  font-size: 3rem;
+  font-weight: 500;
+}

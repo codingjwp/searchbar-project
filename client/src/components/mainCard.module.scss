@@ -1,0 +1,149 @@
+@import '../typeColor';
+
+@keyframes cardBorder {
+  0% {
+    transform: translate(-$halfSize, -$halfSize) rotate(0deg);
+  }
+  100% {
+    transform: translate(-$halfSize, -$halfSize) rotate(360deg);
+  }
+}
+
+@mixin mainCardDevice($ismobile, $width, $height) {
+  .mainCard {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    min-width: $width;
+    min-height: $height;
+    @if $ismobile {
+      margin-bottom: 0.3rem;
+    } @else {
+      margin-right: 0.5rem;
+    }
+  }
+
+  .mainCardContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    width: $fullSize;
+    height: $fullSize;
+    inset: 0;
+    box-sizing: border-box;
+    border-radius: 1.2rem;
+    padding: 2rem 2rem 2rem 2rem;
+    overflow: hidden;
+    &::before {
+      content: '';
+      position: absolute;
+      top: $halfSize;
+      left: $halfSize;
+      width: calc($width + 26rem);
+      height: 15rem;
+      background: linear-gradient(
+        transparent,
+        #e3d984,
+        #edd74e,
+        #e3d984,
+        transparent
+      );
+      @include animation(cardBorder, 4s, linear, infinite);
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0.8rem;
+      border-radius: 1.2rem;
+    }
+    & .mainCardImgCover,
+    & span,
+    & .formCover {
+      z-index: 1;
+    }
+  }
+
+  .mainCardImgCover {
+    background-color: #ffffff;
+    overflow: hidden;
+    border-radius: 3rem;
+    display: flex;
+    justify-content: center;
+    @if $ismobile {
+      width: calc($width - 12rem);
+      height: calc($height - 16rem);
+    } @else {
+      width: calc($width - 12rem);
+      height: calc($height - 22rem);
+    }
+  }
+
+  .mainCardImg {
+    @if $ismobile {
+      width: calc($width - 14rem);
+      height: calc($height - 18rem);
+    } @else {
+      width: calc($width - 14rem);
+      height: calc($height - 24rem);
+    }
+  }
+
+  .mainCardTitle {
+    @if $ismobile {
+      font-size: 1.6rem;
+    } @else {
+      font-size: 2.5rem;
+    }
+    font-weight: bolder;
+    letter-spacing: 0.3rem;
+  }
+  .mainCardEnName {
+    @if $ismobile {
+      font-size: 1.2rem;
+    } @else {
+      font-size: 1.5rem;
+    }
+  }
+
+  .formCover {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+    @if $ismobile {
+      font-size: 1rem;
+    } @else {
+      font-size: 1.4rem;
+    }
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+  }
+}
+
+.titleMarginTop {
+  margin-top: 0.5rem;
+}
+.titleMarginMiddle {
+  margin: 0.3rem 0;
+}
+
+.hidden {
+  display: none;
+}
+
+@include typeCardColor(true);
+
+@include desktop {
+  @include mainCardDevice(false, 36rem, 46rem);
+}
+
+@include tablet {
+  @include mainCardDevice(false, 36rem, 46rem);
+}
+
+@include mobile {
+  @include mainCardDevice(true, 26rem, 30rem);
+}

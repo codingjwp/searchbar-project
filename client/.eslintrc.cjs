@@ -4,15 +4,29 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'plugin:react-hooks/recommended',
+    'prettier',
   ],
-  ignorePatterns: ['dist', '.eslintrc.cjs'],
+  ignorePatterns: ['dist', '.eslintrc.cjs', '.prettierrc.cjs', 'node_modules/', '*.{json, md}'],
   parser: '@typescript-eslint/parser',
-  plugins: ['react-refresh'],
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: true,
+    tsconfigRootDir: __dirname,
+  },
+  plugins: ['react-refresh', 'prettier'],
   rules: {
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true },
     ],
+    'no-dupe-keys': 'error',
+    'no-dupe-args': 'error',
+    'no-console': ['error', { allow: ['warn', 'error'] }],
+    'no-duplicate-imports': 'error',
+    '@typescript-eslint/no-non-null-assertion': 'off',
+    'prettier/prettier': 'error',
   },
 }

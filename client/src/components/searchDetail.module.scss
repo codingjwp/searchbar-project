@@ -1,0 +1,60 @@
+@import '../mixin';
+
+.hidden {
+  display: none;
+}
+
+@mixin searchFoucuse($isdesktop) {
+  .searchBarDetail {
+    display: block;
+    width: $fullSize;
+    overflow-y: auto;
+    & .searchBarDetailCover {
+      margin: 0;
+      padding: 0;
+      border-radius: 0 0 0.5rem 0.5rem;
+      border-top: 0;
+      @if $isdesktop == false {
+        height: 100vh;
+        background-color: #31343855;
+      }
+    }
+    @if $isdesktop {
+      position: absolute;
+      top: 5.9rem;
+      max-width: 40rem;
+    }
+  }
+  .searchBarDetailBox {
+    list-style: none;
+    padding: 1rem;
+    font-size: 1.6rem;
+    border-left: 0.5rem solid $ballMiddle;
+    border-right: 0.5rem solid $ballMiddle;
+    border-bottom: 0.1rem solid $ballMiddle;
+    background-color: $ballBottom;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    & sub {
+      pointer-events: none;
+    }
+    &:last-child {
+      border-bottom: 0.5rem solid $ballMiddle;
+    }
+  }
+}
+
+@include desktop {
+  @include searchFoucuse(true);
+}
+@include tablet {
+  @include searchFoucuse(false);
+}
+@include mobile {
+  @include searchFoucuse(false);
+}
+
+.indexCheck {
+  background-color: #00aaff;
+}

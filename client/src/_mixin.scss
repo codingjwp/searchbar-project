@@ -1,0 +1,26 @@
+@import './variables';
+
+@mixin mobile {
+  @media screen and (max-width: $breakPointMobile) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: $breakPointTablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: $breakPointDesktop) {
+    @content;
+  }
+}
+
+@mixin animation($name, $duration, $timing, $count) {
+  animation-name: $name;
+  animation-duration: $duration;
+  animation-timing-function: $timing;
+  animation-iteration-count: $count;
+}

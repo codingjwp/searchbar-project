@@ -1,0 +1,47 @@
+html {
+  font-size: 62.5%;
+}
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+main {
+  display: block;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0.67rem 0;
+}
+
+a {
+  text-decoration: none;
+  background-color: transparent;
+  color: #000000;
+}
+
+a:hover,
+a:active {
+  text-decoration: underline;
+}
+
+button {
+  appearance: none;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+}
+
+img {
+  border-style: none;
+}
+
+[type='search'] {
+  appearance: textfield;
+  outline-offset: -2px;
+}
+
+[type='search']::-webkit-search-decoration {
+  -webkit-appearance: none;
+}

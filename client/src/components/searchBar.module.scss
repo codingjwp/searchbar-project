@@ -1,0 +1,160 @@
+@import '../mixin';
+
+@mixin searchBarBase($width, $height, $isdesktop) {
+  .searchBar {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  .searchBarCover {
+    width: $fullSize;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .searchBarInput {
+    width: $width;
+    height: $height;
+    padding: 1.5rem;
+    border: 0.5rem solid $ballMiddle;
+    border-radius: $halfSize;
+    transform: scale(2);
+    background-color: $ballBottom;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  .searchBarBtn {
+    position: absolute;
+    border: 0;
+    width: $width;
+    height: $height;
+    padding: 1.5rem;
+    background-color: $ballBottom;
+    &:hover,
+    &:active {
+      background-color: #d5d2d2;
+    }
+  }
+}
+
+@mixin searchBarIsFocus($isdesktop) {
+  .searchBarFocus {
+    width: $fullSize;
+    border-radius: 1.5rem;
+    @if $isdesktop {
+      max-width: 40rem;
+    } @else {
+      position: fixed;
+      top: 0;
+    }
+    .searchBarCover {
+      position: relative;
+    }
+    .searchBarInput {
+      width: $fullSize;
+      font-size: 1.6rem;
+      border-radius: 0.5rem 0 0 0.5rem;
+      border: 0.5rem solid $ballMiddle;
+      padding: 1.5rem 0.5rem 1.5rem 1.5rem;
+      border-right: 0;
+      transform: scale(1);
+      @if $isdesktop {
+        max-width: 34rem;
+      }
+    }
+    .searchBarBtn {
+      position: relative;
+      border: 0.5rem solid $ballMiddle;
+      border-left: 0;
+      border-radius: 0 0.5rem 0.5rem 0;
+    }
+  }
+}
+
+@mixin searchBarBtnObject(
+  $ismobile,
+  $beforeTop,
+  $beforeLeft,
+  $afterTop,
+  $afterLeft
+) {
+  .searchBarBtn::before,
+  .searchBarBtn::after {
+    content: '';
+    display: block;
+    position: absolute;
+  }
+  .searchBarBtn {
+    &::before {
+      top: $beforeTop;
+      left: $beforeLeft;
+      border-radius: $halfSize;
+      border: 0.3rem solid $ballMiddle;
+      @if $ismobile {
+        width: 1.5rem;
+        height: 1.5rem;
+      } @else {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+    &::after {
+      top: $afterTop;
+      left: $afterLeft;
+      border-radius: 0 0.25rem 0.25rem 0;
+      transform: rotate(45deg);
+      width: 0.75rem;
+      height: 0.3rem;
+      background-color: $ballMiddle;
+    }
+  }
+}
+
+.searchBarBtnFocuse {
+  position: absolute;
+  z-index: -1;
+  background-color: transparent;
+}
+
+.searchBarSpan {
+  display: inline-block;
+  overflow: hidden;
+  width: 0.1rem;
+  height: 0.1rem;
+}
+.searchBar,
+.searchBarInput:not(:focus),
+.searchBarBtn {
+  cursor: pointer;
+}
+.searchBarInput:focus,
+.searchBar:focus ~ .searchBarInput:not(:focus) {
+  outline: none;
+}
+.searchBarInput,
+.searchBarBtn {
+  transition: all 0.25s ease-out;
+}
+.hidden {
+  display: none;
+}
+
+@include desktop {
+  @include searchBarBase(6rem, 6rem, true);
+  @include searchBarIsFocus(true);
+  @include searchBarBtnObject(false, 1.2rem, 1.4rem, 3.5rem, 3.3rem);
+}
+@include tablet {
+  @include searchBarBase(5rem, 5rem, false);
+  @include searchBarIsFocus(false);
+  @include searchBarBtnObject(false, 0.6rem, 0.6rem, 2.8rem, 2.5rem);
+}
+@include mobile {
+  @include searchBarBase(3.5rem, 3.5rem, false);
+  @include searchBarIsFocus(false);
+  @include searchBarBtnObject(true, 0.4rem, 0.4rem, 2.2rem, 1.9rem);
+}
