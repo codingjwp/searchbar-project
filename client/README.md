@@ -1,6 +1,6 @@
 # 검색바 프로젝트 프론트엔드 부분
 
-`vite` + `reactjs` + `typescript`를 이용하여 만든 프론트엔드 입니다.
+`vite` + `reactjs` + `typescript`를 이용하여 만든 검색바, 검색리스트 프론트엔드 입니다.
 
 ## Client 정보
 
@@ -22,6 +22,22 @@ touch .env # 아래에 .env에 입력할 내용 설명
 npm install
 npm run dev
 ```
+
+### husky 사용방법
+
+client 폴더 안에 package를 만들었기 때문에 .git과 장소가 달라져서 `npm install`시 husky가 설치되도록 하지 못하였기 때문에 따로 적용해야합니다.
+
+git clone 한 후
+
+```bash
+cd searcher-project/client
+npm install
+npm before
+cd ..
+# git add 및 git commit 시 eslint, prettier 적용.
+```
+
+
 ### port 및 .env 파일
 
 - port : 5173
