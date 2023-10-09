@@ -77,11 +77,9 @@ const SearchBar = ({ name }: SearchBarProps) => {
   };
 
   return (
-    <div
-      className={cn(styles.searchBar, { [styles.searchBarFocus]: isFocused })}>
-      <div className={styles.searchBarCover}>
+    <div className={cn(styles.search, { [styles.bar_focus]: isFocused })}>
+      <div className={styles.cover}>
         <input
-          className={styles.searchBarInput}
           aria-label='search-input'
           name={name}
           ref={textRef}
@@ -93,11 +91,10 @@ const SearchBar = ({ name }: SearchBarProps) => {
           onChange={searchTextChange}
           value={searchText}
           onKeyDown={hasSearchDetailIndex}
-          autoComplete='off'
-        />
+          autoComplete='off' />
         <button
-          className={cn(styles.searchBarBtn, {
-            [styles.searchBarBtnFocuse]: !isFocused,
+          className={cn(styles.btn_search, {
+            [styles.btn_focus]: isFocused,
           })}
           title={name}
           name={name}
@@ -106,7 +103,7 @@ const SearchBar = ({ name }: SearchBarProps) => {
           onBlur={handleFocusChange}
           onClick={movePokemonDb}
           onTouchStart={movePokemonDb}>
-          <span className={styles.searchBarSpan}>Search</span>
+          <span className={styles.hidden_text}>Search</span>
         </button>
       </div>
       <Suspense fallback={<ListSkeleton />}>

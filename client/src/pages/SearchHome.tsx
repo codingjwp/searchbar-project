@@ -4,33 +4,32 @@ import cn from 'classnames';
 
 const randomIndex = Math.floor(Math.random() * 3);
 
+const styleChangeForm = () => {
+  const searchWrap = cn(styles.search_wrap, {
+    [styles.base_ball]: randomIndex === 0,
+    [styles.captain_ball]: randomIndex === 1,
+    [styles.ultra_ball]: randomIndex === 2,
+  });
+  const leftBar = cn({
+    'hide': randomIndex !== 2,
+    [styles.bar_group]: randomIndex === 2,
+    [styles.left_bar]: randomIndex === 2,
+  });
+  const rightBar = cn({
+    'hide': randomIndex !== 2,
+    [styles.bar_group]: randomIndex === 2,
+    [styles.right_bar]: randomIndex === 2,
+  });
+  return [searchWrap, leftBar, rightBar];
+}
+
 const SearchHome = () => {
-  const ballDesign = (randomIndex: number, checkNum: number) => {
-    if (randomIndex === checkNum) return true;
-    return false;
-  };
-  const searchHomeWrapper = cn(styles.searchHomeWrapper, {
-    [styles.pokeball]: ballDesign(randomIndex, 0),
-    [styles.captainball]: ballDesign(randomIndex, 1),
-    [styles.ultraball]: ballDesign(randomIndex, 2),
-  });
-  const barLeftDesign = cn({
-    [styles.barHidden]:
-      ballDesign(randomIndex, 0) || ballDesign(randomIndex, 1),
-    [styles.urltraBallBar]: ballDesign(randomIndex, 2),
-    [styles.leftBar]: ballDesign(randomIndex, 2),
-  });
-  const barRightDesign = cn({
-    [styles.barHidden]:
-      ballDesign(randomIndex, 0) || ballDesign(randomIndex, 1),
-    [styles.urltraBallBar]: ballDesign(randomIndex, 2),
-    [styles.rightBar]: ballDesign(randomIndex, 2),
-  });
+  const [searchWrap, leftBar, rightBar] = styleChangeForm();
 
   return (
-    <div className={searchHomeWrapper}>
-      <div className={barLeftDesign} />
-      <div className={barRightDesign} />
+    <div className={searchWrap}>
+      <div className={leftBar} />
+      <div className={rightBar} />
       <SearchBar name='pokemon-search-bar' />
     </div>
   );

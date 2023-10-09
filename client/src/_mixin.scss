@@ -1,19 +1,30 @@
-@import './variables';
+@mixin tablet2 {
+  @media all and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop2 {
+  @media all and (min-width: 1024px) {
+    @content;
+  }
+}
+
 
 @mixin mobile {
-  @media screen and (max-width: $breakPointMobile) {
+  @media screen and (max-width: 767px) {
     @content;
   }
 }
 
 @mixin tablet {
-  @media screen and (max-width: $breakPointTablet) {
+  @media screen and (max-width: 1023px) {
     @content;
   }
 }
 
 @mixin desktop {
-  @media screen and (min-width: $breakPointDesktop) {
+  @media screen and (min-width: 1024px) {
     @content;
   }
 }
