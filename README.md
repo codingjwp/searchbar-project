@@ -51,9 +51,21 @@ server에 대한 정보 [README.md](./server/README.md)
 
 ### 모바일
 
+| 기본화면 | 검색바 적용화면 | 카드 화면 |
+|:---:|:---:|:---:|
+| <img width="390" alt="Screen Shot 2023-10-09 at 9 03 07 AM" src="https://github.com/codingjwp/searcher-project/assets/113403155/da3fe38d-8f2f-42cb-b808-d3d244ba3e29"> | <img width="390" alt="Screen Shot 2023-10-09 at 9 03 14 AM" src="https://github.com/codingjwp/searcher-project/assets/113403155/8611b330-98de-4822-941b-27e6b0349dff"> | <img width="390" alt="2" src="https://github.com/codingjwp/searcher-project/assets/113403155/2ff243a3-3e61-4bcd-be87-858b064a929d"> |
+
 ### 태블릿
 
+| 검색바 적용화면 | 카드 화면 |
+|:---:|:---:|
+|<img width="390" alt="3" src="https://github.com/codingjwp/searcher-project/assets/113403155/65f68e51-6bbc-4744-8431-199bea5e4f72"> | <img width="390" alt="Screen Shot 2023-10-09 at 9 02 01 AM" src="https://github.com/codingjwp/searcher-project/assets/113403155/0987d9f8-31e6-4270-bf46-7325ba93d290"> |
+
 ### 데스크탑
+
+| 검색바 적용화면 | 카드 화면 |
+|:---:|:---:|
+| <img width="390" alt="5" src="https://github.com/codingjwp/searcher-project/assets/113403155/a1dcc138-f277-463f-8f1c-b714b48e30c3"> | <img width="390" alt="6" src="https://github.com/codingjwp/searcher-project/assets/113403155/d861ad68-42f9-45e5-9848-eb9cc152eca0"> |
 
 ## 추가적 구현 기능
 
