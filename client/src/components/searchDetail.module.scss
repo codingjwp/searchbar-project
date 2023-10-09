@@ -1,68 +1,39 @@
-@import '../mixin';
-
-.hidden {
-  display: none;
+.search_detail {
+  width: 100%;
+  overflow-y: auto;
+  position: relative;
 }
-
-@mixin searchFoucuse($isdesktop) {
-  .searchBarDetail {
+.search_detail .inner {
+  &::after {
+    content: '';
     display: block;
     width: 100%;
-    overflow-y: auto;
-
-    & .searchBarDetailCover {
-      margin: 0;
-      padding: 0;
-      border-radius: 0 0 0.5rem 0.5rem;
-      border-top: 0;
-
-      @if $isdesktop ==false {
-        height: 100vh;
-        background-color: #31343855;
-      }
-    }
-
-    @if $isdesktop {
+    height: 100vh;
+    background-color: #31343855;
+  }
+  /*
+      @if $isdesktop {
       position: absolute;
       top: 5.9rem;
       max-width: 40rem;
-    }
-  }
+    }*/
+}
 
-  .searchBarDetailBox {
-    list-style: none;
-    padding: 1rem;
-    font-size: 1.6rem;
-    border-left: 0.5rem solid var(--base-ball-middle);
-    border-right: 0.5rem solid var(--base-ball-middle);
-    border-bottom: 0.1rem solid var(--base-ball-middle);
-    background-color: var(--base-ball-bottom);
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-
-    & sub {
-      pointer-events: none;
-    }
-
-    &:last-child {
-      border-bottom: 0.5rem solid var(--base-ball-middle);
-    }
+.search_detail li {
+  padding: 1rem;
+  font-size: 1.6rem;
+  border-width: 0 0.5rem 0.1rem 0.5rem;
+  border-style: solid;
+  border-color: var(--base-ball-middle);
+  background-color: var(--base-ball-bottom);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  &:last-child {
+    border-bottom: 0.5rem solid var(--base-ball-middle);
   }
 }
 
-@include desktop {
-  @include searchFoucuse(true);
-}
-
-@include tablet {
-  @include searchFoucuse(false);
-}
-
-@include mobile {
-  @include searchFoucuse(false);
-}
-
-.indexCheck {
-  background-color: #00aaff;
+.search_detail .index_bgcolor {
+  background-color: #3399ff;
 }

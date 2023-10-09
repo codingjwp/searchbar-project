@@ -30,14 +30,6 @@ export const useChart = (
       },
       options: {
         responsive: true,
-        layout: {
-          padding: {
-            left: 20,
-            right: 20,
-            top: 20,
-            bottom: 20,
-          },
-        },
         plugins: {
           legend: {
             display: false,

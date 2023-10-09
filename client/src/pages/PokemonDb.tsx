@@ -19,14 +19,18 @@ const PokemonDb = () => {
   }, [data, navigate]);
 
   return (
-    <div className={styles.pokemonDbWrapper}>
-      <div className={styles.pokemonDbHeader}>
-        <svg width={24} height={24} viewBox='0 0 24 24' onClick={handleLogout}>
+  <>
+    <header className={styles.db_header}>
+      <button type='button'>
+        <svg width={32} height={32} viewBox='0 0 24 24' onClick={handleLogout}>
           <use href={`${svg}#logout`} />
         </svg>
-      </div>
+        <span className={styles.hidden_text}>logout</span>
+      </button>
+    </header>
+    <main className={styles.db_container}>
       {data ? (
-        <div className={styles.pokemonDbContainer}>
+        <div className={styles.inner}>
           <MainCard
             id={data.id}
             number={data.number}
@@ -52,7 +56,8 @@ const PokemonDb = () => {
           />
         </div>
       ) : null}
-    </div>
+    </main>
+  </>
   );
 };
 

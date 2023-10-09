@@ -54,16 +54,11 @@ const MainCard = ({
   };
 
   return (
-    <div className={styles.mainCard}>
-      <div
-        className={cn(
-          styles.mainCardContainer,
-          getTypeStyle(type1.toLowerCase()),
-        )}>
-        <div className={cn(styles.mainCardImgCover)}>
+    <div className={cn(styles.main_card_wrap, getTypeStyle(type1.toLowerCase()))}>
+      <div className={styles.inner}>
+        <div className={cn(styles.img_cover)}>
           <img
             ref={imgRef}
-            className={styles.mainCardImg}
             src={imgSrc}
             alt={enname}
             onError={(e: SyntheticEvent<HTMLImageElement>) =>
@@ -71,28 +66,26 @@ const MainCard = ({
             }
           />
         </div>
-        <span className={cn(styles.mainCardTitle, styles.titleMarginTop)}>
-          #{number}
-        </span>
-        <span className={cn(styles.mainCardTitle, styles.titleMarginMiddle)}>
-          {krname}
-        </span>
-        <span className={styles.mainCardEnName}>{enname}</span>
-        <div
-          className={formList.length === 0 ? styles.hidden : styles.formCover}
-          onMouseOver={handleOverFormImg}
-          onMouseLeave={handleOverFormImg}>
-          {formList.length !== 0 &&
-            formList.map((item) => {
-              if (item !== '')
-                return (
-                  <span key={item} className={styles.formSpan}>
-                    {item}
-                  </span>
-                );
-            })}
+        <div className={styles.info}>
+          <em className={styles.card_title}>#{number}</em>
+          <em className={styles.card_title}>{krname}</em>
+          <em className={styles.card_sub_title}>{enname}</em>
+          <div
+            className={formList.length === 0 ? styles.hidden : styles.formCover}
+            onMouseOver={handleOverFormImg}
+            onMouseLeave={handleOverFormImg}>
+            {formList.length !== 0 &&
+              formList.map((item) => {
+                if (item !== '')
+                  return (
+                    <span key={item} className={styles.form_text}>
+                      {item}
+                    </span>
+                  );
+              })}
+          </div>
+          <span className={styles.hidden_text}>{id}</span>
         </div>
-        <span className={styles.hidden}>{id}</span>
       </div>
     </div>
   );
@@ -101,41 +94,41 @@ const MainCard = ({
 function getTypeStyle(type: string) {
   switch (type) {
     case 'bug':
-      return `${styles.bugType}`;
+      return `${styles.bug_type}`;
     case 'dark':
-      return `${styles.darkType}`;
+      return `${styles.dark_type}`;
     case 'dragon':
-      return `${styles.dragonType}`;
+      return `${styles.dragon_type}`;
     case 'electric':
-      return `${styles.electricType}`;
+      return `${styles.electric_type}`;
     case 'fighting':
-      return `${styles.fightingType}`;
+      return `${styles.fighting_type}`;
     case 'fairy':
-      return `${styles.fairyType}`;
+      return `${styles.fairy_type}`;
     case 'flying':
-      return `${styles.flyingType}`;
+      return `${styles.flying_type}`;
     case 'fire':
-      return `${styles.fireType}`;
+      return `${styles.fire_type}`;
     case 'grass':
-      return `${styles.grassType}`;
+      return `${styles.grass_type}`;
     case 'ghost':
-      return `${styles.ghostType}`;
+      return `${styles.ghost_type}`;
     case 'ground':
-      return `${styles.groundType}`;
+      return `${styles.ground_type}`;
     case 'ice':
-      return `${styles.iceType}`;
+      return `${styles.ice_type}`;
     case 'normal':
-      return `${styles.normalType}`;
+      return `${styles.normal_type}`;
     case 'poison':
-      return `${styles.poisonType}`;
+      return `${styles.poison_type}`;
     case 'psychic':
-      return `${styles.psychicType}`;
+      return `${styles.psychic_type}`;
     case 'rock':
-      return `${styles.rockType}`;
+      return `${styles.rock_type}`;
     case 'steel':
-      return `${styles.steelType}`;
+      return `${styles.steel_type}`;
     case 'water':
-      return `${styles.waterType}`;
+      return `${styles.water_type}`;
     default:
       return '';
   }

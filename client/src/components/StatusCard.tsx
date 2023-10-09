@@ -30,28 +30,35 @@ const StatusCard = ({
   useChart([hp, attack, defense, spattack, spdefense, speed], canvasRef);
 
   return (
-    <div className={styles.statusCard}>
-      <div
-        className={cn(
-          styles.statusCardContainer,
-          getTypeStyle(type1.toLowerCase()),
-        )}>
-        <canvas ref={canvasRef} />
-        <div className={styles.statusCardImgCover}>
-          <img
-            className={cn(styles.statusCardTypeImg, {
-              [styles.statusMarginRight]: type2 !== '',
-            })}
-            src={`${import.meta.env.VITE_API_TYPE}${type1}.png`}
-            alt={type1}
-          />
-          {type2 !== '' ? (
+    <div className={cn(styles.status_card_wrap, getTypeStyle(type1.toLowerCase()))}>
+      <div className={styles.inner}>
+        <div className={styles.status_canvas}>
+          <canvas ref={canvasRef} />
+        </div>
+        <div className={styles.info}>
+          <span className={styles.status_text}>Hp : {hp}</span>
+          <span className={styles.status_text}>Speed : {speed}</span>
+          <span className={styles.status_text}>Attack : {attack}</span>
+          <span className={styles.status_text}>Defense : {defense}</span>
+          <span className={styles.status_text}>Spattack : {spattack}</span>
+          <span className={cn(styles.status_text, styles.status_last_text)}>Spdefense : {spdefense}</span>
+          <div className={styles.img_group}>
+            <span className={cn(styles.status_text, styles.margin_right_add)}>Type: </span>
             <img
-              className={styles.statusCardTypeImg}
-              src={`${import.meta.env.VITE_API_TYPE}${type2}.png`}
-              alt={type2}
+              className={cn(styles.type_img, styles.margin_right_add, {
+                [styles.statusMarginRight]: type2 !== '',
+              })}
+              src={`${import.meta.env.VITE_API_TYPE}${type1}.png`}
+              alt={type1}
             />
-          ) : null}
+            {type2 !== '' ? (
+              <img
+                className={styles.type_img}
+                src={`${import.meta.env.VITE_API_TYPE}${type2}.png`}
+                alt={type2}
+              />
+            ) : null}
+          </div>
         </div>
       </div>
     </div>
@@ -61,41 +68,41 @@ const StatusCard = ({
 function getTypeStyle(type: string) {
   switch (type) {
     case 'bug':
-      return `${styles.bugType}`;
+      return `${styles.bug_type}`;
     case 'dark':
-      return `${styles.darkType}`;
+      return `${styles.dark_type}`;
     case 'dragon':
-      return `${styles.dragonType}`;
+      return `${styles.dragon_type}`;
     case 'electric':
-      return `${styles.electricType}`;
+      return `${styles.electric_type}`;
     case 'fighting':
-      return `${styles.fightingType}`;
+      return `${styles.fighting_type}`;
     case 'fairy':
-      return `${styles.fairyType}`;
+      return `${styles.fairy_type}`;
     case 'flying':
-      return `${styles.flyingType}`;
+      return `${styles.flying_type}`;
     case 'fire':
-      return `${styles.fireType}`;
+      return `${styles.fire_type}`;
     case 'grass':
-      return `${styles.grassType}`;
+      return `${styles.grass_type}`;
     case 'ghost':
-      return `${styles.ghostType}`;
+      return `${styles.ghost_type}`;
     case 'ground':
-      return `${styles.groundType}`;
+      return `${styles.ground_type}`;
     case 'ice':
-      return `${styles.iceType}`;
+      return `${styles.ice_type}`;
     case 'normal':
-      return `${styles.normalType}`;
+      return `${styles.normal_type}`;
     case 'poison':
-      return `${styles.poisonType}`;
+      return `${styles.poison_type}`;
     case 'psychic':
-      return `${styles.psychicType}`;
+      return `${styles.psychic_type}`;
     case 'rock':
-      return `${styles.rockType}`;
+      return `${styles.rock_type}`;
     case 'steel':
-      return `${styles.steelType}`;
+      return `${styles.steel_type}`;
     case 'water':
-      return `${styles.waterType}`;
+      return `${styles.water_type}`;
     default:
       return '';
   }

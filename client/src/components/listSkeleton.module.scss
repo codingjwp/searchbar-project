@@ -55,7 +55,7 @@
   width: 40%;
   height: 100%;
   border-radius: 1.5rem;
-  background: linear-gradient(to right, transparent, var(--type-before-normal), transparent, var(--type-before-normal));
+  background: linear-gradient(to right, transparent, #aaaa99, transparent, #aaaa99);
   background-size: 400%;
   will-change: skeletonLinear;
   @include animation(skeletonLinear, 1s, ease, infinite);

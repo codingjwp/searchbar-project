@@ -8,43 +8,8 @@
   --base-ball-bottom: #ECEBE9;
   --header-color: #039EDC;
 
-  --type-before-normal: #aaaa99;
-  --type-before-fire: #ff4422;
-  --type-before-water: #3399ff;
-  --type-before-electric: #ffcc33;
-  --type-before-grass: #77cc55;
-  --type-before-ice: #66ccff;
-  --type-before-fight: #bb5544;
-  --type-before-poison: #aa5599;
-  --type-before-ground: #ddbb55;
-  --type-before-flying: #8899ff;
-  --type-before-psychic: #ff5599;
-  --type-before-bug: #aabb22;
-  --type-before-rock: #bbaa66;
-  --type-before-ghost: #6666bb;
-  --type-before-dragon: #7766ee;
-  --type-before-dark: #775544;
-  --type-before-steel: #aaaabb;
-  --type-before-fairy: #ee99ee;
-
-  --type-after-normal: #858577;
-  --type-after-fire: #d2381d;
-  --type-after-water: #2b7fd3;
-  --type-after-electric: #d1a72a;
-  --type-after-grass: #5da042;
-  --type-after-ice: #56aeda;
-  --type-after-fight: #9b4738;
-  --type-after-poison: #8b457d;
-  --type-after-ground: #b79b47;
-  --type-after-flying: #7685db;
-  --type-after-psychic: #d2477f;
-  --type-after-bug: #8b9a1d;
-  --type-after-rock: #958853;
-  --type-after-ghost: #515193;
-  --type-after-dragon: #6153bd;
-  --type-after-dark: #5b4134;
-  --type-after-steel: #777783;
-  --type-after-fairy: #bf7dbf;
+  --card-border-color1: #e3d984;
+  --card-border-color2: #edd74e;
 }
 
 /* reset */
@@ -87,6 +52,17 @@ input {
 img {
   vertical-align: top;
   border-style: none;
+}
+
+ul {
+  list-style: none;
+}
+ul, li {
+  margin: 0;
+  padding: 0;
+}
+sub {
+  pointer-events: none;
 }
 
 [type='search'] {

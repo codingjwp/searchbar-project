@@ -19,19 +19,14 @@ const SearchDetail = ({
   const { data = [] } = useSearchList(pokemonName);
   return (
     <div
-      className={cn({
-        [styles.searchBarDetail]: isFocused,
-        [styles.hidden]: !isFocused,
-      })}
+      className={cn({[styles.search_detail]: isFocused, 'hide': !isFocused,})}
       onClick={touchDetail}>
-      <ul className={styles.searchBarDetailCover}>
+      <ul className={styles.inner}>
         {data?.length !== 0 ? (
           data.map((item, index) => {
             return (
               <li
-                className={cn(styles.searchBarDetailBox, {
-                  [styles.indexCheck]: detailIndex === index,
-                })}
+                className={cn({[styles.index_bgcolor]: detailIndex === index,})}
                 key={item.id}
                 id={item.id}
                 aria-label={item.krname}>
@@ -41,7 +36,7 @@ const SearchDetail = ({
             );
           })
         ) : (
-          <li title='no-search' className={styles.searchBarDetailBox}>
+          <li title='no-search'>
             검색어가 존재하지 않습니다.
           </li>
         )}

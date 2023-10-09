@@ -5,11 +5,11 @@ import {
   RouterProvider,
 } from 'react-router-dom';
 import SearchHome from './pages/SearchHome';
-// import PokemonDb from './pages/PokemonDb';
+import PokemonDb from './pages/PokemonDb';
 import ErrorBoundary from './apis/ErrorBoundary';
 // import ErrorModal from './components/ErrorModal';
 import { QueryClient, QueryClientProvider } from 'react-query';
-// import { Suspense } from 'react';
+import { Suspense } from 'react';
 
 const routerElements = createBrowserRouter(
   createRoutesFromElements(
@@ -22,7 +22,7 @@ const routerElements = createBrowserRouter(
           </ErrorBoundary>
         }
       />
-      {/* <Route
+      <Route
         path='db/:id'
         element={
           <ErrorBoundary>
@@ -32,7 +32,7 @@ const routerElements = createBrowserRouter(
           </ErrorBoundary>
         }
       />
-      <Route
+      {/* <Route
         path='*'
         element={
           <ErrorModal
