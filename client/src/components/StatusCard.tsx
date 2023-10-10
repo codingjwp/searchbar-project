@@ -84,23 +84,3 @@ function getTypeStyle(type: string) {
 }
 
 export default StatusCard;
-
-{
-  /* <div className={styles.img_group}>
-<span className={cn(styles.status_text, styles.margin_right_add)}>Type: </span>
-<img
-  className={cn(styles.type_img, styles.margin_right_add, {
-    [styles.statusMarginRight]: type2 !== '',
-  })}
-  src={`${import.meta.env.VITE_API_TYPE}${type1}.png`}
-  alt={type1}
-/>
-{type2 !== '' ? (
-  <img
-    className={styles.type_img}
-    src={`${import.meta.env.VITE_API_TYPE}${type2}.png`}
-    alt={type2}
-  />
-) : null}
-</div> */
-}

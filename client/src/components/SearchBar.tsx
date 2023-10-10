@@ -91,7 +91,8 @@ const SearchBar = ({ name }: SearchBarProps) => {
           onChange={searchTextChange}
           value={searchText}
           onKeyDown={hasSearchDetailIndex}
-          autoComplete='off' />
+          autoComplete='off'
+        />
         <button
           className={cn(styles.btn_search, {
             [styles.btn_focus]: isFocused,

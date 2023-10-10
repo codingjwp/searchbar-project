@@ -20,6 +20,7 @@ interface MainCardProps {
   form5: string;
   imgname: string;
   type1: string;
+  type2: string;
 }
 
 const MainCard = ({
@@ -34,6 +35,7 @@ const MainCard = ({
   form5,
   imgname,
   type1,
+  type2,
 }: MainCardProps) => {
   const [imgSrc, setImgSrc] = useState(
     `${import.meta.env.VITE_API_IMG}${imgname}`,
@@ -66,6 +68,20 @@ const MainCard = ({
               (e.currentTarget.src = '/src/assets/default.avif')
             }
           />
+          <div className={styles.type_group}>
+            <img
+              className={styles.type_img}
+              src={`${import.meta.env.VITE_API_TYPE}${type1}.png`}
+              alt={type1}
+            />
+            {type2 !== '' ? (
+              <img
+                className={styles.type_img}
+                src={`${import.meta.env.VITE_API_TYPE}${type2}.png`}
+                alt={type2}
+              />
+            ) : null}
+          </div>
         </div>
         <div className={styles.info}>
           <em className={styles.card_title}>#{number}</em>

@@ -11,17 +11,17 @@ const styleChangeForm = () => {
     [styles.ultra_ball]: randomIndex === 2,
   });
   const leftBar = cn({
-    'hide': randomIndex !== 2,
+    hide: randomIndex !== 2,
     [styles.bar_group]: randomIndex === 2,
     [styles.left_bar]: randomIndex === 2,
   });
   const rightBar = cn({
-    'hide': randomIndex !== 2,
+    hide: randomIndex !== 2,
     [styles.bar_group]: randomIndex === 2,
     [styles.right_bar]: randomIndex === 2,
   });
   return [searchWrap, leftBar, rightBar];
-}
+};
 
 const SearchHome = () => {
   const [searchWrap, leftBar, rightBar] = styleChangeForm();

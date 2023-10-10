@@ -19,14 +19,16 @@ const SearchDetail = ({
   const { data = [] } = useSearchList(pokemonName);
   return (
     <div
-      className={cn({[styles.search_detail]: isFocused, 'hide': !isFocused,})}
+      className={cn({ [styles.search_detail]: isFocused, hide: !isFocused })}
       onClick={touchDetail}>
       <ul className={styles.inner}>
         {data?.length !== 0 ? (
           data.map((item, index) => {
             return (
               <li
-                className={cn({[styles.index_bgcolor]: detailIndex === index,})}
+                className={cn({
+                  [styles.index_bgcolor]: detailIndex === index,
+                })}
                 key={item.id}
                 id={item.id}
                 aria-label={item.krname}>
@@ -36,9 +38,7 @@ const SearchDetail = ({
             );
           })
         ) : (
-          <li title='no-search'>
-            검색어가 존재하지 않습니다.
-          </li>
+          <li title='no-search'>검색어가 존재하지 않습니다.</li>
         )}
       </ul>
     </div>
