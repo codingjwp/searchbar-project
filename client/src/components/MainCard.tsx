@@ -86,6 +86,10 @@ const MainCard = ({
           </div>
           <span className={styles.hidden_text}>{id}</span>
         </div>
+        <div className={styles.description}>
+          <em className={styles.card_title}>포켓몬 도감 내용:</em>
+          <span className={styles.entries}>2개의 굵은 덩굴을 휘둘러서 싸운다. 10층 빌딩을 가볍게 넘어뜨릴 정도로 파워풀하다.2개의 굵은 덩굴을 휘둘러서 싸운다. 10층 빌딩을 가볍게 넘어뜨릴 정도로 파워풀하다.2개의 굵은 덩굴을 휘둘러서 싸운다. 10층 빌딩을 가볍게 넘어뜨릴 정도로 파워풀하다.</span>
+        </div>
       </div>
     </div>
   );

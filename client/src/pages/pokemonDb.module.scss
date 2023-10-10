@@ -29,18 +29,6 @@
 
 .db_container {
   width: 100%;
-  // height: 100vh;
-  // background: radial-gradient(circle at 50% 50%, #ffffff 0%, #87ceeb 100%);
-  /*
-  @if $isMobile {
-    overflow: scroll;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    &::-webkit-scrollbar {
-      display: none;
-    }
-  }
-  */
 }
 
 .db_container .inner {
@@ -50,17 +38,3 @@
   width: 100%;
   height: 100%;
 }
-// @mixin cardFilp($isMobile) {
-//   .pokemonDbContainer {
-//     display: flex;
-//     position: relative;
-//     width: 100%;
-//     justify-content: center;
-//     align-items: center;
-//     @if $isMobile {
-//       flex-direction: column;
-//     } @else {
-//       flex-direction: row;
-//     }
-//   }
-// }
