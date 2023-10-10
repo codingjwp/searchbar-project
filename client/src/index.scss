@@ -64,6 +64,13 @@ ul, li {
 sub {
   pointer-events: none;
 }
+em, strong {
+  font-style: normal;
+}
+progress, progress[value] {
+  appearance: none;
+  border: none;
+}
 
 [type='search'] {
   appearance: textfield;

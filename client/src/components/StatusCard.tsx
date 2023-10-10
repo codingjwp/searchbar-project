@@ -1,12 +1,9 @@
-import { useRef } from 'react';
 import styles from './statusCard.module.scss';
-import { Chart, registerables } from 'chart.js';
 import cn from 'classnames';
-import { useChart } from '../hooks/useChart';
+import StatusProgress from './StatusProgress';
 
 interface StatusCardProps {
   type1: string;
-  type2: string;
   hp: string;
   attack: string;
   defense: string;
@@ -17,7 +14,6 @@ interface StatusCardProps {
 
 const StatusCard = ({
   type1,
-  type2,
   hp,
   attack,
   defense,
@@ -25,41 +21,20 @@ const StatusCard = ({
   spdefense,
   speed,
 }: StatusCardProps) => {
-  Chart.register(...registerables);
-  const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  useChart([hp, attack, defense, spattack, spdefense, speed], canvasRef);
-
   return (
-    <div className={cn(styles.status_card_wrap, getTypeStyle(type1.toLowerCase()))}>
+    <div
+      className={cn(
+        styles.status_card_wrap,
+        getTypeStyle(type1.toLowerCase()),
+      )}>
       <div className={styles.inner}>
-        <div className={styles.status_canvas}>
-          <canvas ref={canvasRef} />
-        </div>
-        <div className={styles.info}>
-          <span className={styles.status_text}>Hp : {hp}</span>
-          <span className={styles.status_text}>Speed : {speed}</span>
-          <span className={styles.status_text}>Attack : {attack}</span>
-          <span className={styles.status_text}>Defense : {defense}</span>
-          <span className={styles.status_text}>Spattack : {spattack}</span>
-          <span className={cn(styles.status_text, styles.status_last_text)}>Spdefense : {spdefense}</span>
-          <div className={styles.img_group}>
-            <span className={cn(styles.status_text, styles.margin_right_add)}>Type: </span>
-            <img
-              className={cn(styles.type_img, styles.margin_right_add, {
-                [styles.statusMarginRight]: type2 !== '',
-              })}
-              src={`${import.meta.env.VITE_API_TYPE}${type1}.png`}
-              alt={type1}
-            />
-            {type2 !== '' ? (
-              <img
-                className={styles.type_img}
-                src={`${import.meta.env.VITE_API_TYPE}${type2}.png`}
-                alt={type2}
-              />
-            ) : null}
-          </div>
-        </div>
+        <strong className={styles.staus_card_title}>포켓몬 능력치 : </strong>
+        <StatusProgress label='Hp' value={hp} />
+        <StatusProgress label='Speed' value={speed} />
+        <StatusProgress label='Attack' value={attack} />
+        <StatusProgress label='Defense' value={defense} />
+        <StatusProgress label='Spattack' value={spattack} />
+        <StatusProgress label='Spdefense' value={spdefense} />
       </div>
     </div>
   );
@@ -109,3 +84,23 @@ function getTypeStyle(type: string) {
 }
 
 export default StatusCard;
+
+{
+  /* <div className={styles.img_group}>
+<span className={cn(styles.status_text, styles.margin_right_add)}>Type: </span>
+<img
+  className={cn(styles.type_img, styles.margin_right_add, {
+    [styles.statusMarginRight]: type2 !== '',
+  })}
+  src={`${import.meta.env.VITE_API_TYPE}${type1}.png`}
+  alt={type1}
+/>
+{type2 !== '' ? (
+  <img
+    className={styles.type_img}
+    src={`${import.meta.env.VITE_API_TYPE}${type2}.png`}
+    alt={type2}
+  />
+) : null}
+</div> */
+}

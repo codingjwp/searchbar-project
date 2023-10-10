@@ -46,66 +46,15 @@
 }
 
 .status_card_wrap .inner {
-  display: grid;
-  height: 100%;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 2rem;
-  position: relative;
-  z-index: 2;
-}
-
-.status_card_wrap .inner .status_canvas {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 2rem 0 2rem 2rem;
-  padding: 1rem;
-  box-sizing: border-box;
-  max-width: 40rem;
-  max-height: 40rem;
-}
-
-.status_card_wrap .inner canvas {
-  width: 100% !important;
-  height: 100% !important;
-  max-width: 40rem;
-  max-height: 40rem;
-}
-
-.status_card_wrap .info {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   justify-content: center;
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-}
-
-.info .status_text {
-  font-size: 1.15rem;
-  letter-spacing: 0.2rem;
-  margin-bottom: 0.2rem;
-  font-weight: 500;
-}
-
-.info .status_last_text {
-  margin-bottom: 1rem;
-}
-
-.status_card_wrap .img_group {
-  display: flex;
-  align-items: center;
+  position: relative;
   width: 100%;
+  height: 100%;
+  z-index: 2;
 }
-
-.margin_right_add {
-  margin-right: 0.5rem;
-}
-
-.status_card_wrap .img_group .type_img {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-  border: 0.2rem solid var(--base-ball-bottom);  
+.staus_card_title {
+  font-size: 2rem;
+  margin: 0 0 2rem 4rem;
 }
