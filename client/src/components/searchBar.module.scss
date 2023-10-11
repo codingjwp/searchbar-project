@@ -119,15 +119,17 @@
   border-radius: 0;
 }
 
-@include desktop{
+@include desktop {
   .search .cover {
-    max-width: 110rem;
+    max-width: 144rem;
   }
+
   .search.bar_focus {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+
   .bar_focus input {
     font-size: 1.6rem;
     height: 7rem;
@@ -144,7 +146,7 @@
     width: 2rem;
     height: 2rem;
   }
-  
+
   .btn_search.btn_focus::after {
     top: 3.5rem;
     left: 4.1rem;

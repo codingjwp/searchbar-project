@@ -19,6 +19,7 @@
 .db_header button {
   cursor: pointer;
   padding: 1.5rem;
+
   &:hover,
   &:focus {
     background-color: darken(#3399ff, 20%);
@@ -50,13 +51,15 @@
     display: flex;
     justify-content: center;
   }
+
   .db_header .inner {
-    max-width: 110rem;
+    max-width: 144rem;
     height: 100%;
     margin: 0 auto;
   }
+
   .db_container .inner {
-    max-width: 110rem;
+    max-width: 144rem;
   }
-  
+
 }

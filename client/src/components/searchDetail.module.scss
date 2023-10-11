@@ -5,6 +5,7 @@
   overflow-y: auto;
   position: relative;
 }
+
 .search_detail .inner {
   &::after {
     content: '';
@@ -25,6 +26,7 @@
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
+
   &:last-child {
     border-bottom: 0.5rem solid var(--base-ball-middle);
   }
@@ -40,9 +42,11 @@
     display: flex;
     justify-content: center;
   }
+
   .search_detail .inner {
-    max-width: 110rem;
+    max-width: 144rem;
     width: 100%;
+
     &::after {
       position: absolute;
       top: 0;
@@ -50,6 +54,7 @@
       z-index: -1;
     }
   }
+
   .search_detail li {
     padding: 2rem 1rem 2rem 1rem;
   }
