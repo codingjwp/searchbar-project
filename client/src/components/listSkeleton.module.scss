@@ -1,32 +1,19 @@
 @import '../mixin';
 
-@mixin searchSkeleton($isdesktop) {
-  .searchSkeletonDetail {
-    display: block;
-    width: 100%;
-    overflow-y: auto;
+.skeleton_detail {
+  display: block;
+  width: 100%;
+  overflow-y: auto;
 
-    & .skeletonDetailCover {
-      margin: 0;
-      padding: 0;
-      border-radius: 0 0 0.5rem 0.5rem;
-      border-top: 0;
-
-      @if $isdesktop ==false {
-        height: 100vh;
-        background-color: #31343855;
-      }
-    }
-
-    @if $isdesktop {
-      position: absolute;
-      top: 5.9rem;
-      max-width: 40rem;
-    }
+  & .skeleton_cover {
+    margin: 0;
+    padding: 0;
+    border-radius: 0 0 0.5rem 0.5rem;
+    border-top: 0;
   }
 }
 
-.skeletonDetailBox {
+.skeleton_detail_box {
   list-style: none;
   height: 2.4rem;
   padding: 1rem;
@@ -50,7 +37,7 @@
   }
 }
 
-.skeletonDetailText {
+.skeleton_text {
   color: transparent;
   width: 40%;
   height: 100%;
@@ -61,16 +48,14 @@
   @include animation(skeletonLinear, 1s, ease, infinite);
 }
 
-
-
 @include desktop {
-  @include searchSkeleton(true);
-}
-
-@include tablet {
-  @include searchSkeleton(false);
-}
-
-@include mobile {
-  @include searchSkeleton(false);
+  .skeleton_detail {
+    display: flex;
+    justify-content: center;
+  
+    & .skeleton_cover {
+      width: 100%;
+      max-width: 110rem;
+    }
+  }
 }

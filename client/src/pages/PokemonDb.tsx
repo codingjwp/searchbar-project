@@ -21,16 +21,18 @@ const PokemonDb = () => {
   return (
     <>
       <header className={styles.db_header}>
-        <button type='button'>
-          <svg
-            width={32}
-            height={32}
-            viewBox='0 0 24 24'
-            onClick={handleLogout}>
-            <use href={`${svg}#logout`} />
-          </svg>
-          <span className={styles.hidden_text}>logout</span>
-        </button>
+        <div className={styles.inner}>
+          <button type='button'>
+            <svg
+              width={32}
+              height={32}
+              viewBox='0 0 24 24'
+              onClick={handleLogout}>
+              <use href={`${svg}#logout`} />
+            </svg>
+            <span className={styles.hidden_text}>logout</span>
+          </button>
+        </div>
       </header>
       <main className={styles.db_container}>
         {data ? (

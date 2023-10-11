@@ -88,7 +88,10 @@ const MainCard = ({
           <em className={styles.card_title}>{krname}</em>
           <em className={styles.card_sub_title}>{enname}</em>
           <div
-            className={formList.length === 0 ? styles.hidden : styles.formCover}
+            className={cn({
+              ['hide']: formList.length === 0,
+              [styles.form_cover]: formList.length !== 0,
+            })}
             onMouseOver={handleOverFormImg}
             onMouseLeave={handleOverFormImg}>
             {formList.length !== 0 &&
@@ -105,12 +108,12 @@ const MainCard = ({
         </div>
         <div className={styles.description}>
           <em className={styles.card_title}>포켓몬 도감 내용:</em>
-          <span className={styles.entries}>
+          <p className={styles.entries}>
             2개의 굵은 덩굴을 휘둘러서 싸운다. 10층 빌딩을 가볍게 넘어뜨릴
-            정도로 파워풀하다.2개의 굵은 덩굴을 휘둘러서 싸운다. 10층 빌딩을
-            가볍게 넘어뜨릴 정도로 파워풀하다.2개의 굵은 덩굴을 휘둘러서 싸운다.
-            10층 빌딩을 가볍게 넘어뜨릴 정도로 파워풀하다.
-          </span>
+            정도로 파워풀하다. 2개의 굵은 덩굴을 휘둘러서 싸운다. 10층 빌딩을
+            가볍게 넘어뜨릴 정도로 파워풀하다. 2개의 굵은 덩굴을 휘둘러서
+            싸운다. 10층 빌딩을 가볍게 넘어뜨릴 정도로 파워풀하다.
+          </p>
         </div>
       </div>
     </div>

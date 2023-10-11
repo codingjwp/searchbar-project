@@ -2,7 +2,6 @@ import {
   useState,
   ChangeEvent,
   MouseEvent,
-  FocusEvent,
   useRef,
   KeyboardEvent,
   Suspense,
@@ -27,10 +26,6 @@ const SearchBar = ({ name }: SearchBarProps) => {
   const resetIndex = useResetRecoilState(searchDetailIndex);
   const [detailIndex, setDetailIndex] = useRecoilState(searchDetailIndex);
 
-  const handleFocusChange = (e: FocusEvent) => {
-    if (e.type === 'focus' && !isFocused) setIsFocused(true);
-    else if (e.type === 'blur') setIsFocused(textRef.current?.value !== '');
-  };
   const handleTouchOfClick = (e: MouseEvent) => {
     if ((e.target as HTMLElement).nodeName !== 'LI') return;
     const li = e.target as HTMLLIElement;
@@ -86,8 +81,8 @@ const SearchBar = ({ name }: SearchBarProps) => {
           type='search'
           pattern='.*\S.*'
           required={true}
-          onFocus={handleFocusChange}
-          onBlur={handleFocusChange}
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(textRef.current?.value !== '')}
           onChange={searchTextChange}
           value={searchText}
           onKeyDown={hasSearchDetailIndex}
@@ -100,10 +95,9 @@ const SearchBar = ({ name }: SearchBarProps) => {
           title={name}
           name={name}
           type='submit'
-          onFocus={handleFocusChange}
-          onBlur={handleFocusChange}
-          onClick={movePokemonDb}
-          onTouchStart={movePokemonDb}>
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(textRef.current?.value !== '')}
+          onClick={movePokemonDb}>
           <span className={styles.hidden_text}>Search</span>
         </button>
       </div>

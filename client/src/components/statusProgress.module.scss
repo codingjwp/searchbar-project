@@ -1,3 +1,5 @@
+@import '../mixin';
+
 .progress_cover {
   display: grid;
   grid-template-columns: 0.3fr 1fr;
@@ -63,4 +65,10 @@
 }
 .hundred_more::-moz-progress-bar {
   background-color: #23cd5e;
+}
+
+@include tablet {
+  .progress_title {
+    font-size: 1.6rem;
+  }
 }

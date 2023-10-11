@@ -1,3 +1,4 @@
+@import '../mixin';
 @import '../typeColor';
 
 @keyframes cardBorder {
@@ -90,7 +91,7 @@
 .main_card_wrap .info {
   display: flex;
   flex-direction: column;
-  margin: 4rem auto 2rem;
+  margin: 3rem 1rem 1rem 0;
   grid-area: 1 / 2 / 2 / 3;
   align-items: center;
   justify-content: center;
@@ -112,6 +113,11 @@
 .main_card_wrap .card_sub_title {
   font-size: 1.5rem;
 }
+
+.main_card_wrap .info .form_cover {
+  width: 100%;
+}
+
 .main_card_wrap .description {
   grid-area: 2 / 1 / 3 / 3;
   margin: 2rem;
@@ -125,4 +131,53 @@
   line-height: 2.2rem;
   font-size: 1.4rem;
   overflow: hidden;  
+}
+
+@include tablet {
+  .main_card_wrap .inner {
+    grid-template-columns: 1fr 1fr ;
+  }
+  .main_card_wrap .img_cover {
+    grid-area: 1 / 1 / 3 / 2;
+  }
+  .main_card_wrap .info {
+    // margin: 3rem 0.8rem 1rem 0;
+    grid-area: 1 / 2 / 2 / 3;
+  }
+  .form_cover .form_text {
+    font-size: 1.2rem;
+  }
+  .main_card_wrap .description {
+    grid-area: 2 / 2 / 3 / 3;
+  }
+  .main_card_wrap .card_title{
+    font-size: 2rem;
+  }
+  .main_card_wrap .card_sub_title {
+    font-size: 1.8rem;
+  }
+}
+
+@include desktop {
+  .main_card_wrap .inner {
+    grid-template-columns: 0.75fr 0.5fr 0.5fr;
+    grid-template-rows: none;
+  }
+  .main_card_wrap .img_cover {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  .main_card_wrap .info {
+    margin: 3rem 0.8rem 1rem 0;
+    grid-area: 1 / 2 / 2 / 3;
+  }
+  .main_card_wrap .description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-area: 1 / 3 / 2 / 4;
+    margin: 3rem;
+  }
+  .description .entries {
+    -webkit-line-clamp: 3;
+  }
 }
