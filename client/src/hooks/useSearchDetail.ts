@@ -30,7 +30,7 @@ const searchPokemonDb = async (id: string) => {
     return data.length === 0 ? undefined : data[0];
   } catch (error: unknown) {
     const data = (error as Error).message;
-    throw new Error(data);
+    throw new Error('There was a problem with the fetch operation: ' + data);
   }
 };
 
@@ -40,5 +40,6 @@ export const useSearchDetail = (init: string) => {
     queryFn: () => searchPokemonDb(init),
     staleTime: 1000 * 60 * 60 * 24,
     cacheTime: 1000 * 60 * 60 * 24,
+    useErrorBoundary: true,
   });
 };

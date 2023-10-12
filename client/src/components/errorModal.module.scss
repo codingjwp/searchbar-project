@@ -1,28 +1,40 @@
-.modalBaseCenter {
+.modal_base {
   width: 100%;
   background-color: #fafafa;
   z-index: 10;
 }
 
-.modalErrorName {
+.modal_error_name,
+.modal_error_message,
+.modal_error_stack {
   box-sizing: border-box;
   width: 100%;
+}
+
+.modal_error_name,
+.modal_error_message {
   padding: 0 0.5em 0.5em;
+}
+
+.modal_error_name {
+  font-size: 3rem;
   border-bottom: 3px solid #000000;
 }
 
-.modalErrorMessage {
-  box-sizing: border-box;
-  width: 100%;
-  padding: 0 0.5em 0.5em;
+.modal_error_message {
+  font-size: 2rem;
 }
 
-.modalErrorStack {
-  box-sizing: border-box;
+.modal_error_stack {
+  font-size: 1.6rem;
   overflow-x: hidden;
-  width: 100%;
   margin: auto 0;
-  padding: 0 0 0 0.7em;
+  padding: 0 0 1rem 0.7em;
   line-height: 1.5em;
   white-space: pre-wrap;
+
+}
+.modal_error_span {
+  margin-top: 1rem;
+  margin-left: 1rem;
 }

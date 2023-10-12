@@ -17,11 +17,14 @@ const StatusProgress = ({ label, value }: StatusProps) => {
   return (
     <div className={styles.progress_cover}>
       <em className={styles.progress_title}>{label} : </em>
-      <progress className={test} value={value} max={'250'}>
-        <span className={styles.hidden_text}>
-          {label} : {value}
-        </span>
-      </progress>
+      <div className={styles.progress_main}>
+        <progress
+          aria-label={label}
+          className={test}
+          value={value}
+          max={'250'}></progress>
+        <span className={styles.progress_value}>{value}</span>
+      </div>
     </div>
   );
 };

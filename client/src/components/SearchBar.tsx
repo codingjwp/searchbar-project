@@ -34,12 +34,18 @@ const SearchBar = ({ name }: SearchBarProps) => {
     textRef.current?.focus();
     resetIndex();
   };
+
   const movePokemonDb = () => {
     const li = document.querySelector('li');
-    if (li && li.title === 'no-search') return;
+    if (
+      (li && li.title === 'no-search') ||
+      (li && li.innerText.indexOf(textRef.current?.value as string) < 0)
+    )
+      return;
     const id = li?.id;
     navigate(`/db/${id}`);
   };
+
   const hasSearchDetailIndex = (e: KeyboardEvent) => {
     if (
       !['ArrowUp', 'ArrowDown', 'Enter'].includes(e.key) ||

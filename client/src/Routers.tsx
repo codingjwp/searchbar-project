@@ -6,40 +6,24 @@ import {
 } from 'react-router-dom';
 import SearchHome from './pages/SearchHome';
 import PokemonDb from './pages/PokemonDb';
-import ErrorBoundary from './apis/ErrorBoundary';
-// import ErrorModal from './components/ErrorModal';
+import ErrorModal from './components/ErrorModal';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { Suspense } from 'react';
 
 const routerElements = createBrowserRouter(
   createRoutesFromElements(
     <Route>
-      <Route
-        path='/'
-        element={
-          <ErrorBoundary>
-            <SearchHome />
-          </ErrorBoundary>
-        }
-      />
+      <Route path='/' element={<SearchHome />} errorElement={<ErrorModal />} />
       <Route
         path='db/:id'
         element={
-          <ErrorBoundary>
-            <Suspense>
-              <PokemonDb />
-            </Suspense>
-          </ErrorBoundary>
+          <Suspense>
+            <PokemonDb />
+          </Suspense>
         }
+        errorElement={<ErrorModal />}
       />
-      {/* <Route
-        path='*'
-        element={
-          <ErrorModal
-            error={{ stack: '', name: 'Error', message: 'Not found Page' }}
-          />
-        }
-      /> */}
+      <Route path='*' element={<ErrorModal />} />
     </Route>,
   ),
 );

@@ -88,8 +88,6 @@ server에 대한 정보 [README.md](./server/README.md)
 |<img width="384" alt="main page" src="https://github.com/codingjwp/searcher-project/assets/113403155/a68eb138-3264-4d1d-9db4-961f8b57e5f3">|<img width="384" alt="searchbar" src="https://github.com/codingjwp/searcher-project/assets/113403155/c47ab965-9e9b-4b4e-b3e7-d155c055a147">|<img width="384" alt="card page" src="https://github.com/codingjwp/searcher-project/assets/113403155/72d138f6-39d8-4347-8a7a-10d079cd1563">|
 
 
-
-
 ## 추가적 구현 기능
 
 ### 검색 추천 리스트를 선택하지 않고 enter 입력 시 작동
@@ -137,7 +135,8 @@ export const searchListState = selectorFamily<PokemonListProps[], string>({
 
 하지만 다른 입력값으로 서버와 통신할때 초기 연결이 무조건 발생하는 것과 `recoil` 자체는 전역 상태관리 라이브러리라서 HTTP 캐싱이랑은 역할이 달라서 `react-query`로 변경하였습니다.
 
-#### react-query를 사용하여 작성한 캐싱 코드.
+**react-query를 사용하여 작성한 캐싱 코드.**
+
 느린 네트워크 경우 `retry`가 많을 경우 너무 안좋은 사용자 경험을 줄 수 있어 retry를 0로 적용하였습니다. 그리고 느린 경우 `Loading`또는 `skeleton`을 주기 위해 `suspense`를 적용하기 위해 설정을 `true`로 하였습니다.
 
 **기본 react-query 설정**
@@ -207,6 +206,36 @@ export const useSearchList = (init: string) => {
 }
 ```
 
+**반응형 수정**
+
+반응형을 적용헀으나 scss와 반응형을 처음 사용하는 것이라 코드 자체가 너무 난잡하게 만들어 졌으며 해당 코드도 중복이 너무 많이 사용되었습니다.
+
+그렇기 때문에 많은 코드량이 발생하여 코드가 난잡하여 수정을 하였으며 레이아웃 수정을 위해 전체적으로 수정을 하였으며 **데스크탑 기준으로 모바일 까지 만들걸 모바일에서 데스크탑 순**으로 만드는 방식으로 수정을 하였습니다
+
+```scss
+@mixin tablet {
+  @media all and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media all and (min-width: 1024px) {
+    @content;
+  }
+}
+```
+
 ### 검색 후 페이지 구현
 
 검색 추천 리스트만 보여주기에는 뭔가 부족한 것 같아서 `pakemonDb` 페이지를 만들어 카드 정보를 볼수 있도록 하였으며 `chart.js`를 사용해서 데이터를 도넛 형태로 표시하도록 하였습니다.
+
+`chat.js`의 라이브러리를 이용하여 `canvase`로 `Doughnut` 형태를 이용하여 만들었습니다.
+||
+|:---:|
+|<img width="180" alt="2" src="https://github.com/codingjwp/searcher-project/assets/113403155/2ff243a3-3e61-4bcd-be87-858b064a929d">|
+
+하지만 전체적으로 보여주는 느낌이 별로 좋지 않아 해당 라이브러리와 만들어 놓은 커스텀 훅을 지우고
+`progress` 태그를 이용하여 bar를 만들어서 사용하였습니다.
+
+**2차 수정**

@@ -55,5 +55,6 @@ export const useSearchList = (init: string) => {
     queryFn: () => searchListFn(debounceValue),
     staleTime: 1000 * 60 * 60 * 24,
     cacheTime: 1000 * 60 * 60 * 24,
+    useErrorBoundary: true,
   });
 };
