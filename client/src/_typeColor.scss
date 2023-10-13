@@ -116,11 +116,3 @@
   @include afterColor(#3399ff);
   @include otherTypeCardCss(#2b7fd3);
 }
-
-.hidden_text {
-  position: absolute;
-  overflow: hidden;
-  width: 0;
-  height: 0;
-  font-size: 0;
-}

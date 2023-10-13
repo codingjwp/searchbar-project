@@ -83,23 +83,96 @@
   content: '';
   display: block;
   background: url('http://localhost:4000/types/typesprite.png') no-repeat;
+  background-size: 10rem 50rem;
 }
 
 .main_card_wrap .type_group {
   display: flex;
   & .type_img {
-    width: 3rem;
-    height: 3rem;
-    margin: 0.5rem;
+    width: 4rem;
+    height: 4rem;
     border-radius: 50%;
   }
 }
 
-.electric::before {
+.bug::before,
+.dark::before,
+.dragon::before,
+.electric::before,
+.fighting::before,
+.fairy::before,
+.flying::before,
+.fire::before,
+.grass::before,
+.ghost::before,
+.ground::before,
+.ice::before,
+.normal::before,
+.poison::before,
+.psychic::before,
+.rock::before,
+.steel::before,
+.water::before {
   width: 3rem;
   height: 3rem;
+  margin: 0.5rem auto;
   border-radius: 50%;
-  background-position: -1.1rem -1rem;
+}
+
+.water::before {
+  background-position: -1rem -1rem;
+}
+.dark::before {
+  background-position: -1rem -6rem;
+}
+.electric::before {
+  background-position: -1rem -11rem;
+}
+.fighting::before {
+  background-position: -1rem -16rem;
+}
+.flying::before {
+  background-position: -1rem -21rem;
+}
+.grass::before {
+  background-position: -1rem -26rem;
+}
+.ice::before {
+  background-position: -1rem -31rem;
+}
+.poison::before {
+  background-position: -1rem -36rem;
+}
+.rock::before {
+  background-position: -1rem -41rem;
+}
+
+.bug::before {
+  background-position: -6rem -1rem;
+}
+.dragon::before {
+  background-position: -6rem -6rem;
+}
+.fairy::before {
+  background-position: -6rem -11rem;
+}
+.fire::before {
+  background-position: -6rem -16rem;
+}
+.ghost::before {
+  background-position: -6rem -21rem;
+}
+.ground::before {
+  background-position: -6rem -26rem;
+}
+.normal::before {
+  background-position: -6rem -31rem;
+}
+.psychic::before {
+  background-position: -6rem -36rem;
+}
+.steel::before {
+  background-position: -6rem -41rem;
 }
 
 .main_card_wrap .info {
@@ -195,3 +268,5 @@
     -webkit-line-clamp: 3;
   }
 }
+
+@include hiddenText;

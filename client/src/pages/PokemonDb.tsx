@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from 'react-router-dom';
-import svg from '../assets/logout.svg';
+import cn from 'classnames';
 import styles from './pokemonDb.module.scss';
 import MainCard from '../components/MainCard';
 import StatusCard from '../components/StatusCard';
@@ -22,14 +22,10 @@ const PokemonDb = () => {
     <>
       <header className={styles.db_header}>
         <div className={styles.inner}>
-          <button type='button'>
-            <svg
-              width={32}
-              height={32}
-              viewBox='0 0 24 24'
-              onClick={handleLogout}>
-              <use href={`${svg}#logout`} />
-            </svg>
+          <button
+            type='button'
+            className={cn(styles.spr_logout_icon, styles.logout)}
+            onClick={handleLogout}>
             <span className={styles.hidden_text}>logout</span>
           </button>
         </div>

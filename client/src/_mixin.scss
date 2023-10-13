@@ -16,3 +16,13 @@
   animation-timing-function: $timing;
   animation-iteration-count: $count;
 }
+
+@mixin hiddenText {
+  .hidden_text {
+    position: absolute;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    font-size: 0;
+  }
+}

@@ -26,12 +26,18 @@
   }
 }
 
-.hidden_text {
-  position: absolute;
-  overflow: hidden;
-  width: 0;
-  height: 0;
-  font-size: 0;
+.spr_logout_icon::before {
+  content: '';
+  display: block;
+  background: url('http://localhost:4000/types/typesprite.png') no-repeat;
+  background-size: 10rem 50rem;
+}
+
+.logout::before {
+  width: 3rem;
+  height: 3rem;
+  margin: 0.5rem;
+  background-position: -1rem -46rem;
 }
 
 .db_container {
@@ -63,3 +69,5 @@
   }
 
 }
+
+@include hiddenText;
