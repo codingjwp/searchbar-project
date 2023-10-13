@@ -1,5 +1,5 @@
-import { useQuery } from 'react-query';
-import { useEffect, useRef, useState } from 'react';
+import {useQuery} from 'react-query';
+import {useEffect, useRef, useState} from 'react';
 
 interface PokemonListProps {
   id: string;

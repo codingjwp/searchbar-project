@@ -29,11 +29,13 @@
     left: 50%;
     width: 110%;
     height: 15rem;
-    background: linear-gradient(transparent,
-    var(--card-border-color1),
-    var(--card-border-color2),
-    var(--card-border-color1),
-    transparent);
+    background: linear-gradient(
+      transparent,
+      var(--card-border-color1),
+      var(--card-border-color2),
+      var(--card-border-color1),
+      transparent
+    );
     animation-name: cardBorder;
     animation-duration: 4s;
     animation-timing-function: linear;

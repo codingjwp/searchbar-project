@@ -2,7 +2,12 @@
   &::after {
     content: '';
     display: block;
-    background: linear-gradient(0deg, $beforeColor 0%, lighten($beforeColor, 30%) 85%, $beforeColor 100%);
+    background: linear-gradient(
+      0deg,
+      $beforeColor 0%,
+      lighten($beforeColor, 30%) 85%,
+      $beforeColor 100%
+    );
   }
 }
 
@@ -52,7 +57,7 @@
   @include otherTypeCardCss(#9b4738);
 }
 .fairy_type {
-  background-color:#bf7dbf;
+  background-color: #bf7dbf;
   @include afterColor(#ee99ee);
   @include otherTypeCardCss(#bf7dbf);
 }
@@ -97,9 +102,9 @@
   @include otherTypeCardCss(#8b457d);
 }
 .psychic_type {
-  background-color:  #d2477f;
+  background-color: #d2477f;
   @include afterColor(#ff5599);
-  @include otherTypeCardCss( #d2477f);
+  @include otherTypeCardCss(#d2477f);
 }
 .rock_type {
   background-color: #958853;

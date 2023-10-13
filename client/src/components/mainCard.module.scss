@@ -30,11 +30,13 @@
     left: 50%;
     width: 110%;
     height: 15rem;
-    background: linear-gradient(transparent,
-    var(--card-border-color1),
-    var(--card-border-color2),
-    var(--card-border-color1),
-    transparent);
+    background: linear-gradient(
+      transparent,
+      var(--card-border-color1),
+      var(--card-border-color2),
+      var(--card-border-color1),
+      transparent
+    );
     animation-name: cardBorder;
     animation-duration: 4s;
     animation-timing-function: linear;
@@ -193,7 +195,7 @@
   font-weight: 600;
   margin-bottom: 1rem;
 }
-.main_card_wrap .card_title{
+.main_card_wrap .card_title {
   font-size: 1.8rem;
   letter-spacing: 0.5rem;
 }
@@ -217,12 +219,12 @@
   margin-top: 0.5rem;
   line-height: 2.2rem;
   font-size: 1.4rem;
-  overflow: hidden;  
+  overflow: hidden;
 }
 
 @include tablet {
   .main_card_wrap .inner {
-    grid-template-columns: 1fr 1fr ;
+    grid-template-columns: 1fr 1fr;
   }
   .main_card_wrap .img_cover {
     grid-area: 1 / 1 / 3 / 2;
@@ -237,7 +239,7 @@
   .main_card_wrap .description {
     grid-area: 2 / 2 / 3 / 3;
   }
-  .main_card_wrap .card_title{
+  .main_card_wrap .card_title {
     font-size: 2rem;
   }
   .main_card_wrap .card_sub_title {

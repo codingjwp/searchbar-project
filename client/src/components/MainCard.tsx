@@ -1,10 +1,4 @@
-import {
-  SyntheticEvent,
-  useRef,
-  MouseEvent,
-  TouchEvent,
-  useState,
-} from 'react';
+import {SyntheticEvent, useRef, MouseEvent, TouchEvent, useState} from 'react';
 import styles from './mainCard.module.scss';
 import cn from 'classnames';
 

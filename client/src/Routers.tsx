@@ -7,8 +7,8 @@ import {
 import SearchHome from './pages/SearchHome';
 import PokemonDb from './pages/PokemonDb';
 import ErrorModal from './components/ErrorModal';
-import { QueryClient, QueryClientProvider } from 'react-query';
-import { Suspense } from 'react';
+import {QueryClient, QueryClientProvider} from 'react-query';
+import {Suspense} from 'react';
 
 const routerElements = createBrowserRouter(
   createRoutesFromElements(

@@ -25,7 +25,7 @@
 }
 
 .progress_status[value]::-webkit-progress-bar,
-.progress_status[value]::-webkit-progress-value{
+.progress_status[value]::-webkit-progress-value {
   border-radius: 10rem;
 }
 /* 파이어 폭스*/
@@ -54,10 +54,10 @@
   background-color: #ff7f0f;
 }
 .eighty_under::-webkit-progress-value {
-  background-color: #ca15e1;  
+  background-color: #ca15e1;
 }
 .eighty_under::-moz-progress-bar {
-  background-color: #ca15e1;  
+  background-color: #ca15e1;
 }
 .hundred_under::-webkit-progress-value {
   background-color: #422ec4;
@@ -65,7 +65,7 @@
 .hundred_under::-moz-progress-bar {
   background-color: #422ec4;
 }
-.hundred_more::-webkit-progress-value{
+.hundred_more::-webkit-progress-value {
   background-color: #23cd5e;
 }
 .hundred_more::-moz-progress-bar {

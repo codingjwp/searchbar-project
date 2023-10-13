@@ -6,7 +6,7 @@ interface StatusProps {
   value: string;
 }
 
-const StatusProgress = ({ label, value }: StatusProps) => {
+const StatusProgress = ({label, value}: StatusProps) => {
   const test = cn(styles.progress_status, {
     [styles.fifty_under]: Number(value) < 50,
     [styles.eighty_under]: Number(value) >= 50 && Number(value) < 80,

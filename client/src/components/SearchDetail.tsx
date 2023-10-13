@@ -1,7 +1,7 @@
-import { MouseEvent } from 'react';
+import {MouseEvent} from 'react';
 import styles from './searchDetail.module.scss';
 import cn from 'classnames';
-import { useSearchList } from '../hooks/useSearchList';
+import {useSearchList} from '../hooks/useSearchList';
 
 interface searchDetailProps {
   isFocused: boolean;
@@ -16,10 +16,10 @@ const SearchDetail = ({
   detailIndex,
   touchDetail,
 }: searchDetailProps) => {
-  const { data = [] } = useSearchList(pokemonName);
+  const {data = []} = useSearchList(pokemonName);
   return (
     <div
-      className={cn({ [styles.search_detail]: isFocused, hide: !isFocused })}
+      className={cn({[styles.search_detail]: isFocused, hide: !isFocused})}
       onClick={touchDetail}>
       <ul className={styles.inner}>
         {data?.length !== 0 ? (

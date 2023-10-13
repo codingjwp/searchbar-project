@@ -5,8 +5,8 @@
   --captain-ball-top: #223775;
   --ultra-ball-top: #313438;
   --base-ball-middle: #000000;
-  --base-ball-bottom: #ECEBE9;
-  --header-color: #039EDC;
+  --base-ball-bottom: #ecebe9;
+  --header-color: #039edc;
 
   --card-border-color1: #e3d984;
   --card-border-color2: #edd74e;
@@ -57,17 +57,20 @@ img {
 ul {
   list-style: none;
 }
-ul, li {
+ul,
+li {
   margin: 0;
   padding: 0;
 }
 sub {
   pointer-events: none;
 }
-em, strong {
+em,
+strong {
   font-style: normal;
 }
-progress, progress[value] {
+progress,
+progress[value] {
   appearance: none;
   border: none;
 }
@@ -83,7 +86,7 @@ progress, progress[value] {
 
 /* 공통 및 레이아웃 */
 body {
-  padding-top: 7.1rem
+  padding-top: 7.1rem;
 }
 
 .hide {

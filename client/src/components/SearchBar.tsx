@@ -6,9 +6,9 @@ import {
   KeyboardEvent,
   Suspense,
 } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useResetRecoilState, useRecoilState } from 'recoil';
-import { searchDetailIndex } from '../apis/recoilState';
+import {useNavigate} from 'react-router-dom';
+import {useResetRecoilState, useRecoilState} from 'recoil';
+import {searchDetailIndex} from '../apis/recoilState';
 import cn from 'classnames';
 import styles from './searchBar.module.scss';
 import SearchDetail from './SearchDetail';
@@ -18,7 +18,7 @@ interface SearchBarProps {
   name: string;
 }
 
-const SearchBar = ({ name }: SearchBarProps) => {
+const SearchBar = ({name}: SearchBarProps) => {
   const navigate = useNavigate();
   const [isFocused, setIsFocused] = useState(false);
   const textRef = useRef<HTMLInputElement | null>(null);
@@ -78,7 +78,7 @@ const SearchBar = ({ name }: SearchBarProps) => {
   };
 
   return (
-    <div className={cn(styles.search, { [styles.bar_focus]: isFocused })}>
+    <div className={cn(styles.search, {[styles.bar_focus]: isFocused})}>
       <div className={styles.cover}>
         <input
           aria-label='search-input'

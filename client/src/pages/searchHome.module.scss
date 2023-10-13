@@ -1,5 +1,17 @@
-@mixin linear_gradation($topColor, $topPercent, $midColor, $midPercent, $botColor, $botPercent) {
-  background: linear-gradient(to bottom, $topColor $topPercent, $midColor $topPercent $midPercent, $botColor $midPercent $botPercent);
+@mixin linear_gradation(
+  $topColor,
+  $topPercent,
+  $midColor,
+  $midPercent,
+  $botColor,
+  $botPercent
+) {
+  background: linear-gradient(
+    to bottom,
+    $topColor $topPercent,
+    $midColor $topPercent $midPercent,
+    $botColor $midPercent $botPercent
+  );
 }
 
 .search_wrap {
@@ -10,15 +22,36 @@
   left: 0;
 
   &.base_ball {
-    @include linear_gradation(var(--base-ball-top), 48%, var(--base-ball-middle), 52%, var(--base-ball-bottom), 100%);
+    @include linear_gradation(
+      var(--base-ball-top),
+      48%,
+      var(--base-ball-middle),
+      52%,
+      var(--base-ball-bottom),
+      100%
+    );
   }
 
   &.captain_ball {
-    @include linear_gradation(var(--captain-ball-top), 48%, var(--base-ball-middle), 52%, var(--base-ball-bottom), 100%);
+    @include linear_gradation(
+      var(--captain-ball-top),
+      48%,
+      var(--base-ball-middle),
+      52%,
+      var(--base-ball-bottom),
+      100%
+    );
   }
 
   &.ultra_ball {
-    @include linear_gradation(var(--ultra-ball-top), 48%, var(--base-ball-middle), 52%, var(--base-ball-bottom), 100%);
+    @include linear_gradation(
+      var(--ultra-ball-top),
+      48%,
+      var(--base-ball-middle),
+      52%,
+      var(--base-ball-bottom),
+      100%
+    );
   }
 }
 

@@ -1,15 +1,15 @@
-import { useParams, useNavigate } from 'react-router-dom';
+import {useParams, useNavigate} from 'react-router-dom';
 import cn from 'classnames';
 import styles from './pokemonDb.module.scss';
 import MainCard from '../components/MainCard';
 import StatusCard from '../components/StatusCard';
-import { useSearchDetail } from '../hooks/useSearchDetail';
-import { useLayoutEffect } from 'react';
+import {useSearchDetail} from '../hooks/useSearchDetail';
+import {useLayoutEffect} from 'react';
 
 const PokemonDb = () => {
-  const { id } = useParams();
+  const {id} = useParams();
   const navigate = useNavigate();
-  const { data } = useSearchDetail(id ?? '');
+  const {data} = useSearchDetail(id ?? '');
   const handleLogout = () => {
     navigate('/');
   };
