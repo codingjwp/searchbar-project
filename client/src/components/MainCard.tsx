@@ -69,11 +69,19 @@ const MainCard = ({
             }
           />
           <div className={styles.type_group}>
-            <img
+            <div
+              className={cn(
+                styles.spr_type_icon,
+                styles.type_img,
+                `${styles[type1.toLowerCase()]}`,
+              )}>
+              <span className={styles.hidden_text}>{type1}</span>
+            </div>
+            {/* <img
               className={styles.type_img}
               src={`${import.meta.env.VITE_API_TYPE}${type1}.png`}
               alt={type1}
-            />
+            /> */}
             {type2 !== '' ? (
               <img
                 className={styles.type_img}
@@ -89,7 +97,7 @@ const MainCard = ({
           <em className={styles.card_sub_title}>{enname}</em>
           <div
             className={cn({
-              ['hide']: formList.length === 0,
+              hide: formList.length === 0,
               [styles.form_cover]: formList.length !== 0,
             })}
             onMouseOver={handleOverFormImg}

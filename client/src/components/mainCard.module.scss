@@ -79,6 +79,12 @@
   object-fit: fill;
 }
 
+.spr_type_icon::before {
+  content: '';
+  display: block;
+  background: url('http://localhost:4000/types/typesprite.png') no-repeat;
+}
+
 .main_card_wrap .type_group {
   display: flex;
   & .type_img {
@@ -87,6 +93,13 @@
     margin: 0.5rem;
     border-radius: 50%;
   }
+}
+
+.electric::before {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-position: -1.1rem -1rem;
 }
 
 .main_card_wrap .info {
