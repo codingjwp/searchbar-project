@@ -2,14 +2,13 @@ import {
   useState,
   ChangeEvent,
   MouseEvent,
-  FocusEvent,
   useRef,
   KeyboardEvent,
   Suspense,
 } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useResetRecoilState, useRecoilState } from 'recoil';
-import { searchDetailIndex } from '../apis/recoilState';
+import {useNavigate} from 'react-router-dom';
+import {useResetRecoilState, useRecoilState} from 'recoil';
+import {searchDetailIndex} from '../apis/recoilState';
 import cn from 'classnames';
 import styles from './searchBar.module.scss';
 import SearchDetail from './SearchDetail';
@@ -19,7 +18,7 @@ interface SearchBarProps {
   name: string;
 }
 
-const SearchBar = ({ name }: SearchBarProps) => {
+const SearchBar = ({name}: SearchBarProps) => {
   const navigate = useNavigate();
   const [isFocused, setIsFocused] = useState(false);
   const textRef = useRef<HTMLInputElement | null>(null);
@@ -27,10 +26,6 @@ const SearchBar = ({ name }: SearchBarProps) => {
   const resetIndex = useResetRecoilState(searchDetailIndex);
   const [detailIndex, setDetailIndex] = useRecoilState(searchDetailIndex);
 
-  const handleFocusChange = (e: FocusEvent) => {
-    if (e.type === 'focus' && !isFocused) setIsFocused(true);
-    else if (e.type === 'blur') setIsFocused(textRef.current?.value !== '');
-  };
   const handleTouchOfClick = (e: MouseEvent) => {
     if ((e.target as HTMLElement).nodeName !== 'LI') return;
     const li = e.target as HTMLLIElement;
@@ -39,12 +34,18 @@ const SearchBar = ({ name }: SearchBarProps) => {
     textRef.current?.focus();
     resetIndex();
   };
+
   const movePokemonDb = () => {
     const li = document.querySelector('li');
-    if (li && li.title === 'no-search') return;
+    if (
+      (li && li.title === 'no-search') ||
+      (li && li.innerText.indexOf(textRef.current?.value as string) < 0)
+    )
+      return;
     const id = li?.id;
     navigate(`/db/${id}`);
   };
+
   const hasSearchDetailIndex = (e: KeyboardEvent) => {
     if (
       !['ArrowUp', 'ArrowDown', 'Enter'].includes(e.key) ||
@@ -77,36 +78,33 @@ const SearchBar = ({ name }: SearchBarProps) => {
   };
 
   return (
-    <div
-      className={cn(styles.searchBar, { [styles.searchBarFocus]: isFocused })}>
-      <div className={styles.searchBarCover}>
+    <div className={cn(styles.search, {[styles.bar_focus]: isFocused})}>
+      <div className={styles.cover}>
         <input
-          className={styles.searchBarInput}
           aria-label='search-input'
           name={name}
           ref={textRef}
           type='search'
           pattern='.*\S.*'
           required={true}
-          onFocus={handleFocusChange}
-          onBlur={handleFocusChange}
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(textRef.current?.value !== '')}
           onChange={searchTextChange}
           value={searchText}
           onKeyDown={hasSearchDetailIndex}
           autoComplete='off'
         />
         <button
-          className={cn(styles.searchBarBtn, {
-            [styles.searchBarBtnFocuse]: !isFocused,
+          className={cn(styles.btn_search, {
+            [styles.btn_focus]: isFocused,
           })}
           title={name}
           name={name}
           type='submit'
-          onFocus={handleFocusChange}
-          onBlur={handleFocusChange}
-          onClick={movePokemonDb}
-          onTouchStart={movePokemonDb}>
-          <span className={styles.searchBarSpan}>Search</span>
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(textRef.current?.value !== '')}
+          onClick={movePokemonDb}>
+          <span className={styles.hidden_text}>Search</span>
         </button>
       </div>
       <Suspense fallback={<ListSkeleton />}>

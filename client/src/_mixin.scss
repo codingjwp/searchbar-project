@@ -1,19 +1,11 @@
-@import './variables';
-
-@mixin mobile {
-  @media screen and (max-width: $breakPointMobile) {
-    @content;
-  }
-}
-
 @mixin tablet {
-  @media screen and (max-width: $breakPointTablet) {
+  @media all and (min-width: 768px) {
     @content;
   }
 }
 
 @mixin desktop {
-  @media screen and (min-width: $breakPointDesktop) {
+  @media all and (min-width: 1024px) {
     @content;
   }
 }
@@ -23,4 +15,14 @@
   animation-duration: $duration;
   animation-timing-function: $timing;
   animation-iteration-count: $count;
+}
+
+@mixin hiddenText {
+  .hidden_text {
+    position: absolute;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    font-size: 0;
+  }
 }

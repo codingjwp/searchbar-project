@@ -1,68 +1,72 @@
-@import '../mixin';
+@mixin linear_gradation(
+  $topColor,
+  $topPercent,
+  $midColor,
+  $midPercent,
+  $botColor,
+  $botPercent
+) {
+  background: linear-gradient(
+    to bottom,
+    $topColor $topPercent,
+    $midColor $topPercent $midPercent,
+    $botColor $midPercent $botPercent
+  );
+}
 
-.searchHomeWrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.search_wrap {
+  position: fixed;
+  width: 100vw;
   height: 100vh;
+  top: 0;
+  left: 0;
 
-  &.pokeball {
-    background: linear-gradient(
-      to bottom,
-      $pokeTop 48%,
-      $ballMiddle 48% 52%,
-      $ballBottom 52% $fullSize
+  &.base_ball {
+    @include linear_gradation(
+      var(--base-ball-top),
+      48%,
+      var(--base-ball-middle),
+      52%,
+      var(--base-ball-bottom),
+      100%
     );
   }
 
-  &.captainball {
-    background: linear-gradient(
-      to bottom,
-      $superTop 48%,
-      $ballMiddle 48% 52%,
-      $ballBottom 52% $fullSize
+  &.captain_ball {
+    @include linear_gradation(
+      var(--captain-ball-top),
+      48%,
+      var(--base-ball-middle),
+      52%,
+      var(--base-ball-bottom),
+      100%
     );
   }
 
-  &.ultraball {
-    background: linear-gradient(
-      to bottom,
-      $ultraTop 48%,
-      $ballMiddle 48% 52%,
-      $ballBottom 52% $fullSize
+  &.ultra_ball {
+    @include linear_gradation(
+      var(--ultra-ball-top),
+      48%,
+      var(--base-ball-middle),
+      52%,
+      var(--base-ball-bottom),
+      100%
     );
   }
 }
 
-.barHidden {
-  display: none;
-}
+.bar_group {
+  position: fixed;
+  width: 15%;
+  height: 48%;
+  top: 0;
+  background: linear-gradient(to top, #ffcc33 75%, #ffcc33 100%);
 
-@mixin urltraball($width, $height) {
-  .urltraBallBar {
-    position: fixed;
-    width: $width;
-    height: $height;
-    top: 0;
-    background: linear-gradient(to top, #f7b808 75%, #f7d47c $fullSize);
-
-    &.leftBar {
-      left: 15%;
-    }
-    &.rightBar {
-      right: 15%;
-    }
+  &.left_bar {
+    left: 15%;
   }
-}
 
-@include desktop {
-  @include urltraball(15%, 48%);
-}
-
-@include tablet {
-  @include urltraball(15%, 48%);
-}
-
-@include mobile {
-  @include urltraball(15%, 48%);
+  &.right_bar {
+    right: 15%;
+  }
 }

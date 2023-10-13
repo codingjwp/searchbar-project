@@ -1,12 +1,25 @@
+@charset 'utf-8';
+
+:root {
+  --base-ball-top: #cd2e23;
+  --captain-ball-top: #223775;
+  --ultra-ball-top: #313438;
+  --base-ball-middle: #000000;
+  --base-ball-bottom: #ecebe9;
+  --header-color: #039edc;
+
+  --card-border-color1: #e3d984;
+  --card-border-color2: #edd74e;
+}
+
+/* reset */
 html {
   font-size: 62.5%;
 }
+
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-main {
-  display: block;
 }
 
 h1 {
@@ -21,20 +34,45 @@ a {
 }
 
 a:hover,
-a:active {
+a:focus {
   text-decoration: underline;
 }
 
-button {
+button,
+input {
   appearance: none;
+  margin: 0;
   padding: 0;
   border: 0;
   border-radius: 0;
   background-color: transparent;
+  outline: none;
 }
 
 img {
+  vertical-align: top;
   border-style: none;
+}
+
+ul {
+  list-style: none;
+}
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+sub {
+  pointer-events: none;
+}
+em,
+strong {
+  font-style: normal;
+}
+progress,
+progress[value] {
+  appearance: none;
+  border: none;
 }
 
 [type='search'] {
@@ -44,4 +82,13 @@ img {
 
 [type='search']::-webkit-search-decoration {
   -webkit-appearance: none;
+}
+
+/* 공통 및 레이아웃 */
+body {
+  padding-top: 7.1rem;
+}
+
+.hide {
+  display: none;
 }

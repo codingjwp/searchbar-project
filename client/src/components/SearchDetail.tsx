@@ -1,7 +1,7 @@
-import { MouseEvent } from 'react';
+import {MouseEvent} from 'react';
 import styles from './searchDetail.module.scss';
 import cn from 'classnames';
-import { useSearchList } from '../hooks/useSearchList';
+import {useSearchList} from '../hooks/useSearchList';
 
 interface searchDetailProps {
   isFocused: boolean;
@@ -16,21 +16,18 @@ const SearchDetail = ({
   detailIndex,
   touchDetail,
 }: searchDetailProps) => {
-  const { data = [] } = useSearchList(pokemonName);
+  const {data = []} = useSearchList(pokemonName);
   return (
     <div
-      className={cn({
-        [styles.searchBarDetail]: isFocused,
-        [styles.hidden]: !isFocused,
-      })}
+      className={cn({[styles.search_detail]: isFocused, hide: !isFocused})}
       onClick={touchDetail}>
-      <ul className={styles.searchBarDetailCover}>
+      <ul className={styles.inner}>
         {data?.length !== 0 ? (
           data.map((item, index) => {
             return (
               <li
-                className={cn(styles.searchBarDetailBox, {
-                  [styles.indexCheck]: detailIndex === index,
+                className={cn({
+                  [styles.index_bgcolor]: detailIndex === index,
                 })}
                 key={item.id}
                 id={item.id}
@@ -41,9 +38,7 @@ const SearchDetail = ({
             );
           })
         ) : (
-          <li title='no-search' className={styles.searchBarDetailBox}>
-            검색어가 존재하지 않습니다.
-          </li>
+          <li title='no-search'>검색어가 존재하지 않습니다.</li>
         )}
       </ul>
     </div>

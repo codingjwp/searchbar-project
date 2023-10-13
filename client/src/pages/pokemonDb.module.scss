@@ -1,72 +1,72 @@
 @import '../mixin';
 
-@mixin wrapperChange($isMobile) {
-  .pokemonDbWrapper {
-    background: radial-gradient(circle at 50% 50%, #ffffff 0%, #87ceeb 100%);
-    width: $fullSize;
-    height: calc(100vh - 4rem);
-    margin-top: 4rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    @if $isMobile {
-      overflow: scroll;
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-      &::-webkit-scrollbar {
-        display: none;
-      }
-    }
-  }
-}
-
-@mixin cardFilp($isMobile) {
-  .pokemonDbContainer {
-    display: flex;
-    position: relative;
-    width: $fullSize;
-    justify-content: center;
-    align-items: center;
-    @if $isMobile {
-      flex-direction: column;
-    } @else {
-      flex-direction: row;
-    }
-  }
-}
-
-.pokemonDbHeader {
-  display: flex;
-  justify-content: end;
+.db_header {
   position: fixed;
-  align-items: center;
   top: 0;
-  width: $fullSize;
-  height: 4rem;
-  background-color: #0782b3;
+  left: 0;
+  width: 100%;
+  height: 7.1rem;
+  background-color: #2b7fd3;
   z-index: 10;
-  & > svg {
-    cursor: pointer;
-    margin-right: 1vw;
+}
+
+.db_header .inner {
+  display: flex;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.db_header button {
+  cursor: pointer;
+  padding: 1.5rem;
+
+  &:hover,
+  &:focus {
+    background-color: darken(#3399ff, 20%);
   }
+}
+
+.spr_logout_icon::before {
+  content: '';
+  display: block;
+  background: url('http://localhost:4000/types/typesprite.png') no-repeat;
+  background-size: 10rem 50rem;
+}
+
+.logout::before {
+  width: 3rem;
+  height: 3rem;
+  margin: 0.5rem;
+  background-position: -1rem -46rem;
+}
+
+.db_container {
+  width: 100%;
+}
+
+.db_container .inner {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+  width: 100%;
+  height: 100%;
 }
 
 @include desktop {
-  @include wrapperChange(false);
-  @include cardFilp(false);
+  .db_container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .db_header .inner {
+    max-width: 144rem;
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  .db_container .inner {
+    max-width: 144rem;
+  }
 }
 
-@include tablet {
-  @include wrapperChange(false);
-  @include cardFilp(false);
-}
-
-@include mobile {
-  @include wrapperChange(true);
-  @include cardFilp(true);
-}
-
-.pokemondbNotFound {
-  font-size: 3rem;
-  font-weight: 500;
-}
+@include hiddenText;

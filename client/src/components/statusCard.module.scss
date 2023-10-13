@@ -2,96 +2,61 @@
 
 @keyframes cardBorder {
   0% {
-    transform: translate(-$halfSize, -$halfSize) rotate(0deg);
+    transform: translate(-50%, -50%) rotate(0deg);
   }
   100% {
-    transform: translate(-$halfSize, -$halfSize) rotate(360deg);
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
 
-@mixin statusCarDevice($width, $height) {
-  .statusCard {
-    display: flex;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    min-width: $width;
-    min-height: $height;
-  }
-
-  .statusCardContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+.status_card_wrap {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border-radius: 1.2rem;
+  margin-top: 1rem;
+  overflow: hidden;
+  inset: 0;
+  &::before,
+  &::after {
+    content: '';
+    display: block;
     position: absolute;
-    width: $fullSize;
-    height: $fullSize;
-    inset: 0;
-    box-sizing: border-box;
+  }
+  &::before {
+    top: 50%;
+    left: 50%;
+    width: 110%;
+    height: 15rem;
+    background: linear-gradient(
+      transparent,
+      var(--card-border-color1),
+      var(--card-border-color2),
+      var(--card-border-color1),
+      transparent
+    );
+    animation-name: cardBorder;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  &::after {
+    inset: 0.8rem;
     border-radius: 1.2rem;
-    padding: 2rem 3rem 2rem 3rem;
-    overflow: hidden;
-    &::before {
-      content: '';
-      position: absolute;
-      top: $halfSize;
-      left: $halfSize;
-      width: calc($width + 26rem);
-      height: 15rem;
-      background: linear-gradient(
-        transparent,
-        #e3d984,
-        #edd74e,
-        #e3d984,
-        transparent
-      );
-      @include animation(cardBorder, 4s, linear, infinite);
-    }
-    &::after {
-      content: '';
-      position: absolute;
-      inset: 0.8rem;
-      border-radius: 1.2rem;
-    }
-    & .statusCardImgCover,
-    & span,
-    & canvas {
-      z-index: 1;
-    }
-  }
-  .statusCardImgCover {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 3rem;
-  }
-  .statusMarginRight {
-    margin-right: 1rem;
-  }
-
-  .statusCardTypeImg {
-    width: 3rem;
-    height: 3rem;
-    border-radius: $fullSize;
-    border: 0.2rem solid $ballBottom;
   }
 }
 
-.hidden {
-  display: none;
+.status_card_wrap .inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
 }
-
-@include typeCardColor(true);
-
-@include desktop {
-  @include statusCarDevice(36rem, 46rem);
-}
-
-@include tablet {
-  @include statusCarDevice(36rem, 46rem);
-}
-
-@include mobile {
-  @include statusCarDevice(26rem, 30rem);
+.staus_card_title {
+  font-size: 2rem;
+  margin: 0 0 2rem 4rem;
 }

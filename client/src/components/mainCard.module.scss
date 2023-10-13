@@ -1,149 +1,274 @@
+@import '../mixin';
 @import '../typeColor';
 
 @keyframes cardBorder {
   0% {
-    transform: translate(-$halfSize, -$halfSize) rotate(0deg);
+    transform: translate(-50%, -50%) rotate(0deg);
   }
   100% {
-    transform: translate(-$halfSize, -$halfSize) rotate(360deg);
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
 
-@mixin mainCardDevice($ismobile, $width, $height) {
-  .mainCard {
-    display: flex;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    min-width: $width;
-    min-height: $height;
-    @if $ismobile {
-      margin-bottom: 0.3rem;
-    } @else {
-      margin-right: 0.5rem;
-    }
-  }
-
-  .mainCardContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+.main_card_wrap {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border-radius: 1.2rem;
+  margin-top: 1rem;
+  overflow: hidden;
+  inset: 0;
+  &::before,
+  &::after {
+    content: '';
+    display: block;
     position: absolute;
-    width: $fullSize;
-    height: $fullSize;
-    inset: 0;
-    box-sizing: border-box;
+  }
+  &::before {
+    top: 50%;
+    left: 50%;
+    width: 110%;
+    height: 15rem;
+    background: linear-gradient(
+      transparent,
+      var(--card-border-color1),
+      var(--card-border-color2),
+      var(--card-border-color1),
+      transparent
+    );
+    animation-name: cardBorder;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  &::after {
+    inset: 0.8rem;
     border-radius: 1.2rem;
-    padding: 2rem 2rem 2rem 2rem;
-    overflow: hidden;
-    &::before {
-      content: '';
-      position: absolute;
-      top: $halfSize;
-      left: $halfSize;
-      width: calc($width + 26rem);
-      height: 15rem;
-      background: linear-gradient(
-        transparent,
-        #e3d984,
-        #edd74e,
-        #e3d984,
-        transparent
-      );
-      @include animation(cardBorder, 4s, linear, infinite);
-    }
-    &::after {
-      content: '';
-      position: absolute;
-      inset: 0.8rem;
-      border-radius: 1.2rem;
-    }
-    & .mainCardImgCover,
-    & span,
-    & .formCover {
-      z-index: 1;
-    }
-  }
-
-  .mainCardImgCover {
-    background-color: #ffffff;
-    overflow: hidden;
-    border-radius: 3rem;
-    display: flex;
-    justify-content: center;
-    @if $ismobile {
-      width: calc($width - 12rem);
-      height: calc($height - 16rem);
-    } @else {
-      width: calc($width - 12rem);
-      height: calc($height - 22rem);
-    }
-  }
-
-  .mainCardImg {
-    @if $ismobile {
-      width: calc($width - 14rem);
-      height: calc($height - 18rem);
-    } @else {
-      width: calc($width - 14rem);
-      height: calc($height - 24rem);
-    }
-  }
-
-  .mainCardTitle {
-    @if $ismobile {
-      font-size: 1.6rem;
-    } @else {
-      font-size: 2.5rem;
-    }
-    font-weight: bolder;
-    letter-spacing: 0.3rem;
-  }
-  .mainCardEnName {
-    @if $ismobile {
-      font-size: 1.2rem;
-    } @else {
-      font-size: 1.5rem;
-    }
-  }
-
-  .formCover {
-    display: flex;
-    justify-content: center;
-    margin-top: 1.5rem;
-    @if $ismobile {
-      font-size: 1rem;
-    } @else {
-      font-size: 1.4rem;
-    }
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
   }
 }
 
-.titleMarginTop {
+.main_card_wrap .inner {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-rows: 1fr 0.25fr;
+  gap: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.main_card_wrap .img_cover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3rem;
+  background-color: #ffffff;
+  margin: 2rem 0 2rem 2rem;
+  padding: 1rem;
+  box-sizing: border-box;
+  min-width: 16rem;
+  max-width: 40rem;
+  max-height: 40rem;
+  overflow: hidden;
+  grid-area: 1 / 1 / 2 / 2;
+}
+.main_card_wrap .img_cover img {
+  width: 100%;
+  max-width: 34em;
+  max-height: 34rem;
+  object-fit: fill;
+}
+
+.spr_type_icon::before {
+  content: '';
+  display: block;
+  background: url('http://localhost:4000/types/typesprite.png') no-repeat;
+  background-size: 10rem 50rem;
+}
+
+.main_card_wrap .type_group {
+  display: flex;
+  & .type_img {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+  }
+}
+
+.bug::before,
+.dark::before,
+.dragon::before,
+.electric::before,
+.fighting::before,
+.fairy::before,
+.flying::before,
+.fire::before,
+.grass::before,
+.ghost::before,
+.ground::before,
+.ice::before,
+.normal::before,
+.poison::before,
+.psychic::before,
+.rock::before,
+.steel::before,
+.water::before {
+  width: 3rem;
+  height: 3rem;
+  margin: 0.5rem auto;
+  border-radius: 50%;
+}
+
+.water::before {
+  background-position: -1rem -1rem;
+}
+.dark::before {
+  background-position: -1rem -6rem;
+}
+.electric::before {
+  background-position: -1rem -11rem;
+}
+.fighting::before {
+  background-position: -1rem -16rem;
+}
+.flying::before {
+  background-position: -1rem -21rem;
+}
+.grass::before {
+  background-position: -1rem -26rem;
+}
+.ice::before {
+  background-position: -1rem -31rem;
+}
+.poison::before {
+  background-position: -1rem -36rem;
+}
+.rock::before {
+  background-position: -1rem -41rem;
+}
+
+.bug::before {
+  background-position: -6rem -1rem;
+}
+.dragon::before {
+  background-position: -6rem -6rem;
+}
+.fairy::before {
+  background-position: -6rem -11rem;
+}
+.fire::before {
+  background-position: -6rem -16rem;
+}
+.ghost::before {
+  background-position: -6rem -21rem;
+}
+.ground::before {
+  background-position: -6rem -26rem;
+}
+.normal::before {
+  background-position: -6rem -31rem;
+}
+.psychic::before {
+  background-position: -6rem -36rem;
+}
+.steel::before {
+  background-position: -6rem -41rem;
+}
+
+.main_card_wrap .info {
+  display: flex;
+  flex-direction: column;
+  margin: 3rem 1rem 1rem 0;
+  grid-area: 1 / 2 / 2 / 3;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+
+.main_card_wrap .card_title,
+.main_card_wrap .card_sub_title {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.main_card_wrap .card_title {
+  font-size: 1.8rem;
+  letter-spacing: 0.5rem;
+}
+.main_card_wrap .card_sub_title {
+  font-size: 1.5rem;
+}
+
+.main_card_wrap .info .form_cover {
+  width: 100%;
+}
+
+.main_card_wrap .description {
+  grid-area: 2 / 1 / 3 / 3;
+  margin: 2rem;
+}
+.description .entries {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
   margin-top: 0.5rem;
-}
-.titleMarginMiddle {
-  margin: 0.3rem 0;
-}
-
-.hidden {
-  display: none;
-}
-
-@include typeCardColor(true);
-
-@include desktop {
-  @include mainCardDevice(false, 36rem, 46rem);
+  line-height: 2.2rem;
+  font-size: 1.4rem;
+  overflow: hidden;
 }
 
 @include tablet {
-  @include mainCardDevice(false, 36rem, 46rem);
+  .main_card_wrap .inner {
+    grid-template-columns: 1fr 1fr;
+  }
+  .main_card_wrap .img_cover {
+    grid-area: 1 / 1 / 3 / 2;
+  }
+  .main_card_wrap .info {
+    // margin: 3rem 0.8rem 1rem 0;
+    grid-area: 1 / 2 / 2 / 3;
+  }
+  .form_cover .form_text {
+    font-size: 1.2rem;
+  }
+  .main_card_wrap .description {
+    grid-area: 2 / 2 / 3 / 3;
+  }
+  .main_card_wrap .card_title {
+    font-size: 2rem;
+  }
+  .main_card_wrap .card_sub_title {
+    font-size: 1.8rem;
+  }
 }
 
-@include mobile {
-  @include mainCardDevice(true, 26rem, 30rem);
+@include desktop {
+  .main_card_wrap .inner {
+    grid-template-columns: 0.75fr 0.5fr 0.5fr;
+    grid-template-rows: none;
+  }
+  .main_card_wrap .img_cover {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  .main_card_wrap .info {
+    margin: 3rem 0.8rem 1rem 0;
+    grid-area: 1 / 2 / 2 / 3;
+  }
+  .main_card_wrap .description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-area: 1 / 3 / 2 / 4;
+    margin: 3rem;
+  }
+  .description .entries {
+    -webkit-line-clamp: 3;
+  }
 }
+
+@include hiddenText;
