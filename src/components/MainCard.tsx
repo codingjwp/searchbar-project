@@ -47,7 +47,7 @@ const MainCard = ({
             src={imgSrc}
             alt={enname}
             onError={(e: SyntheticEvent<HTMLImageElement>) =>
-              (e.currentTarget.src = '/src/assets/default.avif')
+              (e.currentTarget.src = '/src/assets/default.webp')
             }
           />
           <div className={styles.type_group}>

@@ -266,7 +266,7 @@ export const useSearchList = (init: string) => {
 
 
 
-
+1,761, 980
 
 
 # 검색바 프로젝트 프론트엔드 부분
@@ -335,7 +335,5 @@ VITE_API_TYPE="http://localhost:4000/types/"
 
 ### 사용한 라이브러리 
 ![sass](https://img.shields.io/badge/sass-1.67.0-FF0000?logo=sass)
-![chart.js](https://img.shields.io/badge/chart.js-4.4.0-00FF00?logo=chart.js)
 ![classnames](https://img.shields.io/badge/classnames-2.3.2-00FFFF?logo=classnames)
 ![react-query](https://img.shields.io/badge/react--query-3.39.3-800000?logo=react-query)
-![recoil](https://img.shields.io/badge/recoil-0.0.7-0000FF?logo=recoil)
