@@ -1,0 +1,783 @@
+﻿brands,model,battery,ram,storage,screen,os,height,width
+apple,Apple iPhone 11,3110,4,64 128,6.1,ios,1792,828
+apple,Apple iPhone 11 Pro Max,3500,4,64,6.5,ios,2688,1242
+apple,Apple iPhone 12,2815,4,64 128 256,6.1,ios,2532,1170
+apple,Apple iPhone 12 Mini,2227,4,64 128 256,5.4,ios,2340,1080
+apple,Apple iPhone 12 Pro,2815,6,256 512,6.1,ios,2532,1170
+apple,Apple iPhone 13,3240,4,128 256 512,6.1,ios,2532,1170
+apple,Apple iPhone 13 Mini,2438,4,128,5.4,ios,2340,1080
+apple,Apple iPhone 13 Pro,3095,6,128 256 1000,6.1,ios,2532,1170
+apple,Apple iPhone 13 Pro Max,4352,6,128 256 1000,6.7,ios,2778,1284
+apple,Apple iPhone 14,3279,6,128 256 512,6.1,ios,2532,1170
+apple,Apple iPhone 14 Mini,3500,6,128,5.42,ios,2340,1080
+apple,Apple iPhone 14 Plus,4325,6,128 256 512,6.7,ios,2778,1284
+apple,Apple iPhone 14 Pro,3200,6,128 256 1000,6.1,ios,2556,1179
+apple,Apple iPhone 14 Pro Max,4323,6,128 256 512 1000,6.7,ios,2796,1290
+apple,Apple iPhone 15,3285,6,128,6.06,ios,2532,1170
+apple,Apple iPhone 15 Plus,4532,8,128,6.71,ios,2778,1284
+apple,Apple iPhone 15 Pro,3274,8,128,6.06,ios,2532,1170
+apple,Apple iPhone 15 Pro Max,4352,8,256,6.68,ios,2778,1284
+apple,Apple iPhone 15 Ultra,4700,8,128,6.73,ios,2796,1290
+apple,Apple iPhone 7s,2230,3,32,4.7,ios,1334,750
+apple,Apple iPhone 9,2050,3,64,4.7,ios,1334,750
+apple,Apple iPhone SE 2020,1821,3,64,4.7,ios,1334,750
+apple,Apple iPhone SE 3 2022,2018,4,64,4.7,ios,1334,750
+apple,Apple iPhone SE 4,2018,4,64,6.1,ios,1580,750
+apple,Apple iPhone XR2,3060,4,64,6.1,ios,1792,828
+asus,Asus ROG Phone 5s 5G,6000,8,128,6.78,android,2448,1080
+asus,Asus ROG Phone 6,6000,12,256,6.78,android,2448,1080
+asus,Asus ROG Phone 6 Batman Edition,6000,16,256,6.78,android,2448,1080
+asus,Asus ROG Phone 6 Pro 5G,6000,18,512,6.78,android,2448,1080
+asus,Asus ROG Phone 6D Ultimate,6000,16,512,6.78,,2448,1080
+asus,Asus ROG Phone 7,6000,18,256,6.8,android,2448,1080
+asus,Asus ZenFone 9,4300,8,128,5.9,android,2400,1080
+blackview,Blackview BV5200 Pro,5180,4,64,6.1,android,1560,720
+blu,BLU F91 5G,5000,8,128,6.8,android,2460,1080
+cat,CAT S22 Flip,2000,2,16,4,,640,480
+cola,Cola Phone,5000,4,64,6.4,android,2400,1080
+doogee,Doogee S99,6000,8,128,6.3,android,2340,1080
+doogee,Doogee V Max,22000,12,256,6.58,android,2408,1080
+duoqin,Duoqin F22 Pro,2150,4,64,3.54,android,960,640
+gionee,Gionee G13 Pro,3500,4,32,6.26,other,1600,720
+gionee,Gionee K10,4800,3,32,6.8,android,1600,720
+gionee,Gionee M12 Pro,4000,6,128,6.2,android,1520,720
+google,Google Pixel 2 XL,3520,4,128,6,android,2880,1440
+google,Google Pixel 3a XL,3700,4,64,6,android,2160,1080
+google,Google Pixel 4,2800,6,64,5.7,android,2280,1080
+google,Google Pixel 5,4080,8,128,6,android,2340,1080
+google,Google Pixel 5A,4620,6,128,6.34,android,2400,1080
+google,Google Pixel 6,4614,8,128,6.4,android,2400,1080
+google,Google Pixel 6 Pro,5003,12,128 256,6.71,android,3120,1440
+google,Google Pixel 6A,4410,6,128,6.14,android,2400,1080
+google,Google Pixel 7 5G,4355,8,128,6.3,android,2400,1080
+google,Google Pixel 7 Pro 5G,5000,12,128,6.7,android,3120,1440
+google,Google Pixel 7A,4410,6,128,6.1,android,2400,1080
+google,Google Pixel 8,4830,8,128,6.6,android,2400,1080
+google,Google Pixel 8 Pro,5000,12,256,6.73,android,3120,1440
+honor,Honor 50,4300,6,128,6.57,android,2340,1080
+honor,Honor 60 SE 5G,4300,8,128,6.67,android,2340,1080
+honor,Honor 70 5G,4800,8 12,256 512,6.67,android,2400,1080
+honor,Honor 80 Pro Plus,4500,12,256,6.78,android,2652,1200
+honor,Honor Magic 4 Pro Plus 5G,4600,12,512,6.76,android,2772,1344
+honor,Honor Play 30,5000,4,128,6.5,android,1600,720
+honor,Honor X6,5000,4,64,6.5,android,1600,720
+honor,Honor X7a,5000,6,128,6.75,android,1600,720
+honor,Honor X8,4000,6,128,6.7,android,2388,1080
+honor,Honor X8 5G,5000,6,128,6.5,android,1600,720
+honor,Honor X9 5G,4800,8,128,6.81,android,2388,1080
+honor,Honor X9a,5100,8,256,6.67,android,2400,1080
+huawei,Huawei Honor 9N,3000,4,64,5.84,android,2280,1080
+huawei,Huawei Mate 30 RS Porsche Design,4500,12,512,6.53,android,2400,1176
+huawei,Huawei Mate 40 Pro 4G,4400,8,128,6.76,other,2772,1344
+huawei,Huawei Mate 50 Pro 5G,4500,8,256,6.76,other,3200,1440
+huawei,Huawei Mate 50 RS Porsche Design,4700,12,512,6.74,other,2616,1212
+huawei,Huawei Mate X,4500,8,512,8,,2480,2200
+huawei,Huawei Mate Xs 2,4600,8,512,7.8,,2480,2200
+huawei,Huawei Nova 10,4000,8,128,6.67,other,2400,1080
+huawei,Huawei Nova 10 SE,4500,8,256,6.67,android,2160,1080
+huawei,Huawei Nova 7i,4200,8,128,6.4,android,2340,1080
+huawei,Huawei Nova 9,4300,8,128,6.57,other,2340,1080
+huawei,Huawei Nova 9 SE,4000,8,128,6.78,android,2388,1080
+huawei,Huawei Nova Y61,5000,4,64,6.52,other,1600,720
+huawei,Huawei Nova Y90,5000,8,128,6.7,other,2388,1080
+huawei,Huawei P40 Pro,4200,8,256,6.58,android,2640,1200
+huawei,Huawei P50 Pro 4G,4360,8,256,6.6,other,2700,1288
+ikall,iKall Z18,5000,4,64,6.82,android,1560,720
+ikall,iKall Z19,5000,4,32,6.5,android,1600,720
+ikall,iKall Z19 Pro,5000,4,64,6.5,android,1600,720
+infinix,Infinix Hot 11S,5000,4,64,6.78,android,2480,1080
+infinix,Infinix Hot 12,6000,4,64,6.82,android,1640,720
+infinix,Infinix Hot 12 Play,6000,4,64,6.82,android,720,1640
+infinix,Infinix Hot 12 Pro,5000,6 8,64 128,6.6,android,1612,720
+infinix,Infinix Hot 20,5000,4 6,64 128,6.6,android,2408,1080
+infinix,Infinix Hot 20 Play,6000,4,64,6.82,android,1640,720
+infinix,Infinix Hot 20i,5000,3,64,6.6,android,1612,720
+infinix,Infinix Hot 20S,5000,8,128,6.78,android,2460,1080
+infinix,Infinix Note 11,5000,6,128,6.7,android,2400,1080
+infinix,Infinix Note 11S,5000,8,128,6.95,android,2460,1080
+infinix,Infinix Note 12,5000,4 6,64 128,6.7,android,1080,2400
+infinix,Infinix Note 12 G96,5000,8,128,6.7,android,2400,1080
+infinix,Infinix Note 12 5G,5000,6,64,6.7,android,2400,1080
+infinix,Infinix Note 12 Pro,5000,8,256,6.7,android,2400,1080
+infinix,Infinix Note 12 Pro 5G,5000,8,128,6.7,android,2400,1080
+infinix,Infinix Note 12 Turbo,5000,8,128,6.7,android,1080,2400
+infinix,Infinix Note 12 VIP,4500,8,128,6.7,android,2400,1080
+infinix,Infinix Note 12i 2022,5000,4,64,6.7,android,2400,1080
+infinix,Infinix Note 13 Pro,5000,6,128,6.91,android,2460,1080
+infinix,Infinix Smart 6,5000,2,64,6.6,android,1600,720
+infinix,Infinix Smart 6 HD,5000,2,32,6.6,android,1600,720
+infinix,Infinix Smart 6 Plus,5000,3,64,6.82,android,1600,720
+infinix,Infinix Zero 20,4500,8,128,6.7,android,2400,1080
+infinix,Infinix Zero 5G 2023,5000,8,256,6.78,android,2460,1080
+infinix,Infinix Zero Ultra,4500,8,256,6.8,android,2400,1080
+infinix,Infinix Zero X Pro,4500,8,128,6.67,android,2400,1080
+iqoo,iQOO 11,5000,16,256,6.78,android,3200,1440
+iqoo,iQOO 11 5G,5000,8,256,6.78,android,3200,1440
+iqoo,iQOO 11 Pro 5G,4700,8,256,6.78,android,3200,1440
+iqoo,iQOO 7,4400,8 12,128 256,6.62,android,2400,1080
+iqoo,iQOO 7 Legend,4000,8,128,6.62,android,2400,1080
+iqoo,iQOO 9 5G,4350,8 12,128 256,6.56,android,2376,1080
+iqoo,iQOO 9 Pro 5G,4700,8,256,6.78,android,3200,1440
+iqoo,iQOO 9 SE 5G,4500,8 12,128 256,6.62,android,2400,1080
+iqoo,iQOO 9T 5G,4700,8,128,6.78,android,2400,1080
+iqoo,iQOO Neo 6 5G,4700,8 12,128 256,6.62,android,2400,1080
+iqoo,iQOO Neo 6 SE 5G,4700,8,128,6.62,android,2400,1080
+iqoo,iQOO Neo 7 5G,5000,8,128,6.78,android,2400,1080
+iqoo,iQOO Neo 7 Racing Edition,5000,8,256,6.78,android,2400,1080
+iqoo,iQOO Neo 7 SE 5G,5000,8,128,6.78,android,2400,1080
+iqoo,iQOO Z6 4G,5000,4 6,128,6.44,android,2400,1080
+iqoo,iQOO Z6 5G,5000,4 6 8,128,6.58,android,2408,1080
+iqoo,iQOO Z6 Lite,5000,6,128,6.58,android,2408,1080
+iqoo,iQOO Z6 Lite 5G,5000,4,64,6.58,android,2408,1080
+iqoo,iQOO Z6 Pro 5G,4700,6 8 12,128 256,6.44,android,2404,1080
+iqoo,iQOO Z7 5G,4200,8,128,6.67,android,2400,1080
+iqoo,iQOO Z7 Pro 5G,5000,6,128,6.62,android,2412,1080
+iqoo,iQOO Z8 5G,5000,4,128,6.58,android,2412,1080
+iqoo,iQOO Z9,5000,8,128,6.67,android,2412,1080
+itel,Itel A23 Pro,2400,1,8,5,android,480,854
+itel,itel A23s,3020,2,32,5,android,480,854
+itel,Itel A24 Pro,3020,2,32,5,android,480,854
+itel,itel A56,4000,1,16,6,android,1600,720
+itel,itel P36,5000,1,16,6.5,android,720,1600
+itel,itel S16,4000,1,16,6.5,android,720,1600
+itel,itel S16 Pro,4000,2,32,6.6,android,720,1600
+itel,itel Vision 1,4000,3,32,6.09,android,720,1520
+itel,itel Vision 3,5000,2 3,32 64,6.6,android,720,1612
+jio,Jio JioPhone 5G,5000,4,32,6.5,android,1600,720
+jio,Jio JioPhone Next,3500,2 3,32,5.45,android,1440,720
+jio,Jio Phone 3,2800,2,64,5,android,1280,720
+lava,Lava Agni 5G,5000,8,128,6.78,android,2460,1080
+lava,Lava Blaze 5G,5000,4,128,6.5,android,720,1600
+lava,Lava Blaze NXT,5000,4,64,6.5,android,1600,720
+lava,Lava X3,4000,3,32,6.5,android,720,1600
+leeco,LeEco S1 Pro,5000,8,128,6.5,android,1600,720
+leitz,Leitz Phone 2,5000,12,256,6.6,android,2730,1260
+lenovo,Lenovo Legion Pro 2,5000,16,512,6.5,android,2400,1080
+lenovo,Lenovo Legion Y90,5600,12,256,6.92,android,2460,1080
+letv,Letv Y1 Pro,4000,4,32,6.54,android,1560,720
+letv,Letv Y1 Pro Plus,4000,6,64,6.5,android,1560,720
+letv,Letv Y2 Pro,4000,4,32,6.5,android,1560,720
+lg,LG V60 ThinQ,5000,8,128,6.8,,2460,1080
+lg,LG Velvet 5G,4300,6,128,6.8,android,2460,1080
+lg,LG Wing 5G,4000,8,128,6.8,,2460,1080
+lyf,Lyf Earth 1,3500,3,32,5.5,android,1920,1080
+lyf,Lyf Earth 2,2500,3,32,5,android,1920,1080
+micromax,Micromax IN 2B,5000,4 6,64,6.52,android,1600,720
+micromax,Micromax IN 2C,5000,3,32,6.52,android,1600,720
+motorola,Motorola Edge 20 Fusion 5G,5000,6,128,6.67,android,2400,1080
+motorola,Motorola Edge 30 5G,4020,6 8,128,6.5,android,2400,1080
+motorola,Motorola Edge 30 Fusion 5G,4400,8,128,6.55,android,2400,1080
+motorola,Motorola Edge 30 Pro 5G,4800,8,128,6.7,android,2400,1080
+motorola,Motorola Edge 30 Ultra,4610,8 12,128 256,6.67,android,2400,1080
+motorola,Motorola Edge 40 5G,4200,8,128,6.5,android,2412,1080
+motorola,Motorola Edge 40 Fusion,4500,8,128,6.67,android,2400,1080
+motorola,Motorola Edge 40 Pro 5G,4800,8,128,6.7,android,2460,1080
+motorola,Motorola Edge Plus,5000,12,256,6.7,android,2340,1080
+motorola,Motorola Edge S,5000,6,128,6.7,android,2520,1080
+motorola,Motorola Moto E13,5000,2,64,6.5,android,1600,720
+motorola,Motorola Moto E22s,5000,4,64,6.5,android,1600,720
+motorola,Motorola Moto E32,5000,4,64,6.5,android,1600,720
+motorola,Motorola Moto E32s,5000,3 4,32 64,6.5,android,1600,720
+motorola,Motorola Moto E40,5000,4,64,6.5,android,1600,720
+motorola,Motorola Moto Edge 30 Neo,4020,8,128,6.28,android,2400,1080
+motorola,Motorola Moto Edge S30 5G,5000,6,128,6.8,android,2460,1080
+motorola,Motorola Moto Edge S30 Pro,5000,8,128,6.67,android,2460,1080
+motorola,Motorola Moto Edge X30 Pro,4450,8,128,6.67,android,2340,1080
+motorola,Motorola Moto G 5G,5000,6,128,6.67,android,2400,1080
+motorola,Motorola Moto G13,5000,4,128,6.5,android,1600,720
+motorola,Motorola Moto G22,5000,4,64,6.53,android,1600,720
+motorola,Motorola Moto G23,5000,4,128,6.5,android,1600,720
+motorola,Motorola Moto G31,5000,4 6,64 128,6.47,android,2400,1080
+motorola,Motorola Moto G32,5000,4,64,6.55,android,2400,1080
+motorola,Motorola Moto G40 Fusion,6000,4,64,6.78,android,2460,1080
+motorola,Motorola Moto G42,5000,4,64,6.47,android,2400,1080
+motorola,Motorola Moto G51 5G,5000,4,64,6.8,android,2400,1080
+motorola,Motorola Moto G52,5000,4 6,64 128,6.6,android,1080,2460
+motorola,Motorola Moto G52 5G,5000,4,64,6.6,android,1080,2460
+motorola,Motorola Moto G53,5000,4,128,6.5,android,1600,720
+motorola,Motorola Moto G60,6000,6 8,128,6.78,android,2460,1080
+motorola,Motorola Moto G62 5G,5000,6,128,6.55,android,2400,1080
+motorola,Motorola Moto G71 5G,5000,6,128,6.4,android,2400,1080
+motorola,Motorola Moto G72,5000,6,128,6.5,android,2400,1080
+motorola,Motorola Moto G72 4G,5000,6,128,6.55,android,2400,1080
+motorola,Motorola Moto G73,5000,8,256,6.5,android,2400,1080
+motorola,Motorola Moto G82,5000,8,128,6.6,android,2400,1080
+motorola,Motorola Moto G82 5G,5000,6,128,6.6,android,2400,1080
+motorola,Motorola Moto G91 5G,5000,6,128,6.8,android,2400,1080
+motorola,Motorola Moto S30 Pro,4400,8,128,6.55,android,2460,1080
+motorola,Motorola Moto X30 Pro,4450,8,128,6.67,android,2400,1080
+motorola,Motorola Moto X40,4600,8,128,6.7,android,2400,1080
+motorola,Motorola One Fusion Plus,5000,6,128,6.5,android,2340,1080
+motorola,Motorola One Macro,4000,4,64,6.2,android,1520,720
+motorola,Motorola ThinkPhone,5000,8,128,6.6,android,2400,1080
+nokia,Nokia C01 Plus,3000,2,16,5.45,android,1440,720
+nokia,Nokia C21 Plus,5050,4,64,6.52,android,1600,720
+nokia,Nokia C31,5050,3,32,6.74,android,1600,720
+nokia,Nokia G11 Plus,5000,4,64,6.52,android,1600,720
+nokia,Nokia G21,5050,4 6,64 128,6.5,android,1600,720
+nokia,Nokia G60,4500,6,128,6.58,android,2400,1080
+nokia,Nokia N73 5G,6000,12,256,6.9,android,3200,1400
+nokia,Nokia X100 5G,4470,6,128,6.67,android,2400,1080
+nokia,Nokia X30,4200,6,128,6.43,android,2400,1080
+nokia,Nokia X50 5G,6000,6,64,6.81,android,2400,1080
+nokia,Nokia X60 5G,6000,6,128,6.51,other,2400,1080
+nokia,Nokia X60 Pro 5G,6000,8,128,6.51,android,2408,1080
+nothing,Nothing Phone 1,4500,8 12,128 256,6.55,android,2400,1080
+nothing,Nothing Phone 1 Lite,5000,6,128,6.55,android,2400,1080
+nothing,Nothing Phone 2,4700,8,128,6.67,android,2400,1080
+nubia,Nubia Red Magic 6S 5G,5050,8,128,6.8,android,2400,1080
+nubia,Nubia Red Magic 7S Pro,5000,12,256,6.8,android,2400,1080
+nubia,Nubia Red Magic 8 Pro 5G,6000,8,128,6.8,android,2480,1116
+nubia,Nubia Red Magic 8 Pro Plus,5000,12,256,6.8,android,2480,1116
+nubia,Nubia Z40 Pro 5G,5000,8,128,6.67,android,2400,1080
+nubia,Nubia Z50,5000,8,128,6.67,android,2400,1080
+oneplus,OnePlus 10 Pro 5G,5000,8 12,128 256 512,6.7,android,3216,1440
+oneplus,OnePlus 10R 5G,5000,8 12,128 256,6.7,android,2412,1080
+oneplus,OnePlus 10R Prime Edition,5000,8,128,6.7,android,2412,1080
+oneplus,OnePlus 10T,4800,8 12 16,128 256,6.7,android,2412,1080
+oneplus,OnePlus 11 5G,5000,12,256,6.7,android,3216,1440
+oneplus,OnePlus 11 Pro,4500,8,128,6.7,android,3216,1440
+oneplus,OnePlus 11R,5000,8,128,6.7,android,2412,1080
+oneplus,OnePlus 12 Pro,4800,12,256,6.73,android,3412,1440
+oneplus,OnePlus 6,3300,8,128,6.28,android,2280,1080
+oneplus,OnePlus 9 Pro,4500,8,128,6.7,android,3216,1440
+oneplus,OnePlus 9RT 5G,4500,8,128,6.62,android,2400,1080
+oneplus,OnePlus 9T,4500,8,128,6.55,android,2400,1080
+oneplus,OnePlus Ace 2,5000,8,128,6.7,android,2412,1080
+oneplus,OnePlus Ace 5G,4500,8,128,6.7,android,2412,1080
+oneplus,OnePlus Ace Pro,4800,12,256,6.7,android,2412,1080
+oneplus,OnePlus Ace Racing Edition 5G,5000,8,128,6.59,android,2412,1080
+oneplus,OnePlus Clover,6000,4,64,6.52,android,1560,720
+oneplus,OnePlus Nord 2 Lite 5G,5000,8,128,6.59,android,2412,1080
+oneplus,OnePlus Nord 2T,4500,12,256,6.43,android,2400,1080
+oneplus,OnePlus Nord 2T 5G,4500,8,128,6.43,android,2400,1080
+oneplus,OnePlus Nord 3 5G,4200,8,128,6.43,android,2400,1080
+oneplus,OnePlus Nord 3T 5G,4500,8,128,6.43,android,2400,1080
+oneplus,OnePlus Nord 4 5G,4500,8,128,6.43,android,2412,1080
+oneplus,OnePlus Nord 5,5000,8,128,6.57,android,2400,1080
+oneplus,OnePlus Nord CE 2 Lite 5G,5000,6 8,128 256,6.59,android,2412,1080
+oneplus,OnePlus Nord CE 3 5G,5000,6,128,6.7,android,2412,1080
+oneplus,OnePlus Nord CE 3 Lite 5G,5000,6,128,6.59,android,2412,1080
+oneplus,OnePlus Nord Lite,4300,8,128,6.55,android,2400,1080
+oneplus,OnePlus Nord N10,4300,6,128,6.49,android,2400,1080
+oneplus,OnePlus Nord N100,5000,4,64,6.52,android,1600,720
+oneplus,OnePlus Nord N20 5G,4500,6,128,6.43,android,2400,1080
+oneplus,OnePlus Nord N200,5000,4,64,6.49,android,2400,1080
+oneplus,OnePlus Nord N300,5000,4,64,6.56,android,1612,720
+oneplus,OnePlus Nord SE,4500,4,64,6.3,android,2400,1080
+oneplus,OnePlus Z,4300,8,128,6.55,android,2400,1080
+oppo,OPPO A1 Pro,4800,8,128,6.7,android,2412,1080
+oppo,Oppo A12,4230,3,32,6.22,android,720,1520
+oppo,OPPO A15,4230,3,32,6.52,android,1600,720
+oppo,Oppo A15s,4230,4,128,6.52,android,1600,720
+oppo,OPPO A16,5000,4,64,6.52,android,1600,720
+oppo,OPPO A16e,4230,3 4,32 64,6.52,android,1600,720
+oppo,OPPO A16K,4230,4,64,6.52,android,1600,720
+oppo,OPPO A17,5000,4,64,6.56,android,1612,720
+oppo,OPPO A17K,5000,3,64,6.56,android,1612,720
+oppo,Oppo A31 2020,4230,6,128,6.5,android,1600,720
+oppo,OPPO A53 2020,5000,6,128,6.5,android,720,1600
+oppo,OPPO A54,5000,4 6,64 128,6.51,android,720,1600
+oppo,OPPO A55 4G,5000,4 6,64 128,6.51,android,1600,720
+oppo,OPPO A55 5G,5000,6,128,6.5,android,1600,720
+oppo,Oppo A56 5G,5000,6,128,6.5,android,1600,720
+oppo,Oppo A56s,5000,8,128,6.56,android,1612,720
+oppo,OPPO A57 4G,5000,3 4,64,6.56,android,1612,720
+oppo,OPPO A58,5000,6,128,6.56,android,1612,720
+oppo,OPPO A58x,5000,6,128,6.56,android,1612,720
+oppo,OPPO A73,3200,3,32,6,android,2160,1080
+oppo,OPPO A74 5G,5000,6,128,6.5,android,2400,1080
+oppo,OPPO A76,5000,6,128,6.56,android,1612,720
+oppo,OPPO A77,5000,4,64 128,6.56,android,1600,720
+oppo,Oppo A77 5G,5000,6,128,6.56,android,1600,720
+oppo,OPPO A77s,5000,8,128,6.56,android,1600,720
+oppo,Oppo A78,5000,8,128,6.56,android,1612,720
+oppo,OPPO A96 4G,5000,8,128,6.59,android,2412,1080
+oppo,Oppo A96 5G,4500,8,256,6.43,android,2400,1080
+oppo,OPPO A97 5G,5000,12,256,6.56,android,2400,1080
+oppo,Oppo A98,5000,8,128,6.7,android,2412,1080
+oppo,OPPO F17 Pro,4015,8,128,6.43,android,2400,1080
+oppo,OPPO F19,5000,6,128,6.4,android,2400,1080
+oppo,OPPO F19 Pro,4310,8,128,6.43,android,2400,1080
+oppo,OPPO F19 Pro Plus 5G,4310,8,128,6.43,android,2400,1080
+oppo,OPPO F19s,5000,6,128,6.43,android,2400,1080
+oppo,OPPO F21 Pro 4G,4500,8,128,6.5,android,2400,1080
+oppo,OPPO F21 Pro 5G,4500,8,128,6.43,android,2400,1080
+oppo,OPPO F21s Pro,4500,8,128,6.43,android,2400,1080
+oppo,OPPO F21s Pro 4G,4500,8,128,6.43,android,2400,1080
+oppo,OPPO F22 Pro,4800,8,128,6.58,android,2400,1080
+oppo,OPPO F23 Pro,4500,8,128,6.5,android,2400,1080
+oppo,OPPO F23 Pro Plus 5G,4500,8,128,6.43,android,2460,1080
+oppo,Oppo Find N 5G,4500,8,256,7.1,android,1920,1792
+oppo,OPPO Find N Flip,4300,8,128,6.8,,2400,1200
+oppo,Oppo Find N Fold,5000,8,256,7.1,other,1920,1792
+oppo,Oppo Find N2 5G,4520,12,256,7.1,,1920,1792
+oppo,OPPO Find N2 Flip,4300,8,256,6.8,,2520,1080
+oppo,Oppo Find X3 Pro,4500,12,256,6.7,android,3216,1440
+oppo,Oppo Find X5 Pro 5G,5000,8,256,6.7,android,3216,1440
+oppo,Oppo Find X6,4700,8,256,6.73,android,2400,1080
+oppo,Oppo Find X6 Pro,4700,12,256,6.78,android,2400,1080
+oppo,OPPO K10,5000,6 8,128,6.59,android,2412,1080
+oppo,OPPO K10 5G,5000,8,128,6.56,android,1612,720
+oppo,Oppo K10 Pro 5G,5000,8,128,6.62,android,2400,1080
+oppo,Oppo K10x 5G,5000,6,128,6.59,android,2412,1080
+oppo,Oppo K5,4000,8,128,6.4,android,2340,1080
+oppo,OPPO Reno 10,5000,8,256,6.73,android,2412,1080
+oppo,OPPO Reno 10 Pro,5000,16,256,6.73,android,2412,1080
+oppo,Oppo Reno 10 Pro Plus,4700,12,256,6.73,android,2412,1080
+oppo,Oppo Reno 5,4300,8,128,6.43,android,2400,1080
+oppo,Oppo Reno 5 Pro 5G,4350,8,128,6.53,android,2400,1080
+oppo,Oppo Reno 5A,4000,6,128,6.5,android,2400,1080
+oppo,OPPO Reno 6,4300,8,128,6.43,android,2400,1080
+oppo,OPPO Reno 6 Pro 5G,4500,12,256,6.55,android,2400,1080
+oppo,OPPO Reno 6 Pro Plus 5G,4500,8,128,6.55,android,2400,1080
+oppo,OPPO Reno 8 House of Dragon Edition,4500,8,128,6.43,android,2400,1080
+oppo,Oppo Reno 8 Pro,4500,8,256,6.7,android,2412,1080
+oppo,OPPO Reno 8 Pro 5G,4500,12,256,6.7,android,2412,1080
+oppo,OPPO Reno 8 Pro House of Dragon Edition,4500,12,256,6.7,android,2412,1080
+oppo,OPPO Reno 8 Z,4500,8,256,6.43,android,2400,1080
+oppo,Oppo Reno 8T,5000,8,256,6.67,android,2400,1080
+oppo,Oppo Reno 8T 4G,5000,8,256,6.67,android,2400,1080
+oppo,OPPO Reno 9 5G,4500,8,256,6.7,android,2412,1080
+oppo,OPPO Reno 9 Pro 5G,4500,16,256,6.7,android,2412,1080
+oppo,OPPO Reno 9 Pro Plus,4700,16,256,6.7,android,2412,1080
+oppo,OPPO Reno 9 Z,4800,8,128,6.58,android,2400,1080
+oppo,OPPO Reno7 5G,4500,8,256,6.43,android,2400,1080
+oppo,OPPO Reno7 Pro 5G,4500,12,256,6.55,android,2400,1080
+oppo,OPPO Reno7 Z 5G,4500,8,128,6.43,android,2400,1080
+oppo,OPPO Reno8 5G,4500,8,128,6.43,android,2400,1080
+oppo,OPPO X 2021,4000,8,256,7.4,android,3200,1440
+oukitel,Oukitel WP19,21000,8,256,6.78,android,2400,1080
+oukitel,Oukitel WP21,9800,12,256,6.78,,2400,1080
+oukitel,Oukitel WP9,8000,6,128,5.86,android,1520,720
+poco,POCO C31,5000,3 4,32 64,6.53,android,1600,720
+poco,Poco C50,5000,2 3,32,6.52,android,1600,720
+poco,Poco C55,5000,4,64,6.71,android,1650,720
+poco,Poco F3 GT,5065,6,128,6.67,android,2400,1080
+poco,Poco F4,4500,12,256,6.67,android,2400,1080
+poco,Poco F4 5G,4500,6 8,128,6.67,android,2400,1080
+poco,POCO F4 GT 5G,4700,8,128,6.67,android,2400,1080
+poco,Poco F5,4700,8,128,6.7,android,2400,1080
+poco,POCO F5 GT 5G,4500,8,128,6.67,android,2412,1080
+poco,Poco F5 Pro,5500,8,128,6.67,android,3200,1440
+poco,Poco M2,5000,6,64,6.53,android,2340,1080
+poco,POCO M2 Pro,5000,4,64,6.67,android,2400,1080
+poco,Poco M3,6000,6,64,6.53,android,2340,1080
+poco,POCO M3 Pro 5G,5000,4 6,64 128,6.5,android,2400,1080
+poco,Poco M4 5G,5000,4 6,64 128,6.58,android,2400,1080
+poco,POCO M4 Pro 4G,5000,6 8,64 128,6.43,android,2400,1080
+poco,Poco M4 Pro 5G,5000,4 6 8,64 128,6.6,android,2400,1080
+poco,Poco M5,5000,4 6,64 128,6.58,android,2400,1080
+poco,Poco M6 Pro,5100,8,128,6.73,android,2400,1080
+poco,Poco X3,6000,6,64,6.67,android,2400,1080
+poco,Poco X3 Pro,5160,6,128,6.67,android,2400,1080
+poco,Poco X4,5000,6,128,6.67,android,2400,1080
+poco,POCO X4 GT 5G,5080,8,128 256,6.6,android,2460,1080
+poco,Poco X4 Pro 5G,5000,6 8,64 128,6.67,android,2400,1080
+poco,Poco X5,5000,4,128,6.67,android,2400,1080
+poco,POCO X5 GT,5000,8,128,6.7,android,2400,1080
+poco,Poco X5 Pro,5000,6,128,6.67,android,2400,1080
+poco,Poco X6 Pro 5G,5000,6,128,6.67,android,2400,1080
+realme,Realme 10,5000,4 8,64 128,6.4,android,2400,1080
+realme,Realme 10 5G,5000,8,128,6.6,android,2408,1080
+realme,Realme 10 Pro,5000,6 8,128,6.72,android,2400,1080
+realme,Realme 10 Pro Plus,5000,6 8,128 256,6.7,android,2412,1080
+realme,Realme 10s,5000,8,128,6.6,android,2408,1080
+realme,Realme 11 Pro,5000,6,128,6.4,android,2400,1080
+realme,Realme 11 Pro Plus,4200,6,128,6.4,android,2400,1080
+realme,Realme 6,4300,6,64,6.5,android,2400,1080
+realme,Realme 6 Pro,4300,6 8,64 128,6.6,android,2400,1080
+realme,Realme 8,5000,4 8,128,6.4,android,2400,1080
+realme,Realme 8 5G,5000,4 8,128,6.5,android,2400,1080
+realme,Realme 8i,5000,4 6,64 128,6.6,android,2412,1080
+realme,Realme 8s 5G,5000,6 8,128,6.5,android,2400,1080
+realme,Realme 9 4G,5000,6 8,128,6.4,android,2400,1080
+realme,Realme 9 5G,5000,4 6,64 128,6.5,android,2400,1080
+realme,Realme 9 5G SE,5000,6 8,128,6.6,android,2412,1080
+realme,Realme 9 Pro 5G,5000,6 8,128,6.6,android,2412,1080
+realme,Realme 9 Pro Plus 5G,4500,6 8,128 256,6.4,android,2400,1080
+realme,Realme 9i,5000,4 6,64 128,6.6,android,2412,1080
+realme,Realme 9i 5G,5000,4 6,64 128,6.6,android,2408,1080
+realme,Realme A1,4000,2,16,6.2,android,1520,720
+realme,Realme C11,5000,2,32,6.5,android,1600,720
+realme,Realme C11 2021,5000,2 4,32 64,6.52,android,1600,720
+realme,Realme C2,4000,2,16,6.1,android,720,1560
+realme,Realme C21Y,5000,3 4,32 64,6.5,android,1600,720
+realme,Realme C2s,4000,3,32,6.1,android,1560,720
+realme,Realme C30,5000,2 3,32,6.5,android,1600,720
+realme,Realme C30s,5000,2 4,32 64,6.5,android,1600,720
+realme,Realme C31,5000,3 4,32 64,6.52,android,1600,720
+realme,Realme C32,5000,4,64,6.52,android,1600,720
+realme,Realme C33,5000,3 4,32 64,6.5,android,1600,720
+realme,Realme C35,5000,4 6,64 128,6.6,android,2408,1080
+realme,Realme G1,6000,3,32,6.52,android,1600,720
+realme,Realme GT 2 5G,5000,8,128,6.62,android,2400,1080
+realme,Realme GT 2 Explorer Master Edition,5000,8,128,6.7,android,2412,1080
+realme,Realme GT 2 Pro 5G,5000,8 12,128 256,6.7,android,3216,1440
+realme,Realme GT 5G,4500,8,128,6.43,android,2400,1080
+realme,Realme GT Explorer Master Edition,4500,8,128,6.55,android,2400,1080
+realme,Realme GT Master Edition 5G,4300,8,128,6.43,android,2400,1080
+realme,Realme GT Neo 3 5G,5000,8,128,6.7,android,2412,1080
+realme,Realme GT Neo 3T,5000,6 8,128 256,6.62,android,2400,1080
+realme,Realme GT Neo 4T,5000,8,128,6.73,android,2400,1080
+realme,Realme GT Neo 5,4600,8,128,6.7,android,2412,1080
+realme,Realme GT Neo2 5G,5000,8,128,6.62,android,1080,2400
+realme,Realme Narzo 20,6000,4,64,6.5,android,1600,720
+realme,Realme Narzo 30 5G,5000,6,128,6.5,android,2400,1080
+realme,Realme Narzo 30 Pro 5G,5000,8,128,6.5,android,2400,1080
+realme,Realme Narzo 50,5000,4 6,64 128,6.6,android,2412,1080
+realme,Realme Narzo 50 5G,5000,4 6,64 128,6.6,android,2400,1080
+realme,Realme Narzo 50 Pro 5G,5000,6 8,128,6.4,android,2400,1080
+realme,Realme Narzo 50A,6000,4,64,6.5,android,1600,720
+realme,Realme Narzo 50A Prime,5000,4,64 128,6.6,android,2408,1080
+realme,Realme Narzo 50i,5000,2 4,32 64,6.5,android,1600,720
+realme,Realme Narzo 50i Prime,5000,3 4,32 64,6.5,android,1600,720
+realme,Realme Q2i,5000,4,128,6.5,android,1600,720
+realme,Realme Q3,5000,6,128,6.5,android,2400,1080
+realme,Realme Q3i 5G,5000,4,128,6.5,android,2400,1080
+realme,Realme Q5 5G,5000,6 8 12,128 256,6.6,android,2412,1080
+realme,Realme X7 Max,4500,8,128,6.43,android,2400,1080
+realme,Realme XT,4000,4,64,6.4,android,2340,1080
+redmi,Redmi 12C,5000,4,64,6.71,android,1650,720
+redmi,Redmi Note 11 Pro 2023,5000,6,128,6.67,android,2400,1080
+redmi,Redmi Note 12 Pro Speed Edition,5000,6,128,6.67,android,2400,1080
+royole,Royole FlexPai 2,4450,8,128,7.8,,1920,1440
+royole,Royole FlexPai 3 5G,3360,8,128,7.2,,1920,1440
+samsung,Samsung Galaxy A01 Core,3000,1,16,5.3,android,1480,720
+samsung,Samsung Galaxy A03,5000,3 4,32 64,6.5,android,1560,720
+samsung,Samsung Galaxy A03 Core,5000,2,32,6.5,android,1600,720
+samsung,Samsung Galaxy A03s,5000,3,32,6.5,android,1600,720
+samsung,Samsung Galaxy A04,5000,4,64 128,6.5,android,1600,720
+samsung,Samsung Galaxy A04e,5000,3 4,32 64 128,6.5,android,1600,720
+samsung,Samsung Galaxy A04s,5000,4,64 128,6.5,android,1600,720
+samsung,Samsung Galaxy A05,5000,4,64,6.5,android,1560,720
+samsung,Samsung Galaxy A11,4000,2,32,6.4,android,1560,720
+samsung,Samsung Galaxy A12,5000,4 6,64 128,6.5,android,1560,720
+samsung,Samsung Galaxy A13,5000,4 6,64 128,6.6,android,2408,1080
+samsung,Samsung Galaxy A13 5G,5000,4,64,6.5,android,1600,720
+samsung,Samsung Galaxy A14 5G,5000,4 6 8,64 128,6.6,android,2408,1080
+samsung,Samsung Galaxy A15,5000,6,64 128,6.5,android,1600,720
+samsung,Samsung Galaxy A22,5000,6,128,6.4,android,1600,720
+samsung,Samsung Galaxy A22 5G,5000,6,128,6.6,android,2408,1080
+samsung,Samsung Galaxy A23,5000,6 8,128,6.6,android,2408,1080
+samsung,Samsung Galaxy A23 5G,5000,6 8,128,6.6,android,2408,1080
+samsung,Samsung Galaxy A24,4000,6,64,6.4,android,2408,1080
+samsung,Samsung Galaxy A32,5000,6 8,128,6.4,android,2400,1080
+samsung,Samsung Galaxy A32 5G,5000,6,128,6.5,android,1600,720
+samsung,Samsung Galaxy A33 5G,5000,6 8,128,6.4,android,2400,1080
+samsung,Samsung Galaxy A34 5G,5000,6,128,6.5,android,2400,1080
+samsung,Samsung Galaxy A40,3100,4,64,5.9,android,2340,1080
+samsung,Samsung Galaxy A50s,4000,4,128,6.4,android,2340,1080
+samsung,Samsung Galaxy A52,4500,6 8,128,6.5,android,2400,1080
+samsung,Samsung Galaxy A53,5000,8,256,6.5,android,2400,1080
+samsung,Samsung Galaxy A53 5G,5000,6 8,128,6.5,android,2400,1080
+samsung,Samsung Galaxy A54 5G,5000,6,128,6.4,android,2400,1080
+samsung,Samsung Galaxy A7 2018,3300,4,64,6,android,1080,2220
+samsung,Samsung Galaxy A71,4500,8,128,6.7,android,2400,1080
+samsung,Samsung Galaxy A73 5G,5000,8,128 256,6.7,android,2400,108
+samsung,Samsung Galaxy A74 5G,5000,8,128,6.7,android,2412,1080
+samsung,Samsung Galaxy A75 5G,5000,8,128,6.7,android,2412,1080
+samsung,Samsung Galaxy A82 5G,4500,6,128,6.71,android,3200,1440
+samsung,Samsung Galaxy A83 5G,4500,6,128,6.71,android,3200,1440
+samsung,Samsung Galaxy A9 Pro 2019,3400,6,128,6.4,android,2340,1080
+samsung,Samsung Galaxy A92 5G,5000,8,128,6.7,android,2400,1080
+samsung,Samsung Galaxy F04,5000,4,64,6.5,android,1600,720
+samsung,Samsung Galaxy F12,6000,4,64,6.5,android,1600,720
+samsung,Samsung Galaxy F13,6000,4,64 128,6.6,android,1080,2408
+samsung,Samsung Galaxy F14,5000,4,64,6.62,android,1080,2408
+samsung,Samsung Galaxy F22,6000,4 6,64 128,6.4,android,1600,720
+samsung,Samsung Galaxy F23 5G,5000,4 6,128,6.6,android,2408,1080
+samsung,Samsung Galaxy F24 5G,5000,4,128,6.6,android,2408,1080
+samsung,Samsung Galaxy F41,6000,6,128,6.4,android,2340,1080
+samsung,Samsung Galaxy F42 5G,5000,6 8,128,6.6,android,2408,1080
+samsung,Samsung Galaxy F63,7000,6,128,6.7,android,2400,1080
+samsung,Samsung Galaxy M04,5000,4,64 128,6.5,android,1600,720
+samsung,Samsung Galaxy M12,6000,4,64,6.5,android,1600,720
+samsung,Samsung Galaxy M13,6000,4 6,64 128,6.6,android,2400,1080
+samsung,Samsung Galaxy M13 5G,5000,4 6,64 128,6.5,android,1600,720
+samsung,Samsung Galaxy M14,6000,4,64,6.5,android,1600,720
+samsung,Samsung Galaxy M21 2021,6000,4,64,6.4,android,2340,1080
+samsung,Samsung Galaxy M32,6000,4 6,64 128,6.4,android,2400,1080
+samsung,Samsung Galaxy M32 Prime Edition,6000,4 6,64 128,6.4,android,2400,1080
+samsung,Samsung Galaxy M33 5G,6000,6 8,128,6.6,android,2400,1080
+samsung,Samsung Galaxy M34 5G,6000,6,128,6.5,android,2400,1080
+samsung,Samsung Galaxy M35,6000,8,128,6.5,android,2400,1080
+samsung,Samsung Galaxy M51s 5G,6000,6,128,6.7,android,2400,1080
+samsung,Samsung Galaxy M52s 5G,5000,8,128,6.5,android,2400,1080
+samsung,Samsung Galaxy M53 5G,5000,6 8,128,6.7,android,2400,1080
+samsung,Samsung Galaxy M54 5G,6000,6,128,6.67,android,2412,1080
+samsung,Samsung Galaxy M62,7000,6,128,6.71,android,2400,1080
+samsung,Samsung Galaxy Note 10 Lite,4500,6,128,6.7,android,2400,1080
+samsung,Samsung Galaxy Note 10 Plus,4300,12,256,6.8,android,3040,1440
+samsung,Samsung Galaxy Note 10 Plus 5G,4300,12,256,6.8,android,3040,1440
+samsung,Samsung Galaxy Note 20,4300,8,256,6.7,android,2400,1080
+samsung,Samsung Galaxy Note 30 Ultra 5G,4500,12,256,6.71,android,3214,1440
+samsung,Samsung Galaxy S10 5G,4500,8,256,6.7,android,3040,1440
+samsung,Samsung Galaxy S10 Plus,4100,8,128,6.4,android,3040,1440
+samsung,Samsung Galaxy S20,4000,8,128,6.2,android,3200,1440
+samsung,Samsung Galaxy S20 5G,4000,8,128,6.2,android,3200,1440
+samsung,Samsung Galaxy S20 FE,4500,8,128,6.5,android,2400,1080
+samsung,Samsung Galaxy S20 FE 5G,4500,8,128,6.5,android,2400,1080
+samsung,Samsung Galaxy S20 Plus,4500,8,128,6.7,android,3200,1440
+samsung,Samsung Galaxy S20 Plus 5G,4500,8,128,6.7,android,3200,1440
+samsung,Samsung Galaxy S20 Ultra 5G,5000,12,128,6.9,android,3200,1440
+samsung,Samsung Galaxy S21,4000,8,128,6.2,android,2400,1080
+samsung,Samsung Galaxy S21 FE 5G,4500,8,128 256,6.4,android,2340,1080
+samsung,Samsung Galaxy S21 Plus,4800,8,128,6.7,android,2400,1080
+samsung,Samsung Galaxy S21 Ultra,5000,12,256,6.8,android,3200,1440
+samsung,Samsung Galaxy S21 Ultra 5G,5000,12,128,6.8,android,3200,1440
+samsung,Samsung Galaxy S22 5G,3700,8,128 256,6.1,android,2340,1080
+samsung,Samsung Galaxy S22 FE 5G,4200,8,128,6.4,android,2400,1080
+samsung,Samsung Galaxy S22 Plus 5G,4500,8,128 256,6.6,android,2340,1080
+samsung,Samsung Galaxy S22 Ultra 5G,5000,8 12,128 256 512,6.8,android,3080,1440
+samsung,Samsung Galaxy S23,3900,8,128,6.1,android,2340,1080
+samsung,Samsung Galaxy S23 FE 5G,4500,8,128,6.5,android,2400,1080
+samsung,Samsung Galaxy S23 Plus,4700,8,256,6.6,android,2340,1080
+samsung,Samsung Galaxy S23 Ultra 5G,5000,8,256,6.8,android,3088,1440
+samsung,Samsung Galaxy S24 Ultra,5100,12,256,6.83,android,2860,1200
+samsung,Samsung Galaxy S9 Plus (128GB),3500,6,128,6.2,android,2960,1440
+samsung,Samsung Galaxy Z Flip 3,3300,8,128,6.7,,2640,1080
+samsung,Samsung Galaxy Z Flip 4 5G,3700,8,128,6.7,,2640,1080
+samsung,Samsung Galaxy Z Fold 3,4400,12,256,7.6,android,2208,1768
+samsung,Samsung Galaxy Z Fold 4,4400,12,256 1000,7.6,android,2176,1812
+sharp,Sharp Aquos R5G,3730,12,256,6.5,android,3168,1440
+sony,Sony Xperia 1 II,4000,8 12,256 512,6.5,android,3840,1644
+sony,Sony Xperia 10 II,3600,4,128,6,android,2520,1080
+sony,Sony Xperia 10 III Lite 5G,4500,6,64,6,android,2520,1080
+sony,Sony Xperia 5 II,4000,8,128,6.1,android,2520,1080
+sony,Sony Xperia 5 IV 5G,5000,8,256,6.1,android,2520,1080
+sony,Sony Xperia Ace IV,5000,8,128,6.5,android,2400,1080
+sony,Sony Xperia L5 5G,4000,4,64,6.2,android,1680,720
+sony,Sony Xperia Pro-I,4500,12,512,6.5,android,3840,1644
+tcl,TCL Ion X,3000,3,32,6,android,1440,720
+tecno,Tecno Camon 18,5000,4,128,6.8,android,2460,1080
+tecno,Tecno Camon 19,5000,6,128,6.8,android,2460,1080
+tecno,Tecno Camon 19 Neo,5000,6,128,6.8,android,2400,1080
+tecno,Tecno Camon 19 Pro,5000,8,128,6.8,android,2460,1080
+tecno,Tecno Camon 19 Pro 5G,5000,8,128,6.8,android,2460,1080
+tecno,Tecno Camon 19 Pro Mondrian Edition,5000,8,128,6.8,android,2460,1080
+tecno,Tecno Camon 20 Premier,5000,6,128,6.83,android,2460,1080
+tecno,Tecno Phantom X,4700,8,256,6.7,android,2340,1080
+tecno,Tecno Phantom X Pro,5000,8,256,6.7,android,2400,1080
+tecno,Tecno Phantom X2,5160,8,256,6.8,android,2400,1080
+tecno,Tecno Phantom X2 Pro,5160,12,256,6.8,android,2400,1080
+tecno,Tecno Pop 5 Go,4000,1,16,6.1,android,1520,720
+tecno,Tecno Pop 6 Pro,5000,2,32,6.56,android,1600,720
+tecno,Tecno Pova 2,7000,4,64,6.95,android,2460,1080
+tecno,Tecno Pova 3,7000,4 6,64 128,6.95,android,2460,1080
+tecno,Tecno Pova 4,6000,8,128,6.82,android,1600,720
+tecno,Tecno Pova 4 Pro,6000,8,256,6.66,android,1600,720
+tecno,Tecno Pova 5G,6000,8,128,6.9,android,2460,1080
+tecno,Tecno Pova Neo 2,7000,6,128,6.82,android,1600,720
+tecno,Tecno Pova Neo 5G,6000,4,128,6.8,android,2400,1080
+tecno,Tecno Spark 8,5000,4,64,6.52,android,1600,720
+tecno,Tecno Spark 8 Pro,5000,4,64,6.8,android,2460,1080
+tecno,Tecno Spark 8C,5000,3 4,64,6.6,android,1612,720
+tecno,Tecno Spark 8T,5000,4,64,6.6,android,1600,720
+tecno,Tecno Spark 9,5000,3 4 6,64 128,6.6,android,1600,720
+tecno,Tecno Spark 9 Pro,5000,4,64,6.6,android,2460,1080
+tecno,Tecno Spark 9T,5000,4,64,6.6,android,2408,1080
+tecno,Tecno Spark Go 2022,5000,2,32,6.51,android,1600,720
+tecno,Tecno Spark Go 2023,5000,3,32,6.56,android,1600,720
+tesla,Tesla Pi Phone,5000,16,512,6.73,android,2448,1080
+vertu,Vertu Signature Touch,2275,2,64,4.7,android,1920,1080
+vivo,Vivo S1 Pro,4500,8,128,6.38,android,2340,1080
+vivo,Vivo S16,4600,8,128,6.78,android,2400,1080
+vivo,Vivo S16 Pro,4600,8,256,6.78,android,2400,1080
+vivo,Vivo S17 Pro,5000,12,256,6.67,android,2400,1080
+vivo,Vivo T1 44W,5000,4 6 8,128,6.44,android,2408,1080
+vivo,Vivo T1 5G,5000,4 6 8,128,6.58,android,2408,1080
+vivo,Vivo T1 Pro,4700,6,128,6.44,android,2404,1080
+vivo,Vivo T1 Pro 5G,4700,8,128,6.44,android,2404,1080
+vivo,Vivo T1x,5000,4 6,128,6.58,android,2408,1080
+vivo,Vivo T1x 4G,5000,4,64,6.58,android,2408,1080
+vivo,Vivo T2 5G,4700,8,128,6.62,android,2400,1080
+vivo,Vivo T2 Pro 5G,4500,8,128,6.44,android,2408,1080
+vivo,Vivo T2x 5G,6000,8,128,6.58,android,2408,1080
+vivo,Vivo T3 Pro,4700,8,256,6.67,android,2408,1080
+vivo,Vivo U3,5000,4 6,64,6.53,android,2340,1080
+vivo,Vivo U3x,5000,6,64,6.58,android,2408,1080
+vivo,Vivo V11i,3315,4,128,6.3,android,2280,1080
+vivo,Vivo V15 Pro,3700,8,128,6.39,android,2316,1080
+vivo,Vivo V19,4500,8,256,6.44,android,2400,1080
+vivo,Vivo V20,4000,8,128,6.44,android,2400,1080
+vivo,Vivo V20 Pro,4000,8,128,6.44,android,2400,1080
+vivo,Vivo V20 SE,4100,8,128,6.44,android,2400,1080
+vivo,Vivo V21,4000,8,128,6.44,android,2400,1080
+vivo,Vivo V21 5G,4000,8,128,6.44,android,2400,1080
+vivo,Vivo V21 Pro,4300,8,128,6.44,android,2400,1080
+vivo,Vivo V21s,4000,8,128,6.44,android,2400,1080
+vivo,Vivo V23 5G,4200,8 12,128 256,6.44,android,2400,1080
+vivo,Vivo V23 Pro 5G,4300,8 12,128 256,6.56,android,2376,1080
+vivo,Vivo V23e,4050,8,128,6.44,android,2400,1080
+vivo,Vivo V23e 5G,4050,8,128,6.44,android,2400,1080
+vivo,Vivo V25,4500,12,256,6.44,android,2408,1080
+vivo,Vivo V25 5G,4500,8,128,6.44,android,2408,1080
+vivo,Vivo V25 Pro,4830,12,256,6.56,android,2376,1080
+vivo,Vivo V25 Pro 5G,4830,8,128,6.56,android,2376,1080
+vivo,Vivo V25e,4500,8,256,6.44,android,2400,1080
+vivo,Vivo V26 Pro,4800,12,256,6.7,android,2400,1080
+vivo,Vivo V27,4700,8,256,6.56,android,2400,1080
+vivo,Vivo V27 Pro,5000,12,256,6.73,android,2400,1080
+vivo,Vivo V28,5000,8,256,6.7,android,2400,1080
+vivo,Vivo V29,5000,8,256,6.67,android,2400,1080
+vivo,Vivo X Fold 2,4800,12,256,8.03,android,2160,1916
+vivo,Vivo X Fold 5G,4600,12,256 512,8.03,android,2160,1916
+vivo,Vivo X Fold Plus,4730,12,256,8.03,android,2160,1916
+vivo,Vivo X Note 5G,5000,12,512,7,android,3080,1440
+vivo,Vivo X80 5G,4500,8 12,128 256,6.78,android,2400,1080
+vivo,Vivo X80 Pro 5G,4700,12,256,6.78,android,3200,1440
+vivo,Vivo X80 Pro Plus 5G,4500,12,256,6.78,android,3200,1440
+vivo,Vivo X90 5G,4810,8,128,6.78,android,2800,1260
+vivo,Vivo X90 Pro 5G,4870,8,256,6.78,android,2800,1260
+vivo,Vivo X90 Pro Plus 5G,4700,12,256,6.78,android,3200,1440
+vivo,Vivo Y01,5000,2,32,6.51,android,1600,720
+vivo,Vivo Y01A,5000,2,32,6.51,android,1600,720
+vivo,Vivo Y02,5000,2 3,32,6.51,android,1600,720
+vivo,Vivo Y02s,5000,3,32,6.51,android,1600,720
+vivo,Vivo Y10,5000,4,128,6.51,android,1600,720
+vivo,Vivo Y100,5000,8,128,6,android,2400,1080
+vivo,Vivo Y11 2019,5000,3,32,6.35,android,1544,720
+vivo,Vivo Y12,5000,3,64,6.35,android,1544,720
+vivo,Vivo Y12a,5000,3,32,6.51,android,1600,720
+vivo,Vivo Y12G,5000,3,64,6.51,android,1600,720
+vivo,Vivo Y15,5000,4,64,6.35,android,1544,720
+vivo,Vivo Y15C,5000,3,32 64,6.51,android,1600,720
+vivo,Vivo Y15C,5000,3,64,6.51,android,1600,720
+vivo,Vivo Y15s,5000,3,32,6.51,android,1600,720
+vivo,Vivo Y16,5000,3 4,32 64,6.51,android,1600,720
+vivo,Vivo Y19,5000,4,128,6.53,android,2340,1080
+vivo,Vivo Y20G,5000,4,64,6.51,android,1600,720
+vivo,Vivo Y21 2020,5000,4,64,6.5,android,1544,720
+vivo,Vivo Y21 2021,5000,4,64,6.51,android,1600,720
+vivo,Vivo Y21e,5000,3,64,6.51,android,1600,720
+vivo,Vivo Y21s,5000,4,128,6.51,android,1600,720
+vivo,Vivo Y21T,5000,4,128,6.51,android,720,1600
+vivo,Vivo Y22,5000,4 6,64 128,6.55,android,1612,720
+vivo,Vivo Y22s,5000,8,128,6.55,android,720,1612
+vivo,Vivo Y25,1900,1,16,4.5,android,854,480
+vivo,Vivo Y3,5000,4,128,6.35,android,1544,720
+vivo,Vivo Y33s,5000,8,128,6.58,android,2408,1080
+vivo,Vivo Y33T,5000,8,128,6.58,android,2408,1080
+vivo,Vivo Y35,5000,8,128,6.58,android,2408,1080
+vivo,Vivo Y35 5G,5000,4,128,6.51,android,1600,720
+vivo,Vivo Y53s,5000,8,128,6.58,android,2408,1080
+vivo,Vivo Y53t,6000,4,128,6.51,android,1600,720
+vivo,Vivo Y55 4G,5000,8,128,6.44,android,2400,1080
+vivo,Vivo Y55 5G,5000,4,128,6.58,android,2408,1080
+vivo,Vivo Y55S,2730,3,16,5.2,android,1280,720
+vivo,Vivo Y55s 2023,5000,4,128,6.58,android,2408,1080
+vivo,Vivo Y55s 5G,6000,8,128,6.58,android,2408,1080
+vivo,Vivo Y71,3360,3,16,6,android,1440,720
+vivo,Vivo Y73 2021,4000,8,128,6.44,android,2400,1080
+vivo,Vivo Y73T,6000,8,128,6.58,android,2408,1080
+vivo,Vivo Y75 4G,4050,8,128,6.44,android,2400,1080
+vivo,Vivo Y75 5G,5000,8,128,6.58,android,2408,1080
+vivo,Vivo Y77 5G,4500,6,128,6.64,android,2388,1080
+vivo,Vivo Y78 5G,4500,8,128,6.58,android,2400,1080
+vivo,Vivo Y91c,4030,2,32,6.22,android,1520,720
+vivo,Vivo Y93,4030,4,32,6.2,android,720,1520
+vivo,Vivo Y95,4030,4,64,6.22,android,720,1520
+xiaomi,Xiaomi 11i 5G,5160,8,128,6.67,android,1080,2400
+xiaomi,Xiaomi 11i HyperCharge 5G,4500,6 8,128,6.67,android,1080,2400
+xiaomi,Xiaomi 11T Pro 5G,5000,12,256,6.67,android,2400,1080
+xiaomi,Xiaomi 12 Lite 5G,4300,6,128,6.55,android,2400,1080
+xiaomi,Xiaomi 12 Pro 5G,4600,8 12,256,6.73,android,3200,1440
+xiaomi,Xiaomi 12 Ultra 5G,4800,12,256,6.73,android,3200,1440
+xiaomi,Xiaomi 12S Ultra,4860,8,256,6.73,android,3200,1440
+xiaomi,Xiaomi 12T,5000,8,128,6.67,android,2712,1220
+xiaomi,Xiaomi 12T Pro 5G,5000,8,128,6.67,android,2712,1220
+xiaomi,Xiaomi 13 5G,4500,8,128,6.36,android,2400,1080
+xiaomi,Xiaomi 13 Pro 5G,4820,8,128,6.73,android,3200,1440
+xiaomi,Xiaomi 13 Ultra 5G,5000,12,256,6.6,android,3200,1440
+xiaomi,Xiaomi 14,5000,12,256,6.43,android,3200,1440
+xiaomi,Xiaomi Civi 2,4500,8,128,6.55,android,2400,1080
+xiaomi,Xiaomi Civi 3,5000,8,256,6.7,android,2400,1080
+xiaomi,Xiaomi Mi 10 5G,4780,8,256,6.67,android,2340,1080
+xiaomi,Xiaomi Mi 10T 5G,5000,6,128,6.67,android,1080,2400
+xiaomi,Xiaomi Mi 10T Pro 5G,5000,8,128,6.67,android,2400,1080
+xiaomi,Xiaomi Mi 11 Lite,4250,8,128,6.55,android,2400,1080
+xiaomi,Xiaomi Mi 11 Lite NE 5G,4250,6 8,128,6.55,android,2400,1080
+xiaomi,Xiaomi Mi 11i 5G,5160,6,128,6.67,android,1080,2400
+xiaomi,Xiaomi Mi 11T Pro 5G,5000,8,128,6.67,android,2400,1080
+xiaomi,Xiaomi Mi 11X,4520,6,128,6.67,android,2400,1080
+xiaomi,Xiaomi Mi 11X 5G,4520,8,128,6.67,android,2400,1080
+xiaomi,Xiaomi Mi 11X Pro,4520,8,128,6.67,android,2400,1080
+xiaomi,Xiaomi Mi 12 5G,4500,8,128,6.28,android,2400,1080
+xiaomi,Xiaomi Mi Mix Alpha,4050,12,512,7.92,android,2250,2088
+xiaomi,Xiaomi Mi Mix Fold,5020,12,256,8.01,android,2480,1860
+xiaomi,Xiaomi Mix Fold 2 5G,4500,12,256,8.02,android,2160,1914
+xiaomi,Xiaomi Poco F1,4000,6,64 128,6.18,android,2246,1080
+xiaomi,Xiaomi Redmi 10,6000,4 6,64 128,6.7,android,1600,720
+xiaomi,Xiaomi Redmi 10 Power,6000,8,128,6.7,android,1650,720
+xiaomi,Xiaomi Redmi 10 Prime,6000,4 6,64 128,6.5,android,2400,1080
+xiaomi,Xiaomi Redmi 10 Prime Plus 5G,5000,4,128,6.58,android,2408,1080
+xiaomi,Xiaomi Redmi 10A,5000,3 4 6,32 64 128,6.53,android,1600,720
+xiaomi,Xiaomi Redmi 10A Sport,5000,6,128,6.53,android,1600,720
+xiaomi,Xiaomi Redmi 10C,6000,4,64 128,6.7,android,1600,720
+xiaomi,Xiaomi Redmi 11 Prime,5000,4 6,64 128,6.58,android,2400,1080
+xiaomi,Xiaomi Redmi 11 Prime 5G,5000,4 6,64 128,6.58,android,2408,1080
+xiaomi,Xiaomi Redmi 13 Prime 5G,5100,6,128,6.73,android,2408,1080
+xiaomi,Xiaomi Redmi 20X,5000,4,128,6.43,android,2340,1080
+xiaomi,Xiaomi Redmi 8,5000,4,64,6.22,android,1520,720
+xiaomi,Xiaomi Redmi 9,5000,4,64,6.53,android,1600,720
+xiaomi,Xiaomi Redmi 9 Activ,5000,4 6,64 128,6.53,android,1600,720
+xiaomi,Xiaomi Redmi 9 Power,6000,4,64,6.53,android,2340,1080
+xiaomi,Xiaomi Redmi 9A,5000,2 6,32 128,6.53,android,1600,720
+xiaomi,Xiaomi Redmi 9A Sport,5000,2,32,6.53,android,1600,720
+xiaomi,Xiaomi Redmi 9i,5000,4,128,6.53,android,1600,720
+xiaomi,Xiaomi Redmi 9i Sport,5000,4,64,6.53,android,1600,720
+xiaomi,Xiaomi Redmi A1,5000,2,32,6.52,android,1600,720
+xiaomi,Xiaomi Redmi A1 Plus,5000,2 3,32,6.52,android,1600,720
+xiaomi,Xiaomi Redmi K20 Pro Signature Edition,4000,8,256,6.39,android,2340,1080
+xiaomi,Xiaomi Redmi K50 5G,5500,8,128,6.67,android,3200,1440
+xiaomi,Xiaomi Redmi K50 Ultra 5G,5000,8,128,6.67,android,2712,1220
+xiaomi,Xiaomi Redmi K50i,5080,8,256,6.6,android,2460,1080
+xiaomi,Xiaomi Redmi K50i 5G,5080,6,128,6.6,android,2460,1080
+xiaomi,Xiaomi Redmi K60,5500,8,128,6.67,android,3200,1440
+xiaomi,Xiaomi Redmi K60 Gaming Edition,5000,8,128,6.73,android,3200,1440
+xiaomi,Xiaomi Redmi K60 Pro,5000,8,128,6.67,android,3200,1440
+xiaomi,Xiaomi Redmi K60E,5500,8,128,6.67,android,3200,1440
+xiaomi,Xiaomi Redmi K60i,5080,8,128,6.67,android,2460,1080
+xiaomi,Xiaomi Redmi Note 10,5000,4 6,64 128,6.43,android,2400,1080
+xiaomi,Xiaomi Redmi Note 10,5000,6,128,6.43,android,2400,1080
+xiaomi,Xiaomi Redmi Note 10 5G,5000,4,128,6.5,android,2400,1080
+xiaomi,Xiaomi Redmi Note 10 Lite,5020,4 6,64 128,6.67,android,2400,1080
+xiaomi,Xiaomi Redmi Note 10 Pro,5020,6,128,6.67,android,2400,1080
+xiaomi,Xiaomi Redmi Note 10 Pro 5G,5000,6,128,6.6,android,2400,1080
+xiaomi,Xiaomi Redmi Note 10 Pro Max,5020,6,64 128,6.67,android,2400,1080
+xiaomi,Xiaomi Redmi Note 10S,5000,6 8,64 128,6.43,android,2400,1080
+xiaomi,Xiaomi Redmi Note 10T 5G,5000,4 6,64 128,6.5,android,2400,1080
+xiaomi,Xiaomi Redmi Note 11,5000,4 6,64 128,6.43,android,2400,1080
+xiaomi,Xiaomi Redmi Note 11 5G,5000,4,128,6.6,android,2400,1080
+xiaomi,Xiaomi Redmi Note 11 Pro 4G,5000,6,128,6.67,android,2400,1080
+xiaomi,Xiaomi Redmi Note 11 Pro 5G,5000,6,64,6.67,android,2400,1080
+xiaomi,Xiaomi Redmi Note 11 Pro Max 5G,5200,6,128,6.67,android,2400,1080
+xiaomi,Xiaomi Redmi Note 11 Pro Plus 5G,5000,6 8,128 256,6.67,android,2400,1080
+xiaomi,Xiaomi Redmi Note 11E 5G,5000,4,128,6.58,android,2408,1080
+xiaomi,Xiaomi Redmi Note 11R,5000,4,128,6.58,android,2400,1080
+xiaomi,Xiaomi Redmi Note 11S,5000,6 8,64 128,6.43,android,2400,1080
+xiaomi,Xiaomi Redmi Note 11SE,5000,6,64,6.43,android,2400,1080
+xiaomi,Xiaomi Redmi Note 11T 5G,5000,6 8,64 128,6.6,android,2400,1080
+xiaomi,Xiaomi Redmi Note 11T Pro 5G,5080,6,128,6.6,android,2460,1080
+xiaomi,Xiaomi Redmi Note 12,5000,4 6,128,6.67,android,2400,1080
+xiaomi,Xiaomi Redmi Note 12 4G,5000,4,64,6.67,android,2400,1080
+xiaomi,Xiaomi Redmi Note 12 Discovery Edition,4300,8,256,6.67,android,2400,1080
+xiaomi,Xiaomi Redmi Note 12 Explorer,4300,8,256,6.67,android,2400,1080
+xiaomi,Xiaomi Redmi Note 12 Pro,5000,8,128 256,6.67,android,2400,1080
+xiaomi,Xiaomi Redmi Note 12 Pro 4G,5000,6,128,6.67,android,2400,1080
+xiaomi,Xiaomi Redmi Note 12 Pro 5G,5000,6,128,6.67,android,2400,1080
+xiaomi,Xiaomi Redmi Note 12 Pro Max 5G,5200,6,128,6.67,android,2460,1080
+xiaomi,Xiaomi Redmi Note 12 Pro Plus,4980,6 8 12,128 256,6.67,android,2400,1080
+xiaomi,Xiaomi Redmi Note 12 Turbo,5000,8,128,6.67,android,2400,1080
+xiaomi,Xiaomi Redmi Note 12T 5G,5000,6,64,6.52,android,2400,1080
+xiaomi,Xiaomi Redmi Note 13 Pro 5G,5000,6,128,6.67,android,2460,1080
+xiaomi,Xiaomi Redmi Note 13 Pro Max 5G,5200,6,128,6.67,android,2460,1080
+xiaomi,Xiaomi Redmi Note 4,4100,4,64,5.5,android,1920,1080
+xiaomi,Xiaomi Redmi Note 8 2021,4000,4,64,6.3,android,2340,1080
+xiaomi,Xiaomi Redmi Note 8 Pro,4500,6,64,6.53,android,2340,1080
+xiaomi,Xiaomi Redmi Note 9,5020,4,64,6.53,android,2340,1080
+xiaomi,Xiaomi Redmi Note 9 Pro,5020,4,64 128,6.67,android,2400,1080
+xiaomi,Xiaomi Redmi Note 9 Pro Max,5020,6,64,6.67,android,2400,1080
+zte,ZTE Axon 30S,4200,6,128,6.9,android,2460,1080
+zte,ZTE Axon 40 Ultra 5G,5000,8,128,6.8,android,2480,1116
